@@ -2,3 +2,10 @@
 
 [papers discussion](https://docs.google.com/document/d/1hgv8pvAzedtdTmavVv2MRbwdhtt2JQ150kgkNgfT4UM/edit?usp=sharing)
 
+Dummy mail:
+
+u0367314283@gmail.com
+
+Pasword:
+
+Dreamteam_AQM_2025
