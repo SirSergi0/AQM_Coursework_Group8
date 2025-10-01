@@ -41,15 +41,29 @@ A set of standard references can be found in the
 \verb+biblio.bib+ file, which is compiles using BibTeX.
 \end{abstract}
 \maketitle
-\textcolor{red}{Sergio: I didn't know if you wanted to keep the hole templete, I leave after this section}
-\section{\label{sec:MathematicalBackrground}Mathematical backrground of the algorithm}
-% sections are not used for PRL papers
+\textcolor{red}{Sergio: I didn't know if you wanted to keep the whole template, I leave after this section}
 
-The goal of the algorithm is the following: given a positive integer $n$, find $m, r \in \mathbb{N}$, where $m,r>1$, such that $n = m r$, that is, to decompose $n$ as a product of two non-trivial positive integers.
+\section{\label{sec:History} Introduction}
+\textcolor{red}{DAVID:}
+Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. Although the term itself has gained popularity only recently, Richard Feynman already suggested in 1986 that exploiting quantum mechanics could enable more powerful computation than its classical counterpart \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with high probability \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not provide a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error \footnote{This class is called \textbf{BPP}, which stands for bounded-error probabilistic polynomial time.}. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made a groundbreaking contribution: he identified an oracle problem solvable in polynomial time on a quantum computer but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
 
-Let $\tilde{m}$ be a candidate divisor of $n$, chosen such that $1 < \tilde{m} < n$. Using the Euclidean algorithm, one can compute $\gcd(\tilde{m}, n)$ in polynomial time.  
 
-If $\gcd(\tilde{m}, n) \neq 1$, then we have found a non-trivial divisor of $n$. In this case, set $m = \gcd(\tilde{m}, n)$ and $r = \frac{n}{\gcd(\tilde{m}, n)}$.
+The possibility of quantum computing excelling beyond classical one is a looming threat to, among other fields, cryptography, as some of its methods are often relied on hard-to-solve computational problems. This is the case for the widely used RSA public-key scheme developed by Rivest, Shamir and Adleman in 1978 \cite{RSA178}. In this system, the security rests on the difficulty of factorizing an integer into prime numbers. In 1995, the fastest known algorithm for factorizing an integer was Number Field Sieve by Lenstra, Lenstra Jr., Manasse and Pollard \cite{LenstraLenstraManassePollard90}. Such method takes an asymptotic running time $O(exp(c(\log n)^\frac{1}{3}(\log\log n)^{\frac{2}{3}}))$ to factor an integer $n$ and for some constant $c$.
+
+
+In this article, Shor introduces the first quantum algorithm for integer factorization with an asymptotic running time of $O((\log n)^2(\log\log n)(\log \log \log n))$, demonstrating a clear quantum advantage over Lenstra's classical proposal.
+
+
+\section{\label{sec:MathematicalBackground}Mathematical background of the algorithm}
+\textcolor{red}{In this section, we address how to reduce the factorization problem to a modular exponentiation problem.}
+
+
+\textcolor{red}{SERGIO:}
+The goal of the algorithm is the following: given a positive integer $n$, find $m, t \in \mathbb{N}$, where $m,t>1$, such that $n = m t$, that is, to decompose $n$ as a product of two non-trivial positive integers. \textcolor{red}{It has been later showed that $n$ can be assumed to be neither odd or a prime power, as for the first case 2 is a trivial factor and an efficient classical algorithm can be found for the latter\cite{Bernstein98,AgrawalKayalSaxena04}.}
+
+Let $\tilde{m}$ \textcolor{red}{(I rather use another variable , same as Wikipedia $a$ or same as article $x$)} be a candidate divisor of $n$, chosen such that $1 < \tilde{m} < n$. Using the Euclidean algorithm, one can compute $\gcd(\tilde{m}, n)$ in polynomial time \textcolor{red}{\cite{Shallit94}}. 
+
+If $\gcd(\tilde{m}, n) \neq 1$, then we have found a non-trivial divisor of $n$. In this case, set $m = \gcd(\tilde{m}, n)$ and $t = \frac{n}{\gcd(\tilde{m}, n)}$.
 
 Otherwise, if $\gcd(\tilde{m}, n) = 1$, then the equivalence class $[\tilde{m}]$ belongs to the multiplicative group,
 \begin{align*}
@@ -57,9 +71,9 @@ Otherwise, if $\gcd(\tilde{m}, n) = 1$, then the equivalence class $[\tilde{m}]$
     = \{ [a] \in \tfrac{\mathbb{Z}}{n\mathbb{Z}} : \gcd(a,n)=1 \}.
 \end{align*}
 
-    In this case, we look for the \emph{order} of $[\tilde{m}]$, namely the smallest positive integer $r$ such that $\tilde{m}^r \equiv 1 \pmod{n}$.
+    In this case, we look for the \emph{order} of $[\tilde{m}]$, namely the smallest positive integer $r$  such that $\tilde{m}^r \equiv 1 \pmod{n}$.
 
-This order $r$ always exists because $\left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$ is a finite abelian group. In virtue of the Chinese remainder theorem we know $\left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$ to be isomorphic to a direct product of cyclic groups. The efficient computation of $r$ is precisely the step where the quantum part of the algorithm becomes essential.  
+This order $r$ always exists since $\left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$ is a finite abelian group. The efficient computation of $r$ is precisely the step where the quantum part of the algorithm becomes essential.  
 
 Once $r$ is obtained, two cases arise. If $r$ is odd, the choice of $\tilde{m}$ is not useful, and the procedure is repeated with a new guess $\tilde{m}$. If $r$ is even, then 
 \begin{align*}
@@ -71,6 +85,7 @@ Once $r$ is obtained, two cases arise. If $r$ is odd, the choice of $\tilde{m}$ 
     If $\gcd(\tilde{m}^{r/2} + 1, n) \neq 1$, then $\gcd(\tilde{m}^{r/2} + 1, n)$ is a non-trivial divisor of $n$, and the factorization goal is achieved. Otherwise, the procedure is restarted with a new choice of $\tilde{m}$.
 
 \textcolor{red}{Sergio: Here there is the templete}
+
 \section{\label{sec:level1}Introduction}
 % sections are not used for PRL papers
 

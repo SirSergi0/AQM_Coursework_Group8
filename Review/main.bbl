@@ -1,0 +1,129 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Agrawal et~al.(2004)Agrawal, Kayal, and Saxena]{AgrawalKayalSaxena04}
+Manindra Agrawal, Neeraj Kayal, and Nitin Saxena.
+\newblock {PRIMES} is in {P}.
+\newblock \emph{Ann. Math. (2)}, 160\penalty0 (2):\penalty0 781--793, 2004.
+\newblock ISSN 0003-486X.
+\newblock \doi{10.4007/annals.2004.160.781}.
+
+\bibitem[Arfken et~al.(2005)Arfken, Weber, and Harris]{Arfken}
+G.~B. Arfken, H.~J. Weber, and F.~E. Harris.
+\newblock \emph{Mathematical Methods for Physicists}.
+\newblock Elsevier, 2005.
+\newblock ISBN 9780120598762.
+
+\bibitem[Bernstein(1998)]{Bernstein98}
+Daniel~J. Bernstein.
+\newblock Detecting perfect powers in essentially linear time.
+\newblock \emph{Mathematics of Computation}, 67\penalty0 (223):\penalty0
+  1253--1283, 1998.
+\newblock ISSN 00255718, 10886842.
+\newblock URL \url{http://www.jstor.org/stable/2585183}.
+
+\bibitem[Bernstein and Vazirani(1993)]{BernsteinVazirani97}
+Ethan Bernstein and Umesh Vazirani.
+\newblock Quantum complexity theory.
+\newblock In \emph{Proceedings of the Twenty-Fifth Annual ACM Symposium on
+  Theory of Computing}, STOC '93, page 11–20, New York, NY, USA, 1993.
+  Association for Computing Machinery.
+\newblock ISBN 0897915917.
+\newblock \doi{10.1145/167088.167097}.
+\newblock URL \url{https://doi.org/10.1145/167088.167097}.
+
+\bibitem[Berthiaume and Brassard(1992{\natexlab{a}})]{BerthiaumeBrassard1992a}
+A.~Berthiaume and G.~Brassard.
+\newblock The quantum challenge to structural complexity theory.
+\newblock In \emph{[1992] Proceedings of the Seventh Annual Structure in
+  Complexity Theory Conference}, pages 132--137, 1992{\natexlab{a}}.
+\newblock \doi{10.1109/SCT.1992.215388}.
+
+\bibitem[Berthiaume and Brassard(1992{\natexlab{b}})]{BerthiaumeBrassard1992b}
+A.~Berthiaume and G.~Brassard.
+\newblock Oracle quantum computing.
+\newblock In \emph{Workshop on Physics and Computation}, pages 195--199,
+  1992{\natexlab{b}}.
+\newblock \doi{10.1109/PHYCMP.1992.615538}.
+
+\bibitem[Deutsch and Jozsa(1992)]{DeutschJozsa1992}
+David Deutsch and Richard Jozsa.
+\newblock Rapid solution of problems by quantum computation.
+\newblock \emph{Proceedings of the Royal Society of London. Series A:
+  Mathematical and Physical Sciences}, 439\penalty0 (1907):\penalty0 553--558,
+  1992.
+\newblock \doi{10.1098/rspa.1992.0167}.
+\newblock URL
+  \url{https://royalsocietypublishing.org/doi/abs/10.1098/rspa.1992.0167}.
+
+\bibitem[{Ehrenfest}(1927)]{Ehrenfest}
+P.~{Ehrenfest}.
+\newblock {Bemerkung {\"u}ber die angen{\"a}herte G{\"u}ltigkeit der
+  klassischen Mechanik innerhalb der Quantenmechanik}.
+\newblock \emph{Zeitschrift fur Physik}, 45\penalty0 (7-8):\penalty0 455--457,
+  July 1927.
+\newblock \doi{10.1007/BF01329203}.
+
+\bibitem[Feynman(1985)]{Feynman85}
+Richard~P. Feynman.
+\newblock Quantum mechanical computers.
+\newblock \emph{Optics News}, 11\penalty0 (2):\penalty0 11--20, Feb 1985.
+\newblock \doi{10.1364/ON.11.2.000011}.
+\newblock URL \url{https://www.optica-opn.org/abstract.cfm?URI=on-11-2-11}.
+
+\bibitem[Glauber(1963)]{Glauber1963}
+Roy~J. Glauber.
+\newblock Coherent and incoherent states of the radiation field.
+\newblock \emph{Phys. Rev.}, 131:\penalty0 2766, 1963.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRev.131.2766}.
+
+\bibitem[Lenstra et~al.(1990)Lenstra, Lenstra, Manasse, and
+  Pollard]{LenstraLenstraManassePollard90}
+A.~K. Lenstra, H.~W. Lenstra, M.~S. Manasse, and J.~M. Pollard.
+\newblock The number field sieve.
+\newblock In \emph{Proceedings of the Twenty-Second Annual ACM Symposium on
+  Theory of Computing}, STOC '90, page 564–572, New York, NY, USA, 1990.
+  Association for Computing Machinery.
+\newblock ISBN 0897913612.
+\newblock \doi{10.1145/100216.100295}.
+\newblock URL \url{https://doi.org/10.1145/100216.100295}.
+
+\bibitem[Rivest et~al.(1978)Rivest, Shamir, and Adleman]{RSA178}
+R.~L. Rivest, A.~Shamir, and L.~Adleman.
+\newblock A method for obtaining digital signatures and public-key
+  cryptosystems.
+\newblock \emph{Commun. ACM}, 21\penalty0 (2):\penalty0 120–126, February
+  1978.
+\newblock ISSN 0001-0782.
+\newblock \doi{10.1145/359340.359342}.
+\newblock URL \url{https://doi.org/10.1145/359340.359342}.
+
+\bibitem[Robertson(1929)]{Robertson}
+H.~P. Robertson.
+\newblock {The Uncertainty Principle}.
+\newblock \emph{Phys. Rev.}, 34:\penalty0 163--164, Jul 1929.
+\newblock URL \url{https://link.aps.org/doi/10.1103/PhysRev.34.163}.
+
+\bibitem[Shallit(1994)]{Shallit94}
+Jeffrey Shallit.
+\newblock Origins of the analysis of the euclidean algorithm.
+\newblock \emph{Historia Mathematica}, 21\penalty0 (4):\penalty0 401--419,
+  1994.
+\newblock ISSN 0315-0860.
+\newblock \doi{https://doi.org/10.1006/hmat.1994.1031}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0315086084710317}.
+
+\bibitem[Simon(1997)]{Simon94}
+Daniel~R. Simon.
+\newblock On the power of quantum computation.
+\newblock \emph{SIAM Journal on Computing}, 26\penalty0 (5):\penalty0
+  1474--1483, 1997.
+\newblock \doi{10.1137/S0097539796298637}.
+\newblock URL \url{https://doi.org/10.1137/S0097539796298637}.
+
+\end{thebibliography}

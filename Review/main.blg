@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: plainnat.bst
+Database file #1: biblio.bib
+Warning--I didn't find a database entry for "endnote1"
+You've used 15 entries,
+            2773 wiz_defined-function locations,
+            742 strings with 7959 characters,
+and the built_in function-call counts, 7379 in all, are:
+= -- 736
+> -- 283
+< -- 15
++ -- 100
+- -- 84
+* -- 567
+:= -- 1102
+add.period$ -- 75
+call.type$ -- 15
+change.case$ -- 72
+chr.to.int$ -- 14
+cite$ -- 30
+duplicate$ -- 368
+empty$ -- 636
+format.name$ -- 107
+if$ -- 1615
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 16
+newline$ -- 111
+num.names$ -- 60
+pop$ -- 116
+preamble$ -- 1
+purify$ -- 58
+quote$ -- 0
+skip$ -- 281
+stack$ -- 0
+substring$ -- 347
+swap$ -- 75
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 160
+warning$ -- 0
+while$ -- 65
+width$ -- 0
+write$ -- 263
+(There was 1 warning)
