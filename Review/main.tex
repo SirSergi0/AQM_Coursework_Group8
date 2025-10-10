@@ -20,8 +20,12 @@
 \usepackage{amssymb}   % for math
 \usepackage{amsmath}   % for math
 \usepackage{hyperref}   % for math
-\usepackage{xcolor}     % for colored notes
-
+\usepackage[dvipsnames]{xcolor}     % for colored notes
+\usepackage{braket}
+\usepackage{tikz}
+\usetikzlibrary{quantikz2}
+\usepackage{quantikz}
+\usepackage{adjustbox}
 \begin{document}
 
 \title{Shor's algorithm TEMPORAL NAME}
@@ -41,11 +45,8 @@ A set of standard references can be found in the
 \verb+biblio.bib+ file, which is compiles using BibTeX.
 \end{abstract}
 \maketitle
-\textcolor{red}{Sergio: I didn't know if you wanted to keep the whole template, I leave after this section}
-
-\section{\label{sec:History} Introduction}
-\textcolor{red}{DAVID:}
-Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. Although the term itself has gained popularity only recently, Richard Feynman already suggested in 1986 that exploiting quantum mechanics could enable more powerful computation than its classical counterpart \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with high probability \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not provide a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error \footnote{This class is called \textbf{BPP}, which stands for bounded-error probabilistic polynomial time.}. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made a groundbreaking contribution: he identified an oracle problem solvable in polynomial time on a quantum computer but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
+\section{\label{sec:intro} Introduction}
+\textcolor{red}{DAVID:} Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. Although the term itself has gained popularity only recently, Richard Feynman already suggested in 1986 that exploiting quantum mechanics could enable more powerful computation than its classical counterpart \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with high probability \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not provide a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error \footnote{This class is called \textbf{BPP}, which stands for bounded-error probabilistic polynomial time.}. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made a groundbreaking contribution: he identified an oracle problem solvable in polynomial time on a quantum computer but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
 
 
 The possibility of quantum computing excelling beyond classical one is a looming threat to, among other fields, cryptography, as some of its methods are often relied on hard-to-solve computational problems. This is the case for the widely used RSA public-key scheme developed by Rivest, Shamir and Adleman in 1978 \cite{RSA178}. In this system, the security rests on the difficulty of factorizing an integer into prime numbers. In 1995, the fastest known algorithm for factorizing an integer was Number Field Sieve by Lenstra, Lenstra Jr., Manasse and Pollard \cite{LenstraLenstraManassePollard90}. Such method takes an asymptotic running time $O(exp(c(\log n)^\frac{1}{3}(\log\log n)^{\frac{2}{3}}))$ to factor an integer $n$ and for some constant $c$.
@@ -56,10 +57,10 @@ In this article, Shor introduces the first quantum algorithm for integer factori
 
 \section{\label{sec:MathematicalBackground}Mathematical background of the algorithm}
 \textcolor{red}{In this section, we address how to reduce the factorization problem to a modular exponentiation problem.}
+\textcolor{blue}{SERGIO: It is not exactly that... we present the factorization procedure and we see that the bottleneck is the modular exponentiation, which can be solved using quantum computing.}
 
-
-\textcolor{red}{SERGIO:}
-The goal of the algorithm is the following: given a positive integer $n$, find $m, t \in \mathbb{N}$, where $m,t>1$, such that $n = m t$, that is, to decompose $n$ as a product of two non-trivial positive integers. \textcolor{red}{It has been later showed that $n$ can be assumed to be neither odd or a prime power, as for the first case 2 is a trivial factor and an efficient classical algorithm can be found for the latter\cite{Bernstein98,AgrawalKayalSaxena04}.}
+\textcolor{blue}{SERGIO:}
+The goal of the algorithm is the following: given a positive integer $n$, find $m, t \in \mathbb{N}$, where $m,t>1$, such that $n = m t$, that is, to decompose $n$ as a product of two non-trivial positive integers. \textcolor{red}{It has been later showed that $n$ can be assumed to be neither odd or a prime power, as for the first case 2 is a trivial factor and an efficient classical algorithm can be found for the latter\cite{Bernstein98,AgrawalKayalSaxena04}.} \textcolor{blue}{SERGIO: I would remove the read part, it is unnecessary.}
 
 Let $\tilde{m}$ \textcolor{red}{(I rather use another variable , same as Wikipedia $a$ or same as article $x$)} be a candidate divisor of $n$, chosen such that $1 < \tilde{m} < n$. Using the Euclidean algorithm, one can compute $\gcd(\tilde{m}, n)$ in polynomial time \textcolor{red}{\cite{Shallit94}}. 
 
@@ -80,322 +81,98 @@ Once $r$ is obtained, two cases arise. If $r$ is odd, the choice of $\tilde{m}$ 
        (\tilde{m}^{r/2} - 1)(\tilde{m}^{r/2} + 1) \equiv 0 \pmod{n}.
 	\end{align*}
 	
-    Since $r$ is minimal, we know that $\tilde{m}^{r/2} \not\equiv 1 \pmod{n}$. Thus it follows that $\tilde{m}^{r/2} \equiv -1 \pmod{n}$ i.e. $\tilde{m}^{r/2} + 1$ is a multiple of $n$.
+    Since $r$ is minimal, we know that $\tilde{m}^{r/2} \not\equiv 1 \pmod{n}$. Thus, it follows that $\tilde{m}^{r/2} \equiv -1 \pmod{n}$ i.e. $\tilde{m}^{r/2} + 1$ is a multiple of $n$.
     Therefore, we can compute $\gcd(\tilde{m}^{r/2} + 1, n)$.
-    If $\gcd(\tilde{m}^{r/2} + 1, n) \neq 1$, then $\gcd(\tilde{m}^{r/2} + 1, n)$ is a non-trivial divisor of $n$, and the factorization goal is achieved. Otherwise, the procedure is restarted with a new choice of $\tilde{m}$.
+    If $\gcd(\tilde{m}^{r/2} + 1, n) \neq 1$, then $\gcd(\tilde{m}^{r/2} + 1, n)$ is a non-trivial divisor of $n$, and the factorization goal is achieved. 
+    \textcolor{Orange}{ERNESTO: This is WRONG. $\tilde{m}^{r/2} \not\equiv 1 \pmod{n}$ doesn't imply that $\tilde{m}^{r/2} \equiv -1 \pmod{n}$. In fact, it is desired that this does not happen, since we would have to try another $\tilde{m}$. If $\tilde{m}^{r/2} \equiv -1 \pmod{n}$ i. e. $\tilde{m}^{r/2} + 1$ is a multiple of $n$, when we compute $\gcd(\tilde{m}^{r/2} + 1, n)$ we will obtain n which is not a trivial divisor of n, thus having to try another $\tilde{m}$}.
+    \textcolor{blue}{Sergio: After mull it over my answer is: You are right! I mean I was really convinced that the wikipedia is the ultimate truth, but it is not the case!!!! Concrete counterexample: $n=15$,$a=2$. Then $2^4\equiv1\pmod{15}$ so $r=4$. But
+$2^{r/2}=2^2=4\not\equiv\pm1\pmod{15}$,
+even though ($4-1)(4+1)=3\cdot5\equiv0\pmod{15}$. Here $\gcd(4-1,15)=3$ and $\gcd(4+1,15)=5$ give the nontrivial factors. No joke, we could think of reporting the mistake}
+\textcolor{red}{DAVID: Sergio, I am afraid the Wikipedia is never wrong... Explicitly ``At this point, it may or may not be the case that $N| a^{r/2}-1$...''}  
 
-\textcolor{red}{Sergio: Here there is the templete}
+    Otherwise, the procedure is restarted with a new choice of $\tilde{m}$.
+\section{\label{sec:QFT}Quantum Fourier Transform}
+\section{\label{sec:PrimeFactorization}Prime factorization}
+As discussed above, given $x$ and $n$, our goal is to find the minimum integer $r$ such that $x^r\equiv 1 \pmod n$ \textcolor{blue}{Sergio: We can move to other notations but we must be consistent between sections i.e. $x^r\equiv 1\leftrightarrow \tilde{m}^2\equiv 1$}. The first thing to do is find $q=2^t$, a power of 2 for certain $t\in \mathbb{N}$, such that $n^2<q<2n^2$. \textcolor{blue}{Sergio: Here I would add the comment on: we can discard $n$ from being a power of 2 since there are many efficient classical algorithms to factorize $n$ in these cases.}
+Now, starting from the state given by 
+\[\ket{0}^{\otimes t}\otimes\ket{0},\]
+we apply a Hadamard gate to each of the first $t$ qubits. This yields
+\[\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right)^{\otimes t}\otimes\ket{0}=\frac{1}{\sqrt{2^t}}\sum_{a=0}^{2^t-1}\ket{a}\otimes\ket{0}=\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{0},\]
+where the tensorial product has expanded into a sum of all possible $2^t$ binary strings and we have identified each with an integer $a\in\{0,\dots,2^m-1\}$. Next, we transform $\ket{0}$ to $\ket{x^a\pmod n}$  using \textit{modular exponentiation}. \textcolor{blue}{Sergio: Which $a$ are we talking about?? since $a\in\{0,\dots,2^m-1\}$. Should be something like: For each $a$ one may compute $\ket{a}\ket{0}\rightarrow \ket{a}\ket{x^a(\bmod{n}})$ using modular exponentiation}
+\textcolor{red}{This algorithm works as follows. We decompose $a$ as a binary string, i.e., $a=\sum_{i=0}^{l-1}a_i2^i$ with $a_i\in\{0,1\}$. Thus
+\begin{align*}
+    x^a(\bmod{n})&=x^{\sum_{i=0}^{l-1}a_i2^i}(\bmod{n})=\prod_{i=0}^{l-1}x^{a_i2^i}(\bmod{n})\\&=\prod_{i=0}^{l-1}\left[x^{2^i}(\bmod{n})\right]^{a_i},
+\end{align*}
+and only when $a_i=1$, the term is taken into account.}
+Our state is now 
+\[\frac{1}{\sqrt{q}}\ket{a}\ket{x^a(\bmod{n})}\]
 
-\section{\label{sec:level1}Introduction}
-% sections are not used for PRL papers
+\textcolor{blue}{Sergio: Maybe I am misunderstanding something but the state is 
+\[\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{x^a(\bmod{n})},\]}
+\textcolor{red}{Absolutely! Forgot the sum :(}
+and we can perform a quantum Fourier transform to the first register $\ket{a}$ yielding 
+\[\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\sum_{c=0}^{q-1}e^{2\pi ia\frac{c}{q}}\ket{c}\ket{x^a(\bmod{n})}.\]
+Now we proceed with a projective measurement into a general state $\ket{c}\ket{x^k(\bmod{n})}$ and compute the corresponding probability \textcolor{blue}{Sergio: Do not repeat the dummy index i.e. $\ket{c}\ket{x^k(\bmod{n})}\rightarrow \ket{\tilde{c}}\ket{x^k(\bmod{n})}$, or any other letter but $c$}. This is
+\[\mathbb{P}(c,x^k(\bmod{n}))=\left|\frac{1}{q}\sum_{\substack{a=0\\x^a\equiv x^k (\bmod{n})}}^{q-1}e^{2\pi i a \frac{c}{q}}\right|^2.\]
+Without losing focus on our goal, we can introduce $r$ into the equation \textcolor{blue}{Sergio: I don't like this sentence, keep it clean, maybe "Now we introduce $r$ into the equation as the following"... or even remove the sentence entirely}. By definition $x^{r+a}\equiv x^a (\bmod{n})$, so $x^a(\bmod{n})$ is periodic with period $r$. This means that the sum can be reinterpreted as a sum over $a\equiv k (\bmod{r})$ \textcolor{blue}{Sergio:It is true, but is more natural to say: Notice that some terms in the sum might be repeated since we can find $\ket{x^i(\bmod{n})}=\ket{x^j(\bmod{n})}$ for $i\neq j$. This happens when \[x^ i\equiv x^j(\bmod{n})\implies i=br+j\] where we have supposed $i>j$, $b,r\in \mathbb{Z}$ and $r$ satisfies $x^r\equiv 1(\bmod{n})$ i.e. $r$ is the order of $x$ in $\left(\frac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$}. Therefore, $a=br+k$ for some $k\in \mathbb{Z}$ and the probability is reexpressed as
+\[\textcolor{blue}{\mathbb{P}(c,x^k(\bmod{n}))=}\left|\frac{1}{q}\sum_{b=0}^{\lfloor\frac{q-1-k}{r}\rfloor}e^{2\pi i \frac{c}{q}(br+k)}\right|^2=\textcolor{blue}{\left|\frac{1}{q}\sum_{b=0}^{\lfloor\frac{q-1-k}{r}\rfloor}e^{2\pi i b\frac{rc}{q}}\right|^2}.\]
+\textcolor{blue}{Getting rid of the global unitary factor $e^{2\pi i \frac{c}{q}k}$ in this step looks more logical, then we'll also get rid of the factor $e^{2\pi i bd }$ afterwards.}
+By Euclidean division, $rc=dq+\{rc\}_q$, where $d\in \mathbb{Z}$ and $\{rc\}_q$ is the residue taken in the interval $-\frac{q}{2}<\{rc\}_q\le\frac{q}{2}$. Then, leaving out the unitary phases, we are left with
+\begin{align*}
+    &\textcolor{blue}{\mathbb{P}(c,x^k(\bmod{n}))=\left|\frac{1}{q}\sum_{b=0}^{\lfloor\frac{q-1-k}{r}\rfloor}e^{2\pi ib (\frac{\{rc\}_q}{q}+d)}\right|^2}\\
+    &=\left|\frac{1}{q}\sum_{b=0}^{\lfloor\frac{q-1-k}{r}\rfloor}e^{2\pi ib \frac{\{rc\}_q}{q}}\right|^2.
+    \end{align*}
+We can convert the sum into an integral \textcolor{red}{(I really don't understand this step)}\cite{Iwaniec2021AnalyticNT} (\textcolor{blue}{Sergio: Don't worry I don't think Shor understands it either;)}) as
+\[\frac{1}{q}\int_{0}^{\lfloor\frac{q-1-k}{r}\rfloor}db\,e^{2\pi i b \frac{\{rc\}_q}{q}}+O\left(\frac{\lfloor (q-1-k)/r\rfloor}{q}\left(e^{2\pi i\frac{\{rc\}_q}{q}}-1\right)\right),\]
+where the error term can be bounded by $O(\frac{1}{q})$ if $\left|\{rc\}_q\right|\le\frac{r}{2}$. Under the same condition, the integral term can be shown to be large. 
 
-This sample document demonstrates proper use of REV\TeX~4 (and
-\LaTeXe) in manuscripts prepared for submission.
- Further information can be found in the REV\TeX~4
-documentation included in the distribution or available at
-\url{http://publish.aps.org/revtex4/}.
+\textcolor{blue}{Sergio: I would skip the integral computation at this point (the exact computation is irrelevant), the key is that under some assumptions,
+an error of $O(\frac{1}{q})$ and assuming $\frac{-r}{2}\le \{rc\}_q\le \frac{r}{2}$ it can be shown that \[\mathbb{P}(c,x^k(\bmod{n}))\approx\frac{\left|\sin\left(\pi \frac{\{rc\}_q}{r}\right) \right|^2}{\pi^2 \left|\{rc\}_q\right|^2}.\]}
 
-When commands are referred to in this example file, they are always
-shown with their required arguments, using normal \TeX{} format. In
-this format, \verb+#1+, \verb+#2+, etc. stand for required
-author-supplied arguments to commands. For example, in
-\verb+\section{#1}+ the \verb+#1+ stands for the title text of the
-author's section heading, and in \verb+\title{#1}+ the \verb+#1+
-stands for the title text of the paper.
+First, the variable change $u=\frac{rb}{q}$ enables one to express the integral as
+\[\frac{1}{r}\int_{0}^{\frac{r}{q}\lfloor\frac{q-1-k}{r}\rfloor}du\,e^{2\pi i \frac{\{rc\}_q}{r}u}\approx\frac{1}{r}\int_0^1du\,e^{2\pi i \frac{\{rc\}_q}{r}u},\]
+where we assume an error $O(\frac{1}{q})$ in approximating $\frac{r}{q}\lfloor\frac{q-1-k}{r}\rfloor\approx 1$, since $k<r$. The remaining integral can be directly computed as 
+\begin{align*}
+    \frac{1}{r}\int_{0}^{1}du\,e^{2\pi i \frac{\{rc\}_q}{r}u}=\frac{e^{2\pi i \frac{\{rc\}_q}{r}}-1}{2\pi i \{rc\}_q}=e^{\pi i \frac{\{rc\}_q}{r}}\frac{\sin\left(\pi \frac{\{rc\}_q}{r}\right)}{\pi \{rc\}_q}.
+\end{align*}
+Thus, the probability is given by
+\[\mathbb{P}(c,x^k(\bmod{n}))\approx\frac{\left|\sin\left(\pi \frac{\{rc\}_q}{r}\right) \right|^2}{\pi^2 \left|\{rc\}_q\right|^2}.\]
+Under the assumption that $\frac{-r}{2}\le \{rc\}_q\le \frac{r}{2}$, it is minimized on the boundary of the interval and one obtains an asymptotic lower bound for the probability, which yields $\frac{4}{\pi^2 r^2}\approx0.405 r^{-2}>\frac{1}{3}r^{-2}$. Therefore the probability will be, at least, $\frac{1}{3r^2}$ as long as $\left|\{rc\}_q\right|\le \frac{r}{2}$. Rearranging this condition by the definition of $\{rc\}_q$ we obtain 
+\[\left|\frac{c}{q}-\frac{d}{r}\right|\le\frac{1}{2q}.\]
+In this equation we know both $c$ (we measure it) and $q$, since its the dimension of our QFT.
 
-Line breaks in section headings at all levels can be introduced using
-\textbackslash\textbackslash. A blank input line tells \TeX\ that the
-paragraph has ended. Note that top-level section headings are
-automatically uppercased. If a specific letter or word should appear in
-lowercase instead, you must escape it using \verb+\lowercase{#1}+ as
-in the word ``via'' above.
 
-\section{\label{sec:level2}Second-level heading: Formatting}
-% subsections are not used for PRL papers
+\textcolor{red}{TBC}
 
-The \texttt{widetext} environment will make the text the width of the
-full page.  The width-changing commands only take effect in \texttt{twocolumn}
-formatting. It has no effect if \texttt{preprint} formatting is chosen
-instead.
-
-To cite bibliography entries, use the \verb+\cite{#1}+ command. Most
-journal styles will display the corresponding number(s) in square
-brackets: \cite{Glauber1963}. To avoid the square brackets, use
-\verb+\onlinecite{#1}+: Refs.~\onlinecite{Glauber1963} and
-\onlinecite{Ehrenfest,Robertson}. REV\TeX\ ``collapses'' lists of
-consecutive reference numbers where possible. We now cite everyone
-together \cite{Ehrenfest, Robertson, Arfken}, and once again
-(Refs.~\onlinecite{Ehrenfest, Robertson, Arfken}). Note that the references
-were also sorted into the correct numerical order as well.
-
-Footnotes are produced using the \verb+\footnote{#1}+ command. 
-Some journal styles put footnotes into the bibliography. REV\TeX~4 does
-this as well, but instead of interleaving the footnotes with the
-references, they are listed at the end of the references. Because the correct
-numbering of the footnotes must occur after the numbering of the
-references, an extra pass of \LaTeX\ is required in order to get the
-numbering correct.
-
-\section{Formatting} 
-
-\subsection{Equations} 
-
-Inline math may be typeset using the \verb+$+ delimiters. Bold math
-symbols may be achieved using the \verb+bm+ package and the
-\verb+\bm{#1}+ command it supplies. For instance, a bold $\alpha$ can
-be typeset as \verb+$\bm{\alpha}$+ giving $\bm{\alpha}$. Fraktur and
-Blackboard (or open face or double struck) characters should be
-typeset using the \verb+\mathfrak{#1}+ and \verb+\mathbb{#1}+ commands
-respectively. Both are supplied by the \texttt{amssymb} package. For
-example, \verb+$\mathbb{R}$+ gives $\mathbb{R}$ and
-\verb+$\mathfrak{G}$+ gives $\mathfrak{G}$
-
-In \LaTeX\ there are many different ways to display equations, and a
-few preferred ways are noted below. Displayed math will center by
-default. Use the class option \verb+fleqn+ to flush equations left.
-
-Below we have numbered single-line equations; which are the most
-common equations in this type of text:
-\begin{align}
-\chi_+(p) &\alt {\bf [}2|{\bf p}|(|{\bf p}|+p_z){\bf ]}^{-1/2}
-\left(
-\begin{array}{c}
-|{\bf p}|+p_z\\
-px+ip_y
-\end{array}\right)\;,
-\\
-f(x) & = x^2 + \psi_\alpha(x) 
-\\
-&
-\left\{%
- \openone 234567890abc123 \alpha\beta\gamma\delta1234556\alpha\beta
- \frac{1\sum^{a}_{b}}{A^2}%
-\right\}%
-\label{eq:one}.
-\end{align}
-Note the open one in Eq.~(\ref{eq:one}).
-
-Not all numbered equations will fit within a narrow column this
-way. The equation number will move down automatically if it cannot fit
-on the same line with a one-line equation:
-\begin{align}
-\left\{
- ab12345678abc123456abcdef\alpha\beta\gamma\delta1234556\alpha\beta
- \frac{1\sum^{a}_{b}}{A^2}%
-\right\}.
-\end{align}
-
-When the \verb+\label{#1}+ command is used [cf. input for
-Eq.~(\ref{eq:one})], the equation can be referred to in text without
-knowing the equation number that \TeX\ will assign to it. Just
-use \verb+\ref{#1}+, where \verb+#1+ is the same name that used in
-the \verb+\label{#1}+ command.
-
-Unnumbered single-line equations can be typeset
-using the \verb+\[+, \verb+\]+ format:
-\[g^+g^+ \rightarrow g^+g^+g^+g^+ \dots ~,~~q^+q^+\rightarrow
-q^+g^+g^+ \dots ~. \]
-
-\subsection{Figures} 
-
-Figures may be inserted by using either the \texttt{graphics} or
-\texttt{graphicx} packages. These packages both define the
-\verb+\includegraphics{#1}+ command, but they differ in how optional
-arguments for specifying the orientation, scaling, and translation of the
-figure. Fig.~\ref{fig:epsart} shows a figure that is small enough to
-fit in a single column. It is embedded using the \texttt{figure}
-environment which provides both the caption and the imports the figure
-file.
-
-\begin{figure}[t]
-\includegraphics[width=\linewidth]{fig1.pdf}
-\caption{\label{fig:epsart} A figure caption. The figure captions are
-automatically numbered. When preparing figures, use vector formats (pdf, eps), 
-make sure labels are readable and that lines are differentiated not only by color,
-but also employing different linestyles.}
-\end{figure}
-
-Fig.~\ref{fig:wide} is a figure that is too wide for a single column,
-so instead the \texttt{figure*} environment has been used.
-
-\begin{figure*}[t]
-\includegraphics[width=\linewidth]{fig2.pdf}% Here is how to import EPS art
-\caption{\label{fig:wide}Use the figure* environment to get a wide
-figure that spans the page in \texttt{twocolumn} formatting.}
-\end{figure*}
-
-\subsection{Tables} 
-
-The heart of any table is the \texttt{tabular} environment which gives
-the rows of the tables. Each row consists of column entries separated
-by \verb+&+'s and terminates with \textbackslash\textbackslash. The
-required argument for the \texttt{tabular} environment
-specifies how data are displayed in the columns. For instance, entries
-may be centered, left-justified, right-justified, aligned on a decimal
-point. Extra column-spacing may be be specified as well, although
-REV\TeX~4 sets this spacing so that the columns fill the width of the
-table. Horizontal rules are typeset using the \verb+\hline+
-command. The doubled (or Scotch) rules that appear at the top and
-bottom of a table can be achieved enclosing the \texttt{tabular}
-environment within a \texttt{ruledtabular} environment. Rows whose
-columns span multiple columns can be typeset using the
-\verb+\multicolumn{#1}{#2}{#3}+ command (for example, see the first
-row of Table~\ref{tab:table3}).
-
-Tables~\ref{tab:table1}-\ref{tab:table4} show various effects. Tables
-that fit in a narrow column are contained in a \texttt{table}
-environment. Table~\ref{tab:table3} is a wide table set with the
-\texttt{table*} environment. Long tables may need to break across
-pages. The most straightforward way to accomplish this is to specify
-the \verb+[H]+ float placement on the \texttt{table} or
-\texttt{table*} environment. However, the standard \LaTeXe\ package
-\texttt{longtable} will give more control over how tables break and
-will allow headers and footers to be specified for each page of the
-table. A simple example of the use of \texttt{longtable} can be found
-in the file \texttt{summary.tex} that is included with the REV\TeX~4
-distribution.
-
-There are two methods for setting footnotes within a table (these
-footnotes will be displayed directly below the table rather than at
-the bottom of the page or in the bibliography). The easiest
-and preferred method is just to use the \verb+\footnote{#1}+
-command. This will automatically enumerate the footnotes with
-lowercase roman letters. However, it is sometimes necessary to have
-multiple entries in the table share the same footnote. In this case,
-there is no choice but to manually create the footnotes using
-\verb+\footnotemark[#1]+ and \verb+\footnotetext[#1]{#2}+.
-\texttt{\#1} is a numeric value. Each time the same value for
-\texttt{\#1} is used, the same mark is produced in the table. The
-\verb+\footnotetext[#1]{#2}+ commands are placed after the \texttt{tabular}
-environment. Examine the \LaTeX\ source and output for
-Tables~\ref{tab:table1} and \ref{tab:table2} for examples.
-
-\begin{table}[t]
-\caption{\label{tab:table1}This is a narrow table which fits into a
-narrow column when using \texttt{twocolumn} formatting. Note that
-REV\TeX~4 adjusts the intercolumn spacing so that the table fills the
-entire width of the column. Table captions are numbered
-automatically. This table illustrates left-aligned, centered, and
-right-aligned columns.  }
-\begin{ruledtabular}
-\begin{tabular}{lcr}
-Left\footnote{Note a.}&Centered\footnote{Note b.}&Right\\
-\hline
-1 & 2 & 3\\
-10 & 20 & 30\\
-100 & 200 & 300\\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
-
-\begin{table}[b]
-\caption{\label{tab:table2}A table with more columns still fits
-properly in a column. Note that several entries share the same
-footnote. Inspect the \LaTeX\ input for this table to see
-exactly how it is done.}
-\begin{ruledtabular}
-\begin{tabular}{cccccccc}
- &$r_c$ (\AA)&$r_0$ (\AA)&$\kappa r_0$&
- &$r_c$ (\AA) &$r_0$ (\AA)&$\kappa r_0$\\
-\hline
-Cu& 0.800 & 14.10 & 2.550 &Sn\footnotemark[1]
-& 0.680 & 1.870 & 3.700 \\
-Ag& 0.990 & 15.90 & 2.710 &Pb\footnotemark[2]
-& 0.450 & 1.930 & 3.760 \\
-Au& 1.150 & 15.90 & 2.710 &Ca\footnotemark[3]
-& 0.750 & 2.170 & 3.560 \\
-Mg& 0.490 & 17.60 & 3.200 &Sr\footnotemark[4]
-& 0.900 & 2.370 & 3.720 \\
-Zn& 0.300 & 15.20 & 2.970 &Li\footnotemark[2]
-& 0.380 & 1.730 & 2.830 \\
-Cd& 0.530 & 17.10 & 3.160 &Na\footnotemark[5]
-& 0.760 & 2.110 & 3.120 \\
-Hg& 0.550 & 17.80 & 3.220 &K\footnotemark[5]
-&  1.120 & 2.620 & 3.480 \\
-Al& 0.230 & 15.80 & 3.240 &Rb\footnotemark[3]
-& 1.330 & 2.800 & 3.590 \\
-Ga& 0.310 & 16.70 & 3.330 &Cs\footnotemark[4]
-& 1.420 & 3.030 & 3.740 \\
-In& 0.460 & 18.40 & 3.500 &Ba\footnotemark[5]
-& 0.960 & 2.460 & 3.780 \\
-Tl& 0.480 & 18.90 & 3.550 & & & & \\
-\end{tabular}
-\end{ruledtabular}
-\footnotetext[1]{Here's the first, from Ref.~\onlinecite{Glauber1963}.}
-\footnotetext[2]{Here's the second.}
-\footnotetext[3]{Here's the third.}
-\footnotetext[4]{Here's the fourth.}
-\footnotetext[5]{And etc.}
-\end{table}
-
-\begin{table*}
-\caption{\label{tab:table3}This is a wide table that spans the page
-width in \texttt{twocolumn} mode. It is formatted using the
-\texttt{table*} environment. It also demonstates the use of
-\textbackslash\texttt{multicolumn} in rows with entries that span
-more than one column.}
-\begin{ruledtabular}
-\begin{tabular}{ccccc}
- &\multicolumn{2}{c}{$D_{4h}^1$}&\multicolumn{2}{c}{$D_{4h}^5$}\\
- Ion&1st alternative&2nd alternative&lst alternative
-&2nd alternative\\ \hline
- K&$(2e)+(2f)$&$(4i)$ &$(2c)+(2d)$&$(4f)$ \\
- Mn&$(2g)$\footnote{The $z$ parameter of these positions is $z\sim\frac{1}{4}$.}
- &$(a)+(b)+(c)+(d)$&$(4e)$&$(2a)+(2b)$\\
- Cl&$(a)+(b)+(c)+(d)$&$(2g)$\footnotemark[1]
- &$(4e)^{\text{a}}$\\
- He&$(8r)^{\text{a}}$&$(4j)^{\text{a}}$&$(4g)^{\text{a}}$\\
- Ag& &$(4k)^{\text{a}}$& &$(4h)^{\text{a}}$\\
-\end{tabular}
-\end{ruledtabular}
-\end{table*}
-
-\begin{table}
-\caption{\label{tab:table4}Numbers in columns Three--Five have been
-aligned by using the ``d'' column specifier (requires the
-\texttt{dcolumn} package). Non-numeric entries (those entries without
-a ``.'') in a ``d'' column are aligned on the decimal point. Use the
-``D'' specifier for more complex layouts. }
-\begin{ruledtabular}
-\begin{tabular}{ccddd}
-One&Two&\mbox{Three}&\mbox{Four}&\mbox{Five}\\
-\hline
-one&two&\mbox{three}&\mbox{four}&\mbox{five}\\
-He&2& 2.77234 & 45672. & 0.69 \\
-C\footnote{Some tables require footnotes.}
-  &C\footnote{Some tables need more than one footnote.}
-  & 12537.64 & 37.66345 & 86.37 \\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
+\section{\label{sec:QuantumFourierTransforme}Quantum Fourier Transform}
 
 
 
-Scientific writing style requires that the initial citation of
-figures or tables be in numerical order in text, so don't cite
-Fig.~\ref{fig:wide} until Fig.~\ref{fig:epsart} has been cited.
-All figures should be cited in the main body of the text, otherwise
-you will create a floating figure that readers may not know how to interpret.
-The same holds for Tables, they should all be cited in the main text.
 
-Figures and Tables all carry their own captions. Captions should convey the 
-reader what the figures and table show. They may also be used to draw one 
-single conclusion about the content, but generally it is best to draw such
-conclusions in the main body of the text. 
 
-\subsection{References} 
 
-References below have been prepared in BibTex. Make sure you quote references
-properly, including always authors, journals, volumes and pages and at least one 
-set of additional unique identifiers (URL or DOI, for instance). You will mostly be 
-citing articles, but you should cite (differently) books, PhD thesis, websites, github
-repositories. Make sure you obtain citations from credible sources with a good
-format (eg Google does not always get it right!). 
-BibTex will automatically order references in order of appearance. 
 
-You should include as many references as you need to make your points across 
-(between $10-20$ for this essay is reasonable). Always back up scientific contents or
-ideas with the corresponding reference.
+
+
+
+
+\section{\label{sec:Figure}Figure}
+This figure must be polished, but it is essentially Shor's algorithm
+
+\begin{adjustbox}{width = 0.5\textwidth}
+\begin{quantikz}[row sep={0.7cm,between origins}, column sep=0.8cm]
+% First register (t qubits)
+\lstick{$\ket{0}$} & \gate{H} & \ctrl{4} & \qw & \qw & \qw & \qw & \qw & \gate{QFT^\dagger} & \meter{} \\
+\lstick{$\ket{0}$} & \gate{H} & \qw & \ctrl{3} & \qw & \qw & \qw & \qw & \gate{} & \meter{} \\
+\lstick{$\vdots$} & & & & \ddots & & & & \vdots & \vdots \\
+\lstick{$\ket{0}$} & \gate{H} & \qw & \qw & \qw & \ctrl{1} & \qw & \qw & \gate{} & \meter{} \\
+% Second register (work register)
+\lstick{$\ket{1}$} & \qw & \gate{U^{2^{0}}} & \gate{U^{2^{1}}} & \qw & \gate{\cdots} & \qw & \gate{U^{2^{t-1}}} & \qw & \rstick{$\ket{f(a)}$}
+\end{quantikz}
+\end{adjustbox}
+
+\section{\label{sec:Implementation}Circuit implementation}
+\section{\label{sec:Conclusions}Conclusions and future work}
 
 \bibliographystyle{plainnat}
 

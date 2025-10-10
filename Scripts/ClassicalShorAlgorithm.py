@@ -3,12 +3,10 @@ from math import floor
 from random import randint
 import time
 
-#n = int(input("Enter de number you want to decompose (make sure it is not a prime number !!!): ",))
+# n = int(input("Enter de number you want to decompose (make sure it is not a prime number !!!): ",))
 n=10883*10867
 
-
-
-inicio = time.perf_counter()
+beginnig = time.perf_counter()
 def order(n,m):
     t = 1
     while (pow(m, t, n) != 1):
@@ -32,9 +30,13 @@ while True:
                 m=g
                 t=int(n/g)
                 break
-            #No need to compute m = pow(m,int(r/2),n)-1 
+            m = pow(m,int(r/2),n)-1
+            g = gcd(n,m)
+            if g != 1 and g != n:
+                m=g
+                t=int(n/g)
+                break
 
-fin = time.perf_counter()
-time= fin - inicio
+time = time.perf_counter() - beginnig
 print(n,"=",m,"*",t)
 print(f"It took {time:.1f} seconds")
