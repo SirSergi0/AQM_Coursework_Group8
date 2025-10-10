@@ -1,3 +1,4 @@
+
 %% ****** Start of file template.aps ****** %
 %%
 %%
@@ -14,8 +15,8 @@
 % Copy this file to another name and then work on that file.
 % That way, you always have this original template file to use.
 \documentclass[aps,prl,twocolumn,superscriptaddress,groupedaddress]{revtex4}  % for review and submission
-\usepackage{graphicx}  % needed for figures
 \usepackage{dcolumn}   % needed for some tables
+\usepackage{graphicx}  % needed for figures
 \usepackage{bm}        % for math
 \usepackage{amssymb}   % for math
 \usepackage{amsmath}   % for math
@@ -28,45 +29,68 @@
 \usepackage{adjustbox}
 \begin{document}
 
-\title{Shor's algorithm TEMPORAL NAME}
+\title{Shor, we'll do it!}
 
 \date{\today}
 
 \author{Amey Bhatuse, David González Lociga, José Ernesto Ramos Sánchez and Sergio Castañeiras Morales} % Alphabetically ordered
 
 \begin{abstract}
-An article usually includes an abstract, a concise summary of the work
-covered at length in the main body of the article. It is used for
-secondary publications and for information retrieval purposes.
-For AQM, the abstract should be at most 8 lines and the text
- (excluding authors, abstract but including tables,
-figures and references) should be less than 4 pages (about 3500 words).
-A set of standard references can be found in the 
-\verb+biblio.bib+ file, which is compiles using BibTeX.
+
+The advent of classical computation propelled by the birth of information theory has reduced barriers to communication and enhanced access to information.
+Consequently, protecting public interests has been ensured by using cryptography, a computational domain that relies on the difficulty of classically solving hard problems to secure information. 
+However, the rise of quantum information theory has paved the way for traversing regions of the algorithmic landscape that are unreachable by classical models of computation. 
+Peter Shor at MIT, in his seminal 1994 paper, introduced the first quantum algorithm to factorize large numbers into their respective primes, the basis on which most modern cryptosystems work. 
+Through this report, we summarize the core intuition of Shor's idea and support it with numerical simulation results derived using state-of-the-art quantum computing simulators. 
+First, the mathematical techniques supporting the analytical framework behind the algorithm are outlined followed by the description of a demonstration of the algorithm. 
+Additionally, we provide a brief study of the scaling of the phase estimation precision with respect to the estimation qubit count. 
+
+
+
+% An article usually includes an abstract, a concise summary of the work
+% covered at length in the main body of the article. It is used for
+% secondary publications and for information retrieval purposes.
+% For AQM, the abstract should be at most 8 lines and the text
+%  (excluding authors, abstract but including tables,
+% figures and references) should be less than 4 pages (about 3500 words).
+% A set of standard references can be found in the 
+% \verb+biblio.bib+ file, which is compiles using BibTeX.
 \end{abstract}
 \maketitle
-\section{\label{sec:intro} Introduction}
-\textcolor{red}{DAVID:} Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. Although the term itself has gained popularity only recently, Richard Feynman already suggested in 1986 that exploiting quantum mechanics could enable more powerful computation than its classical counterpart \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with high probability \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not provide a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error \footnote{This class is called \textbf{BPP}, which stands for bounded-error probabilistic polynomial time.}. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made a groundbreaking contribution: he identified an oracle problem solvable in polynomial time on a quantum computer but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
+\section{\label{sec:introDraft} Introduction Draft}
+\textcolor{red}{DAVID:} 
+Quantum Computing is an emerging field based on the theory that illuminates the inherent randomness of quantum physical systems. 
+Under certain considerations, quantum computers can provide exponential complexity separation over some classical computational models \citep{Shor_1994}. 
+This is often referred to as the quantum advantage, a phenomenon in which quantum computing a task is either impossible for a classical computer or can be done with more precision and less resources using a quantum model of computation.
+% Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. 
+Although the term itself has gained popularity only recently, Richard Feynman first suggested in 1986 that exploiting quantum mechanics could enable simulating quantum systems previously thought of being out of reach for binary bits-based computers \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with some probabilistic guarantee \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not include a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error \footnote{This class is called \textbf{BPP}, which stands for bounded-error probabilistic polynomial time.}. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made an influential contribution by identifying an oracle problem solvable in polynomial time on a quantum computer, but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
 
 
-The possibility of quantum computing excelling beyond classical one is a looming threat to, among other fields, cryptography, as some of its methods are often relied on hard-to-solve computational problems. This is the case for the widely used RSA public-key scheme developed by Rivest, Shamir and Adleman in 1978 \cite{RSA178}. In this system, the security rests on the difficulty of factorizing an integer into prime numbers. In 1995, the fastest known algorithm for factorizing an integer was Number Field Sieve by Lenstra, Lenstra Jr., Manasse and Pollard \cite{LenstraLenstraManassePollard90}. Such method takes an asymptotic running time $O(exp(c(\log n)^\frac{1}{3}(\log\log n)^{\frac{2}{3}}))$ to factor an integer $n$ and for some constant $c$.
+Given these extraordinary findings, the possibility of quantum computing classically hard problems seems compelling, but it is a looming threat to fields like cryptography, where most practical methods often rely on hard-to-solve computational problems. 
+% \textcolor{Orange}{Ernesto: Not all is negative, quantum computing has great prospects in other fields.}. 
+A particular example is the RSA public-key scheme invented in 1978, which secures systems admitting the difficulty of finding prime number factors of a large integer.
+% This is the case for the widely used RSA public-key scheme developed by Rivest, Shamir, and Adleman in 1978 \cite{RSA178}. In this system, the security rests on the difficulty of factorizing an integer into prime numbers. 
+The fastest known algorithm for performing this task is the Number Field Sieve with $O(exp(c(\log n)^\frac{1}{3}(\log\log n)^{\frac{2}{3}}))$ complexity \cite{LenstraLenstraManassePollard90}.
+% In 1995, the fastest known algorithm for factorizing an integer was Number Field Sieve by Lenstra, Lenstra Jr., Manasse and Pollard \cite{LenstraLenstraManassePollard90}. Such method takes an asymptotic running time $O(exp(c(\log n)^\frac{1}{3}(\log\log n)^{\frac{2}{3}}))$ to factor an integer $n$ and for some constant $c$.
+A few years later, Shor \cite{Shor_1994} introduced an algorithm employing quantum mechanical principles to do the same task in $O((\log n)^2(\log\log n)(\log \log \log n))$ time. We aim to detail this pioneering work in the following sections, starting with a brief outline of the mathematical backbone, followed by a practical implementation and culminating in a short study of the dependence of qubit count on solution precision.
+
+% In his 1994 paper \cite{Shor_1994}, Shor introduced the first quantum algorithm for integer factorization with an asymptotic running time of $O((\log n)^2(\log\log n)(\log \log \log n))$, demonstrating a clear quantum advantage over Lenstra's classical proposal.
 
 
-In this article, Shor introduces the first quantum algorithm for integer factorization with an asymptotic running time of $O((\log n)^2(\log\log n)(\log \log \log n))$, demonstrating a clear quantum advantage over Lenstra's classical proposal.
-
-
-\section{\label{sec:MathematicalBackground}Mathematical background of the algorithm}
+\section{\label{sec:MathematicalBackgroundDraft}Mathematical background of the algorithm Draft}
 \textcolor{red}{In this section, we address how to reduce the factorization problem to a modular exponentiation problem.}
-\textcolor{blue}{SERGIO: It is not exactly that... we present the factorization procedure and we see that the bottleneck is the modular exponentiation, which can be solved using quantum computing.}
+\textcolor{blue}{SERGIO: It is not exactly that... we present the factorization procedure and we see that the bottleneck is finding the order of an element in a group, which can be solved using quantum computing with parallel computation.}
+\textcolor{Orange}{It is important to note that the problem is not modular exponentiation, since this can be efficiently done clasically (in fact we use a function in our Python script which does the modular exponentiation). It is more precise to say that the problem is order finding: Clasically we would have to do many modular exponentiations, but this is where the quantum advantage comes and we make use of the parallel computation.}
 
 \textcolor{blue}{SERGIO:}
+
 The goal of the algorithm is the following: given a positive integer $n$, find $m, t \in \mathbb{N}$, where $m,t>1$, such that $n = m t$, that is, to decompose $n$ as a product of two non-trivial positive integers. \textcolor{red}{It has been later showed that $n$ can be assumed to be neither odd or a prime power, as for the first case 2 is a trivial factor and an efficient classical algorithm can be found for the latter\cite{Bernstein98,AgrawalKayalSaxena04}.} \textcolor{blue}{SERGIO: I would remove the read part, it is unnecessary.}
 
 Let $\tilde{m}$ \textcolor{red}{(I rather use another variable , same as Wikipedia $a$ or same as article $x$)} be a candidate divisor of $n$, chosen such that $1 < \tilde{m} < n$. Using the Euclidean algorithm, one can compute $\gcd(\tilde{m}, n)$ in polynomial time \textcolor{red}{\cite{Shallit94}}. 
 
 If $\gcd(\tilde{m}, n) \neq 1$, then we have found a non-trivial divisor of $n$. In this case, set $m = \gcd(\tilde{m}, n)$ and $t = \frac{n}{\gcd(\tilde{m}, n)}$.
 
-Otherwise, if $\gcd(\tilde{m}, n) = 1$, then the equivalence class $[\tilde{m}]$ belongs to the multiplicative group,
+Otherwise, if $\gcd(\tilde{m}, n) = 1$, then the equivalence class $[\tilde{m}]$ belongs to the multiplicative group, \textcolor{Orange}{Maybe congruence class is more accurate}
 \begin{align*}
     \left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^* 
     = \{ [a] \in \tfrac{\mathbb{Z}}{n\mathbb{Z}} : \gcd(a,n)=1 \}.
@@ -91,15 +115,67 @@ even though ($4-1)(4+1)=3\cdot5\equiv0\pmod{15}$. Here $\gcd(4-1,15)=3$ and $\gc
 \textcolor{red}{DAVID: Sergio, I am afraid the Wikipedia is never wrong... Explicitly ``At this point, it may or may not be the case that $N| a^{r/2}-1$...''}  
 
     Otherwise, the procedure is restarted with a new choice of $\tilde{m}$.
-\section{\label{sec:QFT}Quantum Fourier Transform}
+\section{\label{sec:QFTDraft}Quantum Fourier Transform Draft}
+This section is entirely based on Nielsen \& Chuang \cite{Nielsen_Chuang_2010}. Let $\{\ket{k}\}_{k=0}^{N-1}$ be an orthonormal basis. We define the \textit{Quantum Fourier Transform} (QFT) as the unitary operation $U$ such that its action on the basis is 
+
+\[U_{QFT}\ket{r}=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}e^{i\frac{2\pi}{N}kr}\ket{k}.\]
+
+Considering a system with $n$ qubits, $N=2^n$ and $\{\ket{k}\}_{k=0}^{N-1}$ is simply the computational basis. We will write the elements of the computational basis as binary strings $k=k_1k_2\dots k_n$ with $k_i\in\{0,1\},\, \forall i\in\{1,\dots,n\}$, i.e., $k=k_12^{n-1}+k_22^{n-2}+\dots+k_{n-1}2^1+k_n2^0$. We will also adopt the notation $$0.k_lk_{l+1}\dots k_m\coloneqq \frac{k_l}{2}+ \frac{k_{l+1}}{4}+\dots+\frac{k_{m}}{2^{m-l+1}}$$ with $l<m$. By doing so, we can express the QFT on a general basis state as
+{\small
+\[
+\begin{aligned}
+U_{\mathrm{QFT}}\ket{k_1 k_2 \dots k_n}
+&= \frac{\ket{0} + e^{2\pi i\, 0.k_n}\ket{1}}{\sqrt{2}}
+   \otimes \frac{\ket{0} + e^{2\pi i\, 0.k_{n-1}k_n}\ket{1}}{\sqrt{2}} \\[4pt]
+&\quad \otimes \cdots \otimes
+   \frac{\ket{0} + e^{2\pi i\, 0.k_1k_2\dots k_n}\ket{1}}{\sqrt{2}}.
+\end{aligned}
+\]
+}
+This expression enables the implementation of the QFT solely through the composition of two types of quantum gates. The first ones are Hadamard's $H$ and act on a single qubit. They are represented as a matrix by \[H=\frac{1}{\sqrt{2}}\begin{pmatrix}
+    1&1\\1&-1
+\end{pmatrix}.\]
+The second ones are controlled rotations $CR_k$ and act in two qubits as \[CR_k=\begin{pmatrix} 1&0&0&0\\0&1&0&0\\ 0&0&1&0 \\ 0&0&0&e^{\frac{2\pi i}{2^k}} \end{pmatrix}.\]
+Then, the quantum circuit that performs the QFT is the one on Fig. \ref{fig:qft}. Notice how such implementation is exactly the same as the one proposed by Shor \cite{Shor_1994}.
+
+% \begin{figure*}[ht]
+% \centering
+% \scalebox{0.9}{ % full size, no shrinking needed
+% \begin{quantikz}[
+%   row sep=0.5cm, 
+%   column sep=0.4cm, 
+%   /tikz/every label/.append style={font=\small},
+%   /tikz/every gate/.append style={minimum width=0.5cm, minimum height=0.35cm, inner sep=0pt, font=\normalsize}
+% ]
+% \lstick{$\ket{k_1}$} & \gate{H} & \gate{R_2} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-1}} & \gate{R_n} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_1\dots k_n}\ket{1}$}\\
+% \lstick{$\ket{k_2}$} & \qw & \ctrl{-1} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw & \gate{H} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-2}} & \gate{R_{n-1}}& {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw  & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_2\dots k_n}\ket{1}$}\\
+% \lstick{$\vdots$} \\ 
+% \lstick{$\ket{k_{n-1}}$} & \qw & \qw & \qw & \ctrl{-3} & \qw & \qw & \qw & \ctrl{-2} &  \qw & {\hspace{0.1cm}\dots\hspace{0.1cm}}  &\gate{H} &\gate{R_2} & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_{n-1}k_n}\ket{1}$}\\
+% \lstick{$\ket{k_n}$} & \qw & \qw & \qw & \qw & \ctrl{-4} & \qw & \qw & \qw & \ctrl{-3} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \ctrl{-1} & \gate{H} & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_n}\ket{1}$}\\
+% \end{quantikz}
+% }
+% \caption{Quantum circuit implementing the Quantum Fourier Transform (QFT). 
+% The output states are shown unnormalized (the $1/\sqrt{2}$ factors are omitted). 
+% Controlled rotation gates $CR_k$ are represented by rotation gates $R_k$ acting on the target qubit, 
+% with filled dots indicating their respective control qubits.}
+
+% \label{fig:qft}
+% \end{figure*}
+
+
+
+
+
+
+
 \section{\label{sec:PrimeFactorization}Prime factorization}
 As discussed above, given $x$ and $n$, our goal is to find the minimum integer $r$ such that $x^r\equiv 1 \pmod n$ \textcolor{blue}{Sergio: We can move to other notations but we must be consistent between sections i.e. $x^r\equiv 1\leftrightarrow \tilde{m}^2\equiv 1$}. The first thing to do is find $q=2^t$, a power of 2 for certain $t\in \mathbb{N}$, such that $n^2<q<2n^2$. \textcolor{blue}{Sergio: Here I would add the comment on: we can discard $n$ from being a power of 2 since there are many efficient classical algorithms to factorize $n$ in these cases.}
 Now, starting from the state given by 
 \[\ket{0}^{\otimes t}\otimes\ket{0},\]
 we apply a Hadamard gate to each of the first $t$ qubits. This yields
 \[\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right)^{\otimes t}\otimes\ket{0}=\frac{1}{\sqrt{2^t}}\sum_{a=0}^{2^t-1}\ket{a}\otimes\ket{0}=\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{0},\]
-where the tensorial product has expanded into a sum of all possible $2^t$ binary strings and we have identified each with an integer $a\in\{0,\dots,2^m-1\}$. Next, we transform $\ket{0}$ to $\ket{x^a\pmod n}$  using \textit{modular exponentiation}. \textcolor{blue}{Sergio: Which $a$ are we talking about?? since $a\in\{0,\dots,2^m-1\}$. Should be something like: For each $a$ one may compute $\ket{a}\ket{0}\rightarrow \ket{a}\ket{x^a(\bmod{n}})$ using modular exponentiation}
-\textcolor{red}{This algorithm works as follows. We decompose $a$ as a binary string, i.e., $a=\sum_{i=0}^{l-1}a_i2^i$ with $a_i\in\{0,1\}$. Thus
+where the tensorial product has expanded into a sum of all possible $2^t$ binary strings and we have identified each with an integer $a\in\{0,\dots,2^t-1\}$. Next, we transform $\ket{0}$ to $\ket{x^a\pmod n}$  using \textit{modular exponentiation}. \textcolor{blue}{Sergio: Which $a$ are we talking about?? since $a\in\{0,\dots,2^m-1\}$. Should be something like: For each $a$ one may compute $\ket{a}\ket{0}\rightarrow \ket{a}\ket{x^a(\bmod{n}})$ using modular exponentiation}
+\textcolor{red}{This algorithm works as follows. We decompose $a$ as a binary string, i.e., $a=\sum_{i=0}^{l-1}a_i2^{i}$ with $a_i\in\{0,1\}$. Thus
 \begin{align*}
     x^a(\bmod{n})&=x^{\sum_{i=0}^{l-1}a_i2^i}(\bmod{n})=\prod_{i=0}^{l-1}x^{a_i2^i}(\bmod{n})\\&=\prod_{i=0}^{l-1}\left[x^{2^i}(\bmod{n})\right]^{a_i},
 \end{align*}
@@ -144,9 +220,6 @@ In this equation we know both $c$ (we measure it) and $q$, since its the dimensi
 
 \textcolor{red}{TBC}
 
-\section{\label{sec:QuantumFourierTransforme}Quantum Fourier Transform}
-
-
 
 
 
@@ -159,20 +232,198 @@ In this equation we know both $c$ (we measure it) and $q$, since its the dimensi
 \section{\label{sec:Figure}Figure}
 This figure must be polished, but it is essentially Shor's algorithm
 
-\begin{adjustbox}{width = 0.5\textwidth}
-\begin{quantikz}[row sep={0.7cm,between origins}, column sep=0.8cm]
-% First register (t qubits)
-\lstick{$\ket{0}$} & \gate{H} & \ctrl{4} & \qw & \qw & \qw & \qw & \qw & \gate{QFT^\dagger} & \meter{} \\
-\lstick{$\ket{0}$} & \gate{H} & \qw & \ctrl{3} & \qw & \qw & \qw & \qw & \gate{} & \meter{} \\
-\lstick{$\vdots$} & & & & \ddots & & & & \vdots & \vdots \\
-\lstick{$\ket{0}$} & \gate{H} & \qw & \qw & \qw & \ctrl{1} & \qw & \qw & \gate{} & \meter{} \\
-% Second register (work register)
-\lstick{$\ket{1}$} & \qw & \gate{U^{2^{0}}} & \gate{U^{2^{1}}} & \qw & \gate{\cdots} & \qw & \gate{U^{2^{t-1}}} & \qw & \rstick{$\ket{f(a)}$}
-\end{quantikz}
-\end{adjustbox}
+% \begin{figure}
+%     \centering
+%     \begin{adjustbox}{width = 0.5\textwidth}
+%         \begin{quantikz}[row sep={0.7cm,between origins}, column sep=0.8cm]
+%         % First register (t qubits)
+%         \lstick{$\ket{0}_0$} & \gate{H} & \ctrl{4} & \qw & \qw & \qw & \qw & \qw & \gate[wires=4]{QFT^\dagger} & \meter{} \\
+%         \lstick{$\ket{0}_1$} & \gate{H} & \qw & \ctrl{3} & \qw & \qw & \qw & \qw &  & \meter{} \\
+%         \lstick{$\vdots$} & & & &  & & & & \vdots & \vdots \\
+%         \lstick{$\ket{0}_{t-1}$} & \gate{H} & \qw & \qw & \qw & \qw & \qw & \ctrl{1} & \qw  & \meter{} \\
+%         % Second register (work register)
+%         \lstick{$\ket{1}$} & \qw & \gate{U^{2^{t-1}}} & \gate{U^{2^{t-2}}} &  & \qw &  & \gate{U^{2^{0}}} & \qw & \rstick{$\ket{f(a)}$}
+%         \end{quantikz}
+%     \end{adjustbox}
+%     \caption{Quantum circuit of the Shor's algorithm.}
+%     \label{fig:MainScheme}
+% \end{figure}
 
-\section{\label{sec:Implementation}Circuit implementation}
+
+\section{\label{sec:Implementation}Circuit implementation draft}
+\textcolor{blue}{Sergio: Shit happens. Okay, here’s a quick summary of the script workflow.}
+
+\textcolor{blue}{After computing the inverse Fourier transform (I think we only mention the Fourier transform, but not the inverse,which is actually the one we use), we measure the first register, projecting it into the computational basis.} 
+
+\textcolor{blue}{For example, if we have 2 qubits, we get $\ket{0}_A$ and $\ket{0}_B$ with eigenvalue 0, and $\ket{1}_A$ and $\ket{1}_B$ with eigenvalue 1. So the observable looks like:
+\begin{align*}
+    \ket{1}_A\bra{1}_A + \ket{1}_B\bra{1}_B
+\end{align*}
+That said, both measurements can be performed separately and then reordered to form a binary number. SUPER IMPORTANT: the bits are reversed compared to the current order,that is, we go from $d-1$ down to $0$ if you prefer.}
+
+\textcolor{blue}{Now, I’m honestly not sure what the most formal way to describe this measurement is. One could say we’re measuring the observable:
+\begin{align*}
+    \sum_{i=0}^{q-1} \ket{i}\bra{i}
+\end{align*}
+where $\ket{i}$ represents the computational basis states written in binary (notice this observable is the identity of the $\otimes_{i=0}^{q-1}\mathcal{H}_i$ hilbert space). This measurement gives us the output of the quantum computation. From this point onward, everything is classical.}
+
+\textcolor{blue}{The resulting binary numbers are then converted to decimal, and we divide them by $q$, i.e.
+\begin{align*}
+    output \rightarrow^{decimal} \alpha \rightarrow \alpha / q = \alpha / 2^t = \beta
+\end{align*}
+Here, $\beta$ is the result of the computation. We then approximate $\beta$ to the closest fraction $\gamma / \delta$, with $\gamma, \delta \in \mathbb{N}$ and $\gamma, \delta < N$.  
+(I know you hate my notation, but I don’t care :) ) }\textcolor{red}{WTF WHY GAMMA AND DELTA ARE NATURALS U ARE FCKIN CRAZY}
+
+\textcolor{blue}{We don’t really care about the numerator since it can be anything a priori. The interesting part is the denominator, which gives us our beloved $r$,the order of $x$ in $\left( \frac{\mathbb{Z}}{n\mathbb{Z}} \right)^*$. } 
+
+\textcolor{blue}{Still, we have to remember that the fraction can simplify. For example, if $r = 4$ and our guess is correct (i.e. $\delta = 4$), we could also have $\gamma = 2$, giving $1/2$ and thus $r = 2$.}
+
+\textcolor{blue}{So, it’s fair to say that each measurement provides a guess for the order of the element. We can always cross-check whether this $r$ is indeed the order, or, more efficiently, just move on and test $x^{r/2} \pm 1$ as potential factors of $n$ (which is probably the smartest move).}
+
+\textcolor{blue}{Important points to highlight:The number of qubits in the second register must be larger than $\log_2 n$ (Naturally it needs to encode the $N$ therefore you will need at least $\log_2 n$ quwh
+bits).  The more qubits you use in the first register, the better the results (obvious, but still worth mentioning).}
+
+
 \section{\label{sec:Conclusions}Conclusions and future work}
+
+\newpage
+
+\section{\label{sec:intro} Introduction}
+
+Quantum Computing is an emerging field based on a theoretical structure built using the inherent randomness of quantum physical systems. If certain conditions are met, quantum computers give an exponential complexity separation against classical computation \citep{Shor_1997}. This is often referred to as quantum advantage, that is, when a quantum computer can compute a task that classical computers cannot or can do with less precision or more energy.
+% Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. 
+Although the term itself has gained popularity only recently, Richard Feynman first suggested in 1986 that exploiting quantum mechanics could enable more powerful computation than its classical counterpart \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with high probability \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not provide a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error \footnote{This class is called \textbf{BPP}, which stands for bounded-error probabilistic polynomial time.}. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made a groundbreaking contribution: he identified an oracle problem solvable in polynomial time on a quantum computer but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
+
+
+The possibility of quantum computing classically hard problems is compelling but it is a looming threat to, among other fields, cryptography, as some of its methods are often relied on hard-to-solve computational problems. This is the case for the widely used RSA public-key scheme developed by Rivest, Shamir and Adleman in 1978 \cite{RSA178}. In this system, the security rests on the difficulty of factorizing an integer into prime numbers. In 1995, the fastest known algorithm for factorizing an integer was Number Field Sieve by Lenstra, Lenstra Jr., Manasse and Pollard \cite{LenstraLenstraManassePollard90}. Such method takes an asymptotic running time $O(exp(c(\log n)^\frac{1}{3}(\log\log n)^{\frac{2}{3}}))$ to factor an integer $n$ and for some constant $c$.
+
+
+In this article, Shor introduces the first quantum algorithm for integer factorization with an asymptotic running time of $O((\log n)^2(\log\log n)(\log \log \log n))$, demonstrating a clear quantum advantage over Lenstra's classical proposal.
+
+
+\section{\label{sec:MathematicalBackground}Mathematical background of the algorithm}
+
+In this section, we present the factorization procedure and we see that the bottleneck is finding the order of an element in a group, which can be solved using quantum computing with parallel computation.
+
+The goal of the algorithm is the following: given a positive integer $n$, find $p_1, p_2 \in \mathbb{N}$, where $p_1,p_2>1$, such that $n = p_1p_2$, that is, to decompose $n$ as a product of two non-trivial positive integers.
+
+Let $x$ be a candidate divisor of $n$, chosen such that $1 < x < n$. Using the Euclidean algorithm, one can compute $\gcd(x, n)$ in polynomial time \cite{Shallit94}. 
+
+If $\gcd(x, n) \neq 1$, then we have found a non-trivial divisor of $n$. In this case, set $p_1 = \gcd(x, n)$ and $p_2 = \frac{n}{\gcd(x, n)}$.
+
+Otherwise, if $\gcd(x, n) = 1$, then the equivalence class $[x]$ belongs to the multiplicative group,
+\begin{align*}
+    \left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^* 
+    = \{ [b] \in \tfrac{\mathbb{Z}}{n\mathbb{Z}} : \gcd(b,n)=1 \}.
+\end{align*}
+
+    In this case, we look for the \emph{order} of $[x]$, namely the smallest positive integer $r$  such that $x^r \equiv 1 \pmod{n}$.
+
+This order $r$ always exists since $\left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$ is a finite abelian group. The efficient computation of $r$ is precisely the step where the quantum routine of the algorithm becomes essential \textcolor{blue}{since it is a hard computing problem in classical computation i.e. the bottle neck of the algorithm when $n$ is a large number}.
+
+Once $r$ is obtained, two cases arise. If $r$ is odd, the choice of $x$ is not useful, and the procedure is repeated with a new guess $x$. If $r$ is even, then 
+\begin{align*}
+       (x^{r/2} - 1)(x^{r/2} + 1) \equiv 0 \pmod{n}.
+	\end{align*}
+	It is clear that $x^{r/2} - 1$ and $x^{r/2} + 1$ are potentional divisors of $n$. Therefore, we can compute $\gcd(x^{r/2} + 1, n)$ and/or $\gcd(x^{r/2} - 1, n)$.
+    If $\gcd(x^{r/2} + 1, n) \neq 1$, then $\gcd(x^{r/2} + 1, n)$ is a non-trivial divisor of $n$, and the factorization goal is achieved, idem for $\gcd(x^{r/2} - 1, n)$ . 
+
+    Otherwise, the procedure is restarted with a new choice of $x$ or taking $x$ as $x^{r/2} \pm 1$.
+\section{\label{sec:QFT}Quantum Fourier Transform}
+\textcolor{blue}{Sergio: we need to motivate the section; something like. One of the key steps of the quantum procedure of the Shor's algorithm is the \textit{Quantum Fourier Transform} (QFT) \cite{Nielsen_Chuang_2010}, in this section we briefly introduce this unitary transformation and how it is implemented in a quantum circuit.}
+
+Let $\{\ket{k}\}_{k=0}^{N-1}$ be an orthonormal basis. We define the \textit{Quantum Fourier Transform} (QFT) \cite{Nielsen_Chuang_2010} as the unitary operation $U$ such that its action on the basis is 
+
+\[U_{QFT}\ket{r}=\frac{1}{\sqrt{N}}\sum_{k=0}^{N-1}e^{i\frac{2\pi}{N}kr}\ket{k}.\]
+
+Considering a system with $n$ qubits, $N=2^n$ and $\{\ket{k}\}_{k=0}^{N-1}$ is simply the computational basis. We will write the elements of the computational basis as binary strings $k=k_1k_2\dots k_n$ with $k_i\in\{0,1\},\, \forall i\in\{1,\dots,n\}$, i.e., $k=k_12^{n-1}+k_22^{n-2}+\dots+k_{n-1}2^1+k_n2^0$. We will also adopt the notation $$0.k_lk_{l+1}\dots k_m\coloneqq \frac{k_l}{2}+ \frac{k_{l+1}}{4}+\dots+\frac{k_{m}}{2^{m-l+1}}$$ with $l<m$. By doing so, we can express the QFT on a general basis state as
+{\small
+\begin{equation}\label{eq: QFT output}
+    \begin{split}
+        U_{\mathrm{QFT}}\ket{k_1 k_2 \dots k_n}
+&= \frac{\ket{0} + e^{2\pi i\, 0.k_n}\ket{1}}{\sqrt{2}}
+   \otimes \frac{\ket{0} + e^{2\pi i\, 0.k_{n-1}k_n}\ket{1}}{\sqrt{2}} \\[4pt]
+&\quad \otimes \cdots \otimes
+   \frac{\ket{0} + e^{2\pi i\, 0.k_1k_2\dots k_n}\ket{1}}{\sqrt{2}}.
+    \end{split}
+\end{equation}
+}
+This expression enables the implementation of the QFT solely through the composition of two types of quantum gates. The first ones are Hadamard's ($H$) and act on a single qubit. They are represented as a matrix by \[H=\frac{1}{\sqrt{2}}\begin{pmatrix}
+    1&1\\1&-1
+\end{pmatrix}.\]
+The second ones are controlled rotations ($CR_k$) and act in two qubits as \[CR_k=\begin{pmatrix} 1&0&0&0\\0&1&0&0\\ 0&0&1&0 \\ 0&0&0&e^{\frac{2\pi i}{2^k}} \end{pmatrix}.\]
+Then, the quantum circuit that performs the QFT is the one on Fig. \ref{fig:qft}. Notice how such implementation is exactly the same as the one proposed by Shor \cite{Shor_1994}.
+
+\begin{figure*}[ht]
+\centering
+\scalebox{0.9}{ % full size, no shrinking needed
+\begin{quantikz}[
+  row sep=0.5cm, 
+  column sep=0.4cm, 
+  /tikz/every label/.append style={font=\small},
+  /tikz/every gate/.append style={minimum width=0.5cm, minimum height=0.35cm, inner sep=0pt, font=\normalsize}
+]
+\lstick{$\ket{k_1}$} & \gate{H} & \gate{R_2} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-1}} & \gate{R_n} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_1\dots k_n}\ket{1}$}\\
+\lstick{$\ket{k_2}$} & \qw & \ctrl{-1} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw & \gate{H} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-2}} & \gate{R_{n-1}}& {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw  & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_2\dots k_n}\ket{1}$}\\
+\lstick{$\vdots$} \\ 
+\lstick{$\ket{k_{n-1}}$} & \qw & \qw & \qw & \ctrl{-3} & \qw & \qw & \qw & \ctrl{-2} &  \qw & {\hspace{0.1cm}\dots\hspace{0.1cm}}  &\gate{H} &\gate{R_2} & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_{n-1}k_n}\ket{1}$}\\
+\lstick{$\ket{k_n}$} & \qw & \qw & \qw & \qw & \ctrl{-4} & \qw & \qw & \qw & \ctrl{-3} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \ctrl{-1} & \gate{H} & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_n}\ket{1}$}\\
+\end{quantikz}
+}
+\caption{Quantum circuit implementing the Quantum Fourier Transform (QFT). 
+The output states are shown unnormalized (the $1/\sqrt{2}$ factors are omitted). 
+Controlled rotation gates $CR_k$ are represented by rotation gates $R_k$ acting on the target qubit, 
+with filled dots indicating their respective control qubits. Notice how by reading the output qubits downwards, we obtain the QFT in the reversed order (see Eq. \ref{eq: QFT output}), so a final SWAP gate is required in order to obtain the desired result.}
+
+\label{fig:qft}
+\end{figure*}
+
+
+
+
+
+
+
+\section{Order finding}\label{sec:Orderfinding}
+
+\textcolor{blue}{As discussed above the quantum computations in Shor's algorithm are mainly focused in the order finding, i.e. the minimum integer $r$ such that $x^r\equiv 1 \pmod n$. Here we introduce implementation ofhow the computation is implemented in a quantum circuit and discuss the insights and problems of this algorithm.}
+
+As discussed above, given $x$ and $n$, our goal is to find the minimum integer $r$ such that $x^r\equiv 1 \pmod n$. The first thing to do is find $q=2^t$, a power of 2 for certain $t\in \mathbb{N}$, such that $n^2<q<2n^2$. Notice we can discard $n$ from being a prime power since there are many efficient classical algorithms to factorize $n$ in these cases \cite{Bernstein98,AgrawalKayalSaxena04}.
+Now, starting from the state given by 
+\[\ket{0}^{\otimes t}\otimes\ket{0},\]
+we apply a Hadamard gate to each of the first $t$ qubits. This yields
+\[\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right)^{\otimes t}\otimes\ket{0}=\frac{1}{\sqrt{2^t}}\sum_{a=0}^{2^t-1}\ket{a}\otimes\ket{0}=\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{0},\]
+where the tensorial product has expanded into a sum of all possible $2^t$ binary strings and we have identified each with an integer $a\in\{0,\dots,2^t-1\}$. For each $a$ one may compute $\ket{a}\ket{0}\rightarrow \ket{a}\ket{x^a(\bmod{n}})$ using modular exponentiation.
+In particular, the modular exponentiation part of the algorithm works as follows. We decompose $a$ as a binary string, i.e., $a=\sum_{i=0}^{t}a_i2^{t-i}$ with $a_i\in\{0,1\}$. Thus
+\begin{align*}
+    x^a(\bmod{n})&=x^{\sum_{i=0}^{t}a_i2^{t-i}}(\bmod{n})=\prod_{i=0}^{t}x^{a_i2^{t-i}}(\bmod{n})\\&=\prod_{i=0}^{t}\left[x^{2^{t-i}}(\bmod{n})\right]^{a_i},
+\end{align*}
+and only when $a_i=1$, the term is taken into account.
+Our state is now 
+\[\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{x^a(\bmod{n})},\]
+
+and we can perform a quantum Fourier transform to the first register $\ket{a}$ yielding 
+\[\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\sum_{c=0}^{q-1}e^{2\pi ia\frac{c}{q}}\ket{c}\ket{x^a(\bmod{n})}.\]
+Now we proceed with a projective measurement into a general state $\ket{\tilde{c}}\ket{x^k(\bmod{n})}$ and compute the corresponding probability. This is
+\[\mathbb{P}(\tilde{c},x^k(\bmod{n}))=\left|\frac{1}{q}\sum_{\substack{a=0\\x^a\equiv x^k (\bmod{n})}}^{q-1}e^{2\pi i a \frac{\tilde{c}}{q}}\right|^2.\]
+
+Notice that some terms in the sum might be repeated since we can find $\ket{x^i(\bmod{n})}=\ket{x^j(\bmod{n})}$ for $i\neq j$. This happens when \[x^ i\equiv x^j(\bmod{n})\implies i=br+j,\] where we have supposed $i>j$, $b,r\in \mathbb{Z}$ and $r$ satisfies $x^r\equiv 1(\bmod{n})$ i.e. $r$ is the order of $x$ in $\left(\frac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$. Therefore, $a=br+k$ for some $k\in \mathbb{Z}$ and the probability is reexpressed as
+\[\mathbb{P}(\tilde{c},x^k(\bmod{n}))=\left|\frac{1}{q}\sum_{b=0}^{\lfloor\frac{q-1-k}{r}\rfloor}e^{2\pi i b\frac{r\tilde{c}}{q}}\right|^2,\]
+where we eliminated the global unitary factor $e^{2\pi i \frac{\tilde{c}}{q}k}$.
+By Euclidean division, $r\tilde{c}=dq+\{r\tilde{c}\}_q$, where $d\in \mathbb{Z}$ and $\{r\tilde{c}\}_q$ is the residue taken in the interval $-\frac{q}{2}<\{r\tilde{c}\}_q\le\frac{q}{2}$. Such operation spans a phase that we can omit.
+
+With an error of $O(\frac{1}{q})$ and assuming $\frac{-r}{2}\le \{r\tilde{c}\}_q\le \frac{r}{2}$ it can be shown that \[\mathbb{P}(\tilde{c},x^k(\bmod{n}))\approx\frac{\left|\sin\left(\pi \frac{\{r\tilde{c}\}_q}{r}\right) \right|^2}{\pi^2 \left|\{r\tilde{c}\}_q\right|^2}.\]
+
+
+Under the assumption that $\frac{-r}{2}\le \{r\tilde{c}\}_q\le \frac{r}{2}$, this probability is minimized on the boundary of the interval and one obtains an asymptotic lower bound for the probability, which yields $\frac{4}{\pi^2 r^2}\approx0.405 r^{-2}>\frac{1}{3}r^{-2}$. Therefore the probability will be, at least, $\frac{1}{3r^2}$ as long as $\left|\{r\tilde{c}\}_q\right|\le \frac{r}{2}$. Rearranging this condition by the definition of $\{r\tilde{c}\}_q$ we obtain 
+\[\left|\frac{\tilde{c}}{q}-\frac{d}{r}\right|\le\frac{1}{2q}.\]
+In this equation, we know both $\tilde{c}$ (we measure it) and $q$, since it is the dimension of our QFT. At this point, it can be mathematically proven that, given our restrictions in $q$, there is at most one solution $\frac{d}{r}$ with $r<n$ to the above inequality. The continued fraction expansion of $\frac{\tilde{c}}{q}$ will find all the best approximations by fractions of this fraction in polynomial time \cite{hardy2008introduction}, therefore allowing us to find $\frac{d}{r}$ with a certain probability.
+
+Once this fraction is obtained, two possibilities arise. If $d$ and $r$ are relatively prime, i.e. $\gcd(d, r) = 1$, then the denominator $r$ of the reduced fraction directly corresponds to the period we seek. Otherwise, if $d$ and $r$ share a common factor $k > 1$, the continued fraction method yields instead the reduced denominator $r' = r/k$. In this case, we must test integer multiples of $r'$, such as $2r', 3r'$, and so on, until the true period $r$ is found. This will be seen clearly in our example.
+
+As discussed in Section \ref{sec:Orderfinding} \textcolor{red}{Why isn't this working?}, once $r$ is obtained, the quantum routine is finished and a potential divisor can be easily computed classically.
+
+
 
 \bibliographystyle{plainnat}
 
