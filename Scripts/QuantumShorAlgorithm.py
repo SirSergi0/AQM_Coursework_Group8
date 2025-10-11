@@ -46,11 +46,26 @@ def to_fraction(x, pos):
     f = Fraction(x).limit_denominator(128)
     return rf'${f.numerator}/{f.denominator}$' if f.denominator != 1 else rf'${f.numerator}$'
 
+def AnalyticalResult(r,q):
+    d = [i for i in range(r)]
+    x = np.sort(np.union1d(np.arange(0, q) + 0.01, np.arange(0, ) - 0.01))
+    y = np.zeros(len(x))
+
+    for k, i in enumerate(x):
+        for j in d[:]:
+            y[k] += (np.sin(np.pi * ((j * q) / r - i)) / np.sin(np.pi * (j / r - i / q))) ** 2
+        y[k] = y[k] / (r * q ** 2)
+    
+
+    for i in range(len(x)): x[i]=x[i]/q
+    
+    return x,y
 
 for i in tqdm(range (4,17), "Shit happens"):
     x       = 2
     N       = 55
     N_mesurements = 2**14
+    r_real  = 20
     n_count = i # number of qubits of QFT_register
     n_q     = ceil(np.log2(N)) + n_count + 1 # total number of Qubits (QFT_register + a**i_register)
     vec     = get_coeffs(x, N, n_q, n_count)
@@ -80,9 +95,14 @@ for i in tqdm(range (4,17), "Shit happens"):
 
 
     # plt.figure(figsize=(10,5))
-    plt.bar(x_UwU, y, width=0.005, align='center')  # width ~ spacing between your x values
+    plt.bar(x_UwU, y, width=0.005, align='center', label = 'Numerical result')  # width ~ spacing between your x values
+    
+    WTFErnesto = AnalyticalResult(r_real,2**n_count)
+    plt.plot(WTFErnesto[0], WTFErnesto[1], color='orange', linewidth=1.5, linestyle='dotted', label='Analytical result')
+
     plt.xlabel(r"$\frac{d}{r}$", fontsize=16)
     plt.ylabel("Relative frequency")
+    plt.legend(loc='upper right')
     
     plt.gca().xaxis.set_major_formatter(FuncFormatter(to_fraction))
     plt.tight_layout()
