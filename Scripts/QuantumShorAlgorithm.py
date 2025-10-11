@@ -50,6 +50,7 @@ def to_fraction(x, pos):
 for i in tqdm(range (4,17), "Shit happens"):
     x       = 2
     N       = 55
+    N_mesurements = 2**14
     n_count = i # number of qubits of QFT_register
     n_q     = ceil(np.log2(N)) + n_count + 1 # total number of Qubits (QFT_register + a**i_register)
     vec     = get_coeffs(x, N, n_q, n_count)
@@ -63,7 +64,7 @@ for i in tqdm(range (4,17), "Shit happens"):
 
     aer_sim       = Aer.get_backend('aer_simulator')
     t_qc          = transpile(Q, aer_sim)
-    results       = aer_sim.run(t_qc).result()
+    results       = aer_sim.run(t_qc, shots=N_mesurements).result()
     counts        = results.get_counts()
     for j in range(2 ** n_count):
         key = format(j, f'0{n_count}b') 
