@@ -1,0 +1,35 @@
+\documentclass{standalone}
+% \usepackage{yquant}
+\usepackage{quantikz}
+\usepackage{tikz}
+% \usepackage{subcaption}
+% \usepackage{pgfplots}
+% % \DeclareUnicodeCharacter{2212}{−}
+% \usepgfplotslibrary{groupplots,dateplot}
+% \usetikzlibrary{patterns,shapes.arrows}
+% \pgfplotsset{compat=newest}
+% \usepgfplotslibrary{external}
+% \tikzexternalize
+% \usepackage[export]{adjustbox}
+% \usepackage{circuitikz}
+
+
+
+
+\begin{document}
+
+\begin{quantikz}[
+  row sep=0.5cm, 
+  column sep=0.4cm, 
+  /tikz/every label/.append style={font=\small},
+  /tikz/every gate/.append style={minimum width=0.5cm, minimum height=0.35cm, inner sep=0pt, font=\normalsize}
+]
+\lstick{$\ket{k_1}$} & \gate{H} & \gate{R_2} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-1}} & \gate{R_n} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_1\dots k_n}\ket{1}$}\\
+\lstick{$\ket{k_2}$} & \qw & \ctrl{-1} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw & \gate{H} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-2}} & \gate{R_{n-1}}& {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw  & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_2\dots k_n}\ket{1}$}\\
+\lstick{$\vdots$} \\ 
+\lstick{$\ket{k_{n-1}}$} & \qw & \qw & \qw & \ctrl{-3} & \qw & \qw & \qw & \ctrl{-2} &  \qw & {\hspace{0.1cm}\dots\hspace{0.1cm}}  &\gate{H} &\gate{R_2} & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_{n-1}k_n}\ket{1}$}\\
+\lstick{$\ket{k_n}$} & \qw & \qw & \qw & \qw & \ctrl{-4} & \qw & \qw & \qw & \ctrl{-3} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \ctrl{-1} & \gate{H} & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_n}\ket{1}$}\\
+\end{quantikz}
+
+\end{document}
+

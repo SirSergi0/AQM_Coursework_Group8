@@ -2,13 +2,17 @@
 \begin{tikzpicture}
 
 \definecolor{darkgray176}{RGB}{176,176,176}
-\definecolor{steelblue31119180}{RGB}{31,119,180}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{orangered}{RGB}{255,69,0}
+\definecolor{royalblue}{RGB}{65,105,225}
 
 \begin{axis}[
+legend cell align={left},
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=lightgray204},
 tick align=outside,
 tick pos=left,
 x grid style={darkgray176},
-xlabel={\(\displaystyle \frac{d}{r}\)},
+xlabel={\(\displaystyle \frac{\tilde{c}}{q}\)},
 xmin=-0.05265234375, xmax=1.05069921875,
 xtick style={color=black},
 xtick={-0.2,0,0.2,0.4,0.6,0.8,1,1.2},
@@ -24,521 +28,1040 @@ xticklabels={
 },
 y grid style={darkgray176},
 ylabel={Relative frequency},
-ymin=0, ymax=0.0533843994140625,
+ymin=0, ymax=0.0535125732421875,
 ytick style={color=black}
 ]
-\draw[draw=none,fill=steelblue31119180] (axis cs:-0.0025,0) rectangle (axis cs:0.0025,0.05084228515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:-0.000546875,0) rectangle (axis cs:0.004453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.00140625,0) rectangle (axis cs:0.00640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.003359375,0) rectangle (axis cs:0.008359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0053125,0) rectangle (axis cs:0.0103125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.007265625,0) rectangle (axis cs:0.012265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.00921875,0) rectangle (axis cs:0.01421875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.011171875,0) rectangle (axis cs:0.016171875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.013125,0) rectangle (axis cs:0.018125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.015078125,0) rectangle (axis cs:0.020078125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.01703125,0) rectangle (axis cs:0.02203125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.018984375,0) rectangle (axis cs:0.023984375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0209375,0) rectangle (axis cs:0.0259375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.022890625,0) rectangle (axis cs:0.027890625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.02484375,0) rectangle (axis cs:0.02984375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.026796875,0) rectangle (axis cs:0.031796875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.02875,0) rectangle (axis cs:0.03375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.030703125,0) rectangle (axis cs:0.035703125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.03265625,0) rectangle (axis cs:0.03765625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.034609375,0) rectangle (axis cs:0.039609375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0365625,0) rectangle (axis cs:0.0415625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.038515625,0) rectangle (axis cs:0.043515625,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.04046875,0) rectangle (axis cs:0.04546875,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.042421875,0) rectangle (axis cs:0.047421875,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.044375,0) rectangle (axis cs:0.049375,0.0015869140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.046328125,0) rectangle (axis cs:0.051328125,0.01177978515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.04828125,0) rectangle (axis cs:0.05328125,0.029296875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.050234375,0) rectangle (axis cs:0.055234375,0.00244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0521875,0) rectangle (axis cs:0.0571875,0.0006103515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.054140625,0) rectangle (axis cs:0.059140625,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.05609375,0) rectangle (axis cs:0.06109375,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.058046875,0) rectangle (axis cs:0.063046875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.06,0) rectangle (axis cs:0.065,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.061953125,0) rectangle (axis cs:0.066953125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.06390625,0) rectangle (axis cs:0.06890625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.065859375,0) rectangle (axis cs:0.070859375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0678125,0) rectangle (axis cs:0.0728125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.069765625,0) rectangle (axis cs:0.074765625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.07171875,0) rectangle (axis cs:0.07671875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.073671875,0) rectangle (axis cs:0.078671875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.075625,0) rectangle (axis cs:0.080625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.077578125,0) rectangle (axis cs:0.082578125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.07953125,0) rectangle (axis cs:0.08453125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.081484375,0) rectangle (axis cs:0.086484375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0834375,0) rectangle (axis cs:0.0884375,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.085390625,0) rectangle (axis cs:0.090390625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.08734375,0) rectangle (axis cs:0.09234375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.089296875,0) rectangle (axis cs:0.094296875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.09125,0) rectangle (axis cs:0.09625,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.093203125,0) rectangle (axis cs:0.098203125,0.00054931640625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.09515625,0) rectangle (axis cs:0.10015625,0.00091552734375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.097109375,0) rectangle (axis cs:0.102109375,0.04364013671875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.0990625,0) rectangle (axis cs:0.1040625,0.0023193359375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.101015625,0) rectangle (axis cs:0.106015625,0.0006103515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.10296875,0) rectangle (axis cs:0.10796875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.104921875,0) rectangle (axis cs:0.109921875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.106875,0) rectangle (axis cs:0.111875,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.108828125,0) rectangle (axis cs:0.113828125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.11078125,0) rectangle (axis cs:0.11578125,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.112734375,0) rectangle (axis cs:0.117734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1146875,0) rectangle (axis cs:0.1196875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.116640625,0) rectangle (axis cs:0.121640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.11859375,0) rectangle (axis cs:0.12359375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.120546875,0) rectangle (axis cs:0.125546875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1225,0) rectangle (axis cs:0.1275,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.124453125,0) rectangle (axis cs:0.129453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.12640625,0) rectangle (axis cs:0.13140625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.128359375,0) rectangle (axis cs:0.133359375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1303125,0) rectangle (axis cs:0.1353125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.132265625,0) rectangle (axis cs:0.137265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.13421875,0) rectangle (axis cs:0.13921875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.136171875,0) rectangle (axis cs:0.141171875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.138125,0) rectangle (axis cs:0.143125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.140078125,0) rectangle (axis cs:0.145078125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.14203125,0) rectangle (axis cs:0.14703125,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.143984375,0) rectangle (axis cs:0.148984375,0.00067138671875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1459375,0) rectangle (axis cs:0.1509375,0.00286865234375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.147890625,0) rectangle (axis cs:0.152890625,0.04571533203125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.14984375,0) rectangle (axis cs:0.15484375,0.00177001953125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.151796875,0) rectangle (axis cs:0.156796875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.15375,0) rectangle (axis cs:0.15875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.155703125,0) rectangle (axis cs:0.160703125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.15765625,0) rectangle (axis cs:0.16265625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.159609375,0) rectangle (axis cs:0.164609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1615625,0) rectangle (axis cs:0.1665625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.163515625,0) rectangle (axis cs:0.168515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.16546875,0) rectangle (axis cs:0.17046875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.167421875,0) rectangle (axis cs:0.172421875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.169375,0) rectangle (axis cs:0.174375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.171328125,0) rectangle (axis cs:0.176328125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.17328125,0) rectangle (axis cs:0.17828125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.175234375,0) rectangle (axis cs:0.180234375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1771875,0) rectangle (axis cs:0.1821875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.179140625,0) rectangle (axis cs:0.184140625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.18109375,0) rectangle (axis cs:0.18609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.183046875,0) rectangle (axis cs:0.188046875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.185,0) rectangle (axis cs:0.19,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.186953125,0) rectangle (axis cs:0.191953125,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.18890625,0) rectangle (axis cs:0.19390625,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.190859375,0) rectangle (axis cs:0.195859375,0.0006103515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.1928125,0) rectangle (axis cs:0.1978125,0.00128173828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.194765625,0) rectangle (axis cs:0.199765625,0.002685546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.19671875,0) rectangle (axis cs:0.20171875,0.03094482421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.198671875,0) rectangle (axis cs:0.203671875,0.0137939453125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.200625,0) rectangle (axis cs:0.205625,0.00189208984375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.202578125,0) rectangle (axis cs:0.207578125,0.000732421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.20453125,0) rectangle (axis cs:0.20953125,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.206484375,0) rectangle (axis cs:0.211484375,0.00048828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2084375,0) rectangle (axis cs:0.2134375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.210390625,0) rectangle (axis cs:0.215390625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.21234375,0) rectangle (axis cs:0.21734375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.214296875,0) rectangle (axis cs:0.219296875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.21625,0) rectangle (axis cs:0.22125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.218203125,0) rectangle (axis cs:0.223203125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.22015625,0) rectangle (axis cs:0.22515625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.222109375,0) rectangle (axis cs:0.227109375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2240625,0) rectangle (axis cs:0.2290625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.226015625,0) rectangle (axis cs:0.231015625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.22796875,0) rectangle (axis cs:0.23296875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.229921875,0) rectangle (axis cs:0.234921875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.231875,0) rectangle (axis cs:0.236875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.233828125,0) rectangle (axis cs:0.238828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.23578125,0) rectangle (axis cs:0.24078125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.237734375,0) rectangle (axis cs:0.242734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2396875,0) rectangle (axis cs:0.2446875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.241640625,0) rectangle (axis cs:0.246640625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.24359375,0) rectangle (axis cs:0.24859375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.245546875,0) rectangle (axis cs:0.250546875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2475,0) rectangle (axis cs:0.2525,0.04937744140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.249453125,0) rectangle (axis cs:0.254453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.25140625,0) rectangle (axis cs:0.25640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.253359375,0) rectangle (axis cs:0.258359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2553125,0) rectangle (axis cs:0.2603125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.257265625,0) rectangle (axis cs:0.262265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.25921875,0) rectangle (axis cs:0.26421875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.261171875,0) rectangle (axis cs:0.266171875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.263125,0) rectangle (axis cs:0.268125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.265078125,0) rectangle (axis cs:0.270078125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.26703125,0) rectangle (axis cs:0.27203125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.268984375,0) rectangle (axis cs:0.273984375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2709375,0) rectangle (axis cs:0.2759375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.272890625,0) rectangle (axis cs:0.277890625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.27484375,0) rectangle (axis cs:0.27984375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.276796875,0) rectangle (axis cs:0.281796875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.27875,0) rectangle (axis cs:0.28375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.280703125,0) rectangle (axis cs:0.285703125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.28265625,0) rectangle (axis cs:0.28765625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.284609375,0) rectangle (axis cs:0.289609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.2865625,0) rectangle (axis cs:0.2915625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.288515625,0) rectangle (axis cs:0.293515625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.29046875,0) rectangle (axis cs:0.29546875,0.00048828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.292421875,0) rectangle (axis cs:0.297421875,0.000732421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.294375,0) rectangle (axis cs:0.299375,0.00189208984375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.296328125,0) rectangle (axis cs:0.301328125,0.01251220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.29828125,0) rectangle (axis cs:0.30328125,0.0269775390625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.300234375,0) rectangle (axis cs:0.305234375,0.00201416015625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3021875,0) rectangle (axis cs:0.3071875,0.000732421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.304140625,0) rectangle (axis cs:0.309140625,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.30609375,0) rectangle (axis cs:0.31109375,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.308046875,0) rectangle (axis cs:0.313046875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.31,0) rectangle (axis cs:0.315,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.311953125,0) rectangle (axis cs:0.316953125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.31390625,0) rectangle (axis cs:0.31890625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.315859375,0) rectangle (axis cs:0.320859375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3178125,0) rectangle (axis cs:0.3228125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.319765625,0) rectangle (axis cs:0.324765625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.32171875,0) rectangle (axis cs:0.32671875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.323671875,0) rectangle (axis cs:0.328671875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.325625,0) rectangle (axis cs:0.330625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.327578125,0) rectangle (axis cs:0.332578125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.32953125,0) rectangle (axis cs:0.33453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.331484375,0) rectangle (axis cs:0.336484375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3334375,0) rectangle (axis cs:0.3384375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.335390625,0) rectangle (axis cs:0.340390625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.33734375,0) rectangle (axis cs:0.34234375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.339296875,0) rectangle (axis cs:0.344296875,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.34125,0) rectangle (axis cs:0.34625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.343203125,0) rectangle (axis cs:0.348203125,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.34515625,0) rectangle (axis cs:0.35015625,0.00103759765625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.347109375,0) rectangle (axis cs:0.352109375,0.0433349609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3490625,0) rectangle (axis cs:0.3540625,0.003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.351015625,0) rectangle (axis cs:0.356015625,0.0006103515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.35296875,0) rectangle (axis cs:0.35796875,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.354921875,0) rectangle (axis cs:0.359921875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.356875,0) rectangle (axis cs:0.361875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.358828125,0) rectangle (axis cs:0.363828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.36078125,0) rectangle (axis cs:0.36578125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.362734375,0) rectangle (axis cs:0.367734375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3646875,0) rectangle (axis cs:0.3696875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.366640625,0) rectangle (axis cs:0.371640625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.36859375,0) rectangle (axis cs:0.37359375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.370546875,0) rectangle (axis cs:0.375546875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3725,0) rectangle (axis cs:0.3775,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.374453125,0) rectangle (axis cs:0.379453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.37640625,0) rectangle (axis cs:0.38140625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.378359375,0) rectangle (axis cs:0.383359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3803125,0) rectangle (axis cs:0.3853125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.382265625,0) rectangle (axis cs:0.387265625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.38421875,0) rectangle (axis cs:0.38921875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.386171875,0) rectangle (axis cs:0.391171875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.388125,0) rectangle (axis cs:0.393125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.390078125,0) rectangle (axis cs:0.395078125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.39203125,0) rectangle (axis cs:0.39703125,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.393984375,0) rectangle (axis cs:0.398984375,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.3959375,0) rectangle (axis cs:0.4009375,0.00244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.397890625,0) rectangle (axis cs:0.402890625,0.04339599609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.39984375,0) rectangle (axis cs:0.40484375,0.0008544921875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.401796875,0) rectangle (axis cs:0.406796875,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.40375,0) rectangle (axis cs:0.40875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.405703125,0) rectangle (axis cs:0.410703125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.40765625,0) rectangle (axis cs:0.41265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.409609375,0) rectangle (axis cs:0.414609375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4115625,0) rectangle (axis cs:0.4165625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.413515625,0) rectangle (axis cs:0.418515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.41546875,0) rectangle (axis cs:0.42046875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.417421875,0) rectangle (axis cs:0.422421875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.419375,0) rectangle (axis cs:0.424375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.421328125,0) rectangle (axis cs:0.426328125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.42328125,0) rectangle (axis cs:0.42828125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.425234375,0) rectangle (axis cs:0.430234375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4271875,0) rectangle (axis cs:0.4321875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.429140625,0) rectangle (axis cs:0.434140625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.43109375,0) rectangle (axis cs:0.43609375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.433046875,0) rectangle (axis cs:0.438046875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.435,0) rectangle (axis cs:0.44,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.436953125,0) rectangle (axis cs:0.441953125,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.43890625,0) rectangle (axis cs:0.44390625,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.440859375,0) rectangle (axis cs:0.445859375,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4428125,0) rectangle (axis cs:0.4478125,0.00091552734375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.444765625,0) rectangle (axis cs:0.449765625,0.00262451171875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.44671875,0) rectangle (axis cs:0.45171875,0.02874755859375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.448671875,0) rectangle (axis cs:0.453671875,0.0126953125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.450625,0) rectangle (axis cs:0.455625,0.00213623046875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.452578125,0) rectangle (axis cs:0.457578125,0.000732421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.45453125,0) rectangle (axis cs:0.45953125,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.456484375,0) rectangle (axis cs:0.461484375,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4584375,0) rectangle (axis cs:0.4634375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.460390625,0) rectangle (axis cs:0.465390625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.46234375,0) rectangle (axis cs:0.46734375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.464296875,0) rectangle (axis cs:0.469296875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.46625,0) rectangle (axis cs:0.47125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.468203125,0) rectangle (axis cs:0.473203125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.47015625,0) rectangle (axis cs:0.47515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.472109375,0) rectangle (axis cs:0.477109375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4740625,0) rectangle (axis cs:0.4790625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.476015625,0) rectangle (axis cs:0.481015625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.47796875,0) rectangle (axis cs:0.48296875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.479921875,0) rectangle (axis cs:0.484921875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.481875,0) rectangle (axis cs:0.486875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.483828125,0) rectangle (axis cs:0.488828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.48578125,0) rectangle (axis cs:0.49078125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.487734375,0) rectangle (axis cs:0.492734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4896875,0) rectangle (axis cs:0.4946875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.491640625,0) rectangle (axis cs:0.496640625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.49359375,0) rectangle (axis cs:0.49859375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.495546875,0) rectangle (axis cs:0.500546875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.4975,0) rectangle (axis cs:0.5025,0.050048828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.499453125,0) rectangle (axis cs:0.504453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.50140625,0) rectangle (axis cs:0.50640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.503359375,0) rectangle (axis cs:0.508359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5053125,0) rectangle (axis cs:0.5103125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.507265625,0) rectangle (axis cs:0.512265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.50921875,0) rectangle (axis cs:0.51421875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.511171875,0) rectangle (axis cs:0.516171875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.513125,0) rectangle (axis cs:0.518125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.515078125,0) rectangle (axis cs:0.520078125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.51703125,0) rectangle (axis cs:0.52203125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.518984375,0) rectangle (axis cs:0.523984375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5209375,0) rectangle (axis cs:0.5259375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.522890625,0) rectangle (axis cs:0.527890625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.52484375,0) rectangle (axis cs:0.52984375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.526796875,0) rectangle (axis cs:0.531796875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.52875,0) rectangle (axis cs:0.53375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.530703125,0) rectangle (axis cs:0.535703125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.53265625,0) rectangle (axis cs:0.53765625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.534609375,0) rectangle (axis cs:0.539609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5365625,0) rectangle (axis cs:0.5415625,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.538515625,0) rectangle (axis cs:0.543515625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.54046875,0) rectangle (axis cs:0.54546875,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.542421875,0) rectangle (axis cs:0.547421875,0.0008544921875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.544375,0) rectangle (axis cs:0.549375,0.0015869140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.546328125,0) rectangle (axis cs:0.551328125,0.012451171875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.54828125,0) rectangle (axis cs:0.55328125,0.02923583984375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.550234375,0) rectangle (axis cs:0.555234375,0.0023193359375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5521875,0) rectangle (axis cs:0.5571875,0.0008544921875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.554140625,0) rectangle (axis cs:0.559140625,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.55609375,0) rectangle (axis cs:0.56109375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.558046875,0) rectangle (axis cs:0.563046875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.56,0) rectangle (axis cs:0.565,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.561953125,0) rectangle (axis cs:0.566953125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.56390625,0) rectangle (axis cs:0.56890625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.565859375,0) rectangle (axis cs:0.570859375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5678125,0) rectangle (axis cs:0.5728125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.569765625,0) rectangle (axis cs:0.574765625,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.57171875,0) rectangle (axis cs:0.57671875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.573671875,0) rectangle (axis cs:0.578671875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.575625,0) rectangle (axis cs:0.580625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.577578125,0) rectangle (axis cs:0.582578125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.57953125,0) rectangle (axis cs:0.58453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.581484375,0) rectangle (axis cs:0.586484375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5834375,0) rectangle (axis cs:0.5884375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.585390625,0) rectangle (axis cs:0.590390625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.58734375,0) rectangle (axis cs:0.59234375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.589296875,0) rectangle (axis cs:0.594296875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.59125,0) rectangle (axis cs:0.59625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.593203125,0) rectangle (axis cs:0.598203125,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.59515625,0) rectangle (axis cs:0.60015625,0.00128173828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.597109375,0) rectangle (axis cs:0.602109375,0.0460205078125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.5990625,0) rectangle (axis cs:0.6040625,0.0023193359375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.601015625,0) rectangle (axis cs:0.606015625,0.00054931640625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.60296875,0) rectangle (axis cs:0.60796875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.604921875,0) rectangle (axis cs:0.609921875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.606875,0) rectangle (axis cs:0.611875,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.608828125,0) rectangle (axis cs:0.613828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.61078125,0) rectangle (axis cs:0.61578125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.612734375,0) rectangle (axis cs:0.617734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6146875,0) rectangle (axis cs:0.6196875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.616640625,0) rectangle (axis cs:0.621640625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.61859375,0) rectangle (axis cs:0.62359375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.620546875,0) rectangle (axis cs:0.625546875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6225,0) rectangle (axis cs:0.6275,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.624453125,0) rectangle (axis cs:0.629453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.62640625,0) rectangle (axis cs:0.63140625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.628359375,0) rectangle (axis cs:0.633359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6303125,0) rectangle (axis cs:0.6353125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.632265625,0) rectangle (axis cs:0.637265625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.63421875,0) rectangle (axis cs:0.63921875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.636171875,0) rectangle (axis cs:0.641171875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.638125,0) rectangle (axis cs:0.643125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.640078125,0) rectangle (axis cs:0.645078125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.64203125,0) rectangle (axis cs:0.64703125,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.643984375,0) rectangle (axis cs:0.648984375,0.00048828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6459375,0) rectangle (axis cs:0.6509375,0.002197265625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.647890625,0) rectangle (axis cs:0.652890625,0.04498291015625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.64984375,0) rectangle (axis cs:0.65484375,0.000732421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.651796875,0) rectangle (axis cs:0.656796875,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.65375,0) rectangle (axis cs:0.65875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.655703125,0) rectangle (axis cs:0.660703125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.65765625,0) rectangle (axis cs:0.66265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.659609375,0) rectangle (axis cs:0.664609375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6615625,0) rectangle (axis cs:0.6665625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.663515625,0) rectangle (axis cs:0.668515625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.66546875,0) rectangle (axis cs:0.67046875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.667421875,0) rectangle (axis cs:0.672421875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.669375,0) rectangle (axis cs:0.674375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.671328125,0) rectangle (axis cs:0.676328125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.67328125,0) rectangle (axis cs:0.67828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.675234375,0) rectangle (axis cs:0.680234375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6771875,0) rectangle (axis cs:0.6821875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.679140625,0) rectangle (axis cs:0.684140625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.68109375,0) rectangle (axis cs:0.68609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.683046875,0) rectangle (axis cs:0.688046875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.685,0) rectangle (axis cs:0.69,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.686953125,0) rectangle (axis cs:0.691953125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.68890625,0) rectangle (axis cs:0.69390625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.690859375,0) rectangle (axis cs:0.695859375,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.6928125,0) rectangle (axis cs:0.6978125,0.0006103515625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.694765625,0) rectangle (axis cs:0.699765625,0.003173828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.69671875,0) rectangle (axis cs:0.70171875,0.02911376953125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.698671875,0) rectangle (axis cs:0.703671875,0.012451171875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.700625,0) rectangle (axis cs:0.705625,0.00201416015625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.702578125,0) rectangle (axis cs:0.707578125,0.00079345703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.70453125,0) rectangle (axis cs:0.70953125,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.706484375,0) rectangle (axis cs:0.711484375,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7084375,0) rectangle (axis cs:0.7134375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.710390625,0) rectangle (axis cs:0.715390625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.71234375,0) rectangle (axis cs:0.71734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.714296875,0) rectangle (axis cs:0.719296875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.71625,0) rectangle (axis cs:0.72125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.718203125,0) rectangle (axis cs:0.723203125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.72015625,0) rectangle (axis cs:0.72515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.722109375,0) rectangle (axis cs:0.727109375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7240625,0) rectangle (axis cs:0.7290625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.726015625,0) rectangle (axis cs:0.731015625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.72796875,0) rectangle (axis cs:0.73296875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.729921875,0) rectangle (axis cs:0.734921875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.731875,0) rectangle (axis cs:0.736875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.733828125,0) rectangle (axis cs:0.738828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.73578125,0) rectangle (axis cs:0.74078125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.737734375,0) rectangle (axis cs:0.742734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7396875,0) rectangle (axis cs:0.7446875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.741640625,0) rectangle (axis cs:0.746640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.74359375,0) rectangle (axis cs:0.74859375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.745546875,0) rectangle (axis cs:0.750546875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7475,0) rectangle (axis cs:0.7525,0.05023193359375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.749453125,0) rectangle (axis cs:0.754453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.75140625,0) rectangle (axis cs:0.75640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.753359375,0) rectangle (axis cs:0.758359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7553125,0) rectangle (axis cs:0.7603125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.757265625,0) rectangle (axis cs:0.762265625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.75921875,0) rectangle (axis cs:0.76421875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.761171875,0) rectangle (axis cs:0.766171875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.763125,0) rectangle (axis cs:0.768125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.765078125,0) rectangle (axis cs:0.770078125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.76703125,0) rectangle (axis cs:0.77203125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.768984375,0) rectangle (axis cs:0.773984375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7709375,0) rectangle (axis cs:0.7759375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.772890625,0) rectangle (axis cs:0.777890625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.77484375,0) rectangle (axis cs:0.77984375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.776796875,0) rectangle (axis cs:0.781796875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.77875,0) rectangle (axis cs:0.78375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.780703125,0) rectangle (axis cs:0.785703125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.78265625,0) rectangle (axis cs:0.78765625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.784609375,0) rectangle (axis cs:0.789609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.7865625,0) rectangle (axis cs:0.7915625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.788515625,0) rectangle (axis cs:0.793515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.79046875,0) rectangle (axis cs:0.79546875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.792421875,0) rectangle (axis cs:0.797421875,0.00091552734375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.794375,0) rectangle (axis cs:0.799375,0.002197265625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.796328125,0) rectangle (axis cs:0.801328125,0.0135498046875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.79828125,0) rectangle (axis cs:0.80328125,0.028076171875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.800234375,0) rectangle (axis cs:0.805234375,0.00244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8021875,0) rectangle (axis cs:0.8071875,0.00054931640625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.804140625,0) rectangle (axis cs:0.809140625,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.80609375,0) rectangle (axis cs:0.81109375,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.808046875,0) rectangle (axis cs:0.813046875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.81,0) rectangle (axis cs:0.815,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.811953125,0) rectangle (axis cs:0.816953125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.81390625,0) rectangle (axis cs:0.81890625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.815859375,0) rectangle (axis cs:0.820859375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8178125,0) rectangle (axis cs:0.8228125,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.819765625,0) rectangle (axis cs:0.824765625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.82171875,0) rectangle (axis cs:0.82671875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.823671875,0) rectangle (axis cs:0.828671875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.825625,0) rectangle (axis cs:0.830625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.827578125,0) rectangle (axis cs:0.832578125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.82953125,0) rectangle (axis cs:0.83453125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.831484375,0) rectangle (axis cs:0.836484375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8334375,0) rectangle (axis cs:0.8384375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.835390625,0) rectangle (axis cs:0.840390625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.83734375,0) rectangle (axis cs:0.84234375,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.839296875,0) rectangle (axis cs:0.844296875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.84125,0) rectangle (axis cs:0.84625,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.843203125,0) rectangle (axis cs:0.848203125,0.00048828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.84515625,0) rectangle (axis cs:0.85015625,0.00152587890625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.847109375,0) rectangle (axis cs:0.852109375,0.0443115234375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8490625,0) rectangle (axis cs:0.8540625,0.00201416015625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.851015625,0) rectangle (axis cs:0.856015625,0.00048828125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.85296875,0) rectangle (axis cs:0.85796875,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.854921875,0) rectangle (axis cs:0.859921875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.856875,0) rectangle (axis cs:0.861875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.858828125,0) rectangle (axis cs:0.863828125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.86078125,0) rectangle (axis cs:0.86578125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.862734375,0) rectangle (axis cs:0.867734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8646875,0) rectangle (axis cs:0.8696875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.866640625,0) rectangle (axis cs:0.871640625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.86859375,0) rectangle (axis cs:0.87359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.870546875,0) rectangle (axis cs:0.875546875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8725,0) rectangle (axis cs:0.8775,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.874453125,0) rectangle (axis cs:0.879453125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.87640625,0) rectangle (axis cs:0.88140625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.878359375,0) rectangle (axis cs:0.883359375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8803125,0) rectangle (axis cs:0.8853125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.882265625,0) rectangle (axis cs:0.887265625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.88421875,0) rectangle (axis cs:0.88921875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.886171875,0) rectangle (axis cs:0.891171875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.888125,0) rectangle (axis cs:0.893125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.890078125,0) rectangle (axis cs:0.895078125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.89203125,0) rectangle (axis cs:0.89703125,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.893984375,0) rectangle (axis cs:0.898984375,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.8959375,0) rectangle (axis cs:0.9009375,0.0029296875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.897890625,0) rectangle (axis cs:0.902890625,0.0445556640625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.89984375,0) rectangle (axis cs:0.90484375,0.0013427734375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.901796875,0) rectangle (axis cs:0.906796875,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.90375,0) rectangle (axis cs:0.90875,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.905703125,0) rectangle (axis cs:0.910703125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.90765625,0) rectangle (axis cs:0.91265625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.909609375,0) rectangle (axis cs:0.914609375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.9115625,0) rectangle (axis cs:0.9165625,0.000244140625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.913515625,0) rectangle (axis cs:0.918515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.91546875,0) rectangle (axis cs:0.92046875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.917421875,0) rectangle (axis cs:0.922421875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.919375,0) rectangle (axis cs:0.924375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.921328125,0) rectangle (axis cs:0.926328125,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.92328125,0) rectangle (axis cs:0.92828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.925234375,0) rectangle (axis cs:0.930234375,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.9271875,0) rectangle (axis cs:0.9321875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.929140625,0) rectangle (axis cs:0.934140625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.93109375,0) rectangle (axis cs:0.93609375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.933046875,0) rectangle (axis cs:0.938046875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.935,0) rectangle (axis cs:0.94,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.936953125,0) rectangle (axis cs:0.941953125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.93890625,0) rectangle (axis cs:0.94390625,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.940859375,0) rectangle (axis cs:0.945859375,0.00054931640625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.9428125,0) rectangle (axis cs:0.9478125,0.00030517578125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.944765625,0) rectangle (axis cs:0.949765625,0.00238037109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.94671875,0) rectangle (axis cs:0.95171875,0.02587890625);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.948671875,0) rectangle (axis cs:0.953671875,0.0125732421875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.950625,0) rectangle (axis cs:0.955625,0.0020751953125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.952578125,0) rectangle (axis cs:0.957578125,0.00042724609375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.95453125,0) rectangle (axis cs:0.95953125,0.0003662109375);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.956484375,0) rectangle (axis cs:0.961484375,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.9584375,0) rectangle (axis cs:0.9634375,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.960390625,0) rectangle (axis cs:0.965390625,0.0001220703125);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.96234375,0) rectangle (axis cs:0.96734375,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.964296875,0) rectangle (axis cs:0.969296875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.96625,0) rectangle (axis cs:0.97125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.968203125,0) rectangle (axis cs:0.973203125,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.97015625,0) rectangle (axis cs:0.97515625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.972109375,0) rectangle (axis cs:0.977109375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.9740625,0) rectangle (axis cs:0.9790625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.976015625,0) rectangle (axis cs:0.981015625,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.97796875,0) rectangle (axis cs:0.98296875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.979921875,0) rectangle (axis cs:0.984921875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.981875,0) rectangle (axis cs:0.986875,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.983828125,0) rectangle (axis cs:0.988828125,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.98578125,0) rectangle (axis cs:0.99078125,0.00018310546875);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.987734375,0) rectangle (axis cs:0.992734375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.9896875,0) rectangle (axis cs:0.9946875,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.991640625,0) rectangle (axis cs:0.996640625,6.103515625e-05);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.99359375,0) rectangle (axis cs:0.99859375,0);
-\draw[draw=none,fill=steelblue31119180] (axis cs:0.995546875,0) rectangle (axis cs:1.000546875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:-0.0025,0) rectangle (axis cs:0.0025,0.04730224609375);
+\addlegendimage{ybar,ybar legend,draw=none,fill=royalblue}
+\addlegendentry{Numerical result}
+
+\draw[draw=none,fill=royalblue] (axis cs:-0.000546875,0) rectangle (axis cs:0.004453125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.00140625,0) rectangle (axis cs:0.00640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.003359375,0) rectangle (axis cs:0.008359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.0053125,0) rectangle (axis cs:0.0103125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.007265625,0) rectangle (axis cs:0.012265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.00921875,0) rectangle (axis cs:0.01421875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.011171875,0) rectangle (axis cs:0.016171875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.013125,0) rectangle (axis cs:0.018125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.015078125,0) rectangle (axis cs:0.020078125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.01703125,0) rectangle (axis cs:0.02203125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.018984375,0) rectangle (axis cs:0.023984375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.0209375,0) rectangle (axis cs:0.0259375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.022890625,0) rectangle (axis cs:0.027890625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.02484375,0) rectangle (axis cs:0.02984375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.026796875,0) rectangle (axis cs:0.031796875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.02875,0) rectangle (axis cs:0.03375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.030703125,0) rectangle (axis cs:0.035703125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.03265625,0) rectangle (axis cs:0.03765625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.034609375,0) rectangle (axis cs:0.039609375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.0365625,0) rectangle (axis cs:0.0415625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.038515625,0) rectangle (axis cs:0.043515625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.04046875,0) rectangle (axis cs:0.04546875,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.042421875,0) rectangle (axis cs:0.047421875,0.0008544921875);
+\draw[draw=none,fill=royalblue] (axis cs:0.044375,0) rectangle (axis cs:0.049375,0.00146484375);
+\draw[draw=none,fill=royalblue] (axis cs:0.046328125,0) rectangle (axis cs:0.051328125,0.0123291015625);
+\draw[draw=none,fill=royalblue] (axis cs:0.04828125,0) rectangle (axis cs:0.05328125,0.0294189453125);
+\draw[draw=none,fill=royalblue] (axis cs:0.050234375,0) rectangle (axis cs:0.055234375,0.00311279296875);
+\draw[draw=none,fill=royalblue] (axis cs:0.0521875,0) rectangle (axis cs:0.0571875,0.00091552734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.054140625,0) rectangle (axis cs:0.059140625,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.05609375,0) rectangle (axis cs:0.06109375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.058046875,0) rectangle (axis cs:0.063046875,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.06,0) rectangle (axis cs:0.065,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.061953125,0) rectangle (axis cs:0.066953125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.06390625,0) rectangle (axis cs:0.06890625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.065859375,0) rectangle (axis cs:0.070859375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.0678125,0) rectangle (axis cs:0.0728125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.069765625,0) rectangle (axis cs:0.074765625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.07171875,0) rectangle (axis cs:0.07671875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.073671875,0) rectangle (axis cs:0.078671875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.075625,0) rectangle (axis cs:0.080625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.077578125,0) rectangle (axis cs:0.082578125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.07953125,0) rectangle (axis cs:0.08453125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.081484375,0) rectangle (axis cs:0.086484375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.0834375,0) rectangle (axis cs:0.0884375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.085390625,0) rectangle (axis cs:0.090390625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.08734375,0) rectangle (axis cs:0.09234375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.089296875,0) rectangle (axis cs:0.094296875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.09125,0) rectangle (axis cs:0.09625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.093203125,0) rectangle (axis cs:0.098203125,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.09515625,0) rectangle (axis cs:0.10015625,0.00091552734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.097109375,0) rectangle (axis cs:0.102109375,0.04290771484375);
+\draw[draw=none,fill=royalblue] (axis cs:0.0990625,0) rectangle (axis cs:0.1040625,0.0028076171875);
+\draw[draw=none,fill=royalblue] (axis cs:0.101015625,0) rectangle (axis cs:0.106015625,0.00079345703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.10296875,0) rectangle (axis cs:0.10796875,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.104921875,0) rectangle (axis cs:0.109921875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.106875,0) rectangle (axis cs:0.111875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.108828125,0) rectangle (axis cs:0.113828125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.11078125,0) rectangle (axis cs:0.11578125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.112734375,0) rectangle (axis cs:0.117734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.1146875,0) rectangle (axis cs:0.1196875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.116640625,0) rectangle (axis cs:0.121640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.11859375,0) rectangle (axis cs:0.12359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.120546875,0) rectangle (axis cs:0.125546875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.1225,0) rectangle (axis cs:0.1275,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.124453125,0) rectangle (axis cs:0.129453125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.12640625,0) rectangle (axis cs:0.13140625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.128359375,0) rectangle (axis cs:0.133359375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.1303125,0) rectangle (axis cs:0.1353125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.132265625,0) rectangle (axis cs:0.137265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.13421875,0) rectangle (axis cs:0.13921875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.136171875,0) rectangle (axis cs:0.141171875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.138125,0) rectangle (axis cs:0.143125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.140078125,0) rectangle (axis cs:0.145078125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.14203125,0) rectangle (axis cs:0.14703125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.143984375,0) rectangle (axis cs:0.148984375,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.1459375,0) rectangle (axis cs:0.1509375,0.0025634765625);
+\draw[draw=none,fill=royalblue] (axis cs:0.147890625,0) rectangle (axis cs:0.152890625,0.04278564453125);
+\draw[draw=none,fill=royalblue] (axis cs:0.14984375,0) rectangle (axis cs:0.15484375,0.00177001953125);
+\draw[draw=none,fill=royalblue] (axis cs:0.151796875,0) rectangle (axis cs:0.156796875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.15375,0) rectangle (axis cs:0.15875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.155703125,0) rectangle (axis cs:0.160703125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.15765625,0) rectangle (axis cs:0.16265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.159609375,0) rectangle (axis cs:0.164609375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.1615625,0) rectangle (axis cs:0.1665625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.163515625,0) rectangle (axis cs:0.168515625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.16546875,0) rectangle (axis cs:0.17046875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.167421875,0) rectangle (axis cs:0.172421875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.169375,0) rectangle (axis cs:0.174375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.171328125,0) rectangle (axis cs:0.176328125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.17328125,0) rectangle (axis cs:0.17828125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.175234375,0) rectangle (axis cs:0.180234375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.1771875,0) rectangle (axis cs:0.1821875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.179140625,0) rectangle (axis cs:0.184140625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.18109375,0) rectangle (axis cs:0.18609375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.183046875,0) rectangle (axis cs:0.188046875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.185,0) rectangle (axis cs:0.19,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.186953125,0) rectangle (axis cs:0.191953125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.18890625,0) rectangle (axis cs:0.19390625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.190859375,0) rectangle (axis cs:0.195859375,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.1928125,0) rectangle (axis cs:0.1978125,0.00054931640625);
+\draw[draw=none,fill=royalblue] (axis cs:0.194765625,0) rectangle (axis cs:0.199765625,0.0023193359375);
+\draw[draw=none,fill=royalblue] (axis cs:0.19671875,0) rectangle (axis cs:0.20171875,0.02685546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.198671875,0) rectangle (axis cs:0.203671875,0.01373291015625);
+\draw[draw=none,fill=royalblue] (axis cs:0.200625,0) rectangle (axis cs:0.205625,0.00201416015625);
+\draw[draw=none,fill=royalblue] (axis cs:0.202578125,0) rectangle (axis cs:0.207578125,0.0008544921875);
+\draw[draw=none,fill=royalblue] (axis cs:0.20453125,0) rectangle (axis cs:0.20953125,0.0006103515625);
+\draw[draw=none,fill=royalblue] (axis cs:0.206484375,0) rectangle (axis cs:0.211484375,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.2084375,0) rectangle (axis cs:0.2134375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.210390625,0) rectangle (axis cs:0.215390625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.21234375,0) rectangle (axis cs:0.21734375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.214296875,0) rectangle (axis cs:0.219296875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.21625,0) rectangle (axis cs:0.22125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.218203125,0) rectangle (axis cs:0.223203125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.22015625,0) rectangle (axis cs:0.22515625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.222109375,0) rectangle (axis cs:0.227109375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.2240625,0) rectangle (axis cs:0.2290625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.226015625,0) rectangle (axis cs:0.231015625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.22796875,0) rectangle (axis cs:0.23296875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.229921875,0) rectangle (axis cs:0.234921875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.231875,0) rectangle (axis cs:0.236875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.233828125,0) rectangle (axis cs:0.238828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.23578125,0) rectangle (axis cs:0.24078125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.237734375,0) rectangle (axis cs:0.242734375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.2396875,0) rectangle (axis cs:0.2446875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.241640625,0) rectangle (axis cs:0.246640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.24359375,0) rectangle (axis cs:0.24859375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.245546875,0) rectangle (axis cs:0.250546875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.2475,0) rectangle (axis cs:0.2525,0.05096435546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.249453125,0) rectangle (axis cs:0.254453125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.25140625,0) rectangle (axis cs:0.25640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.253359375,0) rectangle (axis cs:0.258359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.2553125,0) rectangle (axis cs:0.2603125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.257265625,0) rectangle (axis cs:0.262265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.25921875,0) rectangle (axis cs:0.26421875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.261171875,0) rectangle (axis cs:0.266171875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.263125,0) rectangle (axis cs:0.268125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.265078125,0) rectangle (axis cs:0.270078125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.26703125,0) rectangle (axis cs:0.27203125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.268984375,0) rectangle (axis cs:0.273984375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.2709375,0) rectangle (axis cs:0.2759375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.272890625,0) rectangle (axis cs:0.277890625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.27484375,0) rectangle (axis cs:0.27984375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.276796875,0) rectangle (axis cs:0.281796875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.27875,0) rectangle (axis cs:0.28375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.280703125,0) rectangle (axis cs:0.285703125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.28265625,0) rectangle (axis cs:0.28765625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.284609375,0) rectangle (axis cs:0.289609375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.2865625,0) rectangle (axis cs:0.2915625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.288515625,0) rectangle (axis cs:0.293515625,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.29046875,0) rectangle (axis cs:0.29546875,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.292421875,0) rectangle (axis cs:0.297421875,0.000732421875);
+\draw[draw=none,fill=royalblue] (axis cs:0.294375,0) rectangle (axis cs:0.299375,0.00225830078125);
+\draw[draw=none,fill=royalblue] (axis cs:0.296328125,0) rectangle (axis cs:0.301328125,0.01214599609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.29828125,0) rectangle (axis cs:0.30328125,0.0274658203125);
+\draw[draw=none,fill=royalblue] (axis cs:0.300234375,0) rectangle (axis cs:0.305234375,0.00225830078125);
+\draw[draw=none,fill=royalblue] (axis cs:0.3021875,0) rectangle (axis cs:0.3071875,0.0013427734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.304140625,0) rectangle (axis cs:0.309140625,0.00048828125);
+\draw[draw=none,fill=royalblue] (axis cs:0.30609375,0) rectangle (axis cs:0.31109375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.308046875,0) rectangle (axis cs:0.313046875,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.31,0) rectangle (axis cs:0.315,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.311953125,0) rectangle (axis cs:0.316953125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.31390625,0) rectangle (axis cs:0.31890625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.315859375,0) rectangle (axis cs:0.320859375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.3178125,0) rectangle (axis cs:0.3228125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.319765625,0) rectangle (axis cs:0.324765625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.32171875,0) rectangle (axis cs:0.32671875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.323671875,0) rectangle (axis cs:0.328671875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.325625,0) rectangle (axis cs:0.330625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.327578125,0) rectangle (axis cs:0.332578125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.32953125,0) rectangle (axis cs:0.33453125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.331484375,0) rectangle (axis cs:0.336484375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.3334375,0) rectangle (axis cs:0.3384375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.335390625,0) rectangle (axis cs:0.340390625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.33734375,0) rectangle (axis cs:0.34234375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.339296875,0) rectangle (axis cs:0.344296875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.34125,0) rectangle (axis cs:0.34625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.343203125,0) rectangle (axis cs:0.348203125,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.34515625,0) rectangle (axis cs:0.35015625,0.00091552734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.347109375,0) rectangle (axis cs:0.352109375,0.04345703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.3490625,0) rectangle (axis cs:0.3540625,0.00238037109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.351015625,0) rectangle (axis cs:0.356015625,0.0006103515625);
+\draw[draw=none,fill=royalblue] (axis cs:0.35296875,0) rectangle (axis cs:0.35796875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.354921875,0) rectangle (axis cs:0.359921875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.356875,0) rectangle (axis cs:0.361875,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.358828125,0) rectangle (axis cs:0.363828125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.36078125,0) rectangle (axis cs:0.36578125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.362734375,0) rectangle (axis cs:0.367734375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.3646875,0) rectangle (axis cs:0.3696875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.366640625,0) rectangle (axis cs:0.371640625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.36859375,0) rectangle (axis cs:0.37359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.370546875,0) rectangle (axis cs:0.375546875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.3725,0) rectangle (axis cs:0.3775,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.374453125,0) rectangle (axis cs:0.379453125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.37640625,0) rectangle (axis cs:0.38140625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.378359375,0) rectangle (axis cs:0.383359375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.3803125,0) rectangle (axis cs:0.3853125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.382265625,0) rectangle (axis cs:0.387265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.38421875,0) rectangle (axis cs:0.38921875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.386171875,0) rectangle (axis cs:0.391171875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.388125,0) rectangle (axis cs:0.393125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.390078125,0) rectangle (axis cs:0.395078125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.39203125,0) rectangle (axis cs:0.39703125,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.393984375,0) rectangle (axis cs:0.398984375,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.3959375,0) rectangle (axis cs:0.4009375,0.0023193359375);
+\draw[draw=none,fill=royalblue] (axis cs:0.397890625,0) rectangle (axis cs:0.402890625,0.04437255859375);
+\draw[draw=none,fill=royalblue] (axis cs:0.39984375,0) rectangle (axis cs:0.40484375,0.00091552734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.401796875,0) rectangle (axis cs:0.406796875,0.00054931640625);
+\draw[draw=none,fill=royalblue] (axis cs:0.40375,0) rectangle (axis cs:0.40875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.405703125,0) rectangle (axis cs:0.410703125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.40765625,0) rectangle (axis cs:0.41265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.409609375,0) rectangle (axis cs:0.414609375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.4115625,0) rectangle (axis cs:0.4165625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.413515625,0) rectangle (axis cs:0.418515625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.41546875,0) rectangle (axis cs:0.42046875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.417421875,0) rectangle (axis cs:0.422421875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.419375,0) rectangle (axis cs:0.424375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.421328125,0) rectangle (axis cs:0.426328125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.42328125,0) rectangle (axis cs:0.42828125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.425234375,0) rectangle (axis cs:0.430234375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.4271875,0) rectangle (axis cs:0.4321875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.429140625,0) rectangle (axis cs:0.434140625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.43109375,0) rectangle (axis cs:0.43609375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.433046875,0) rectangle (axis cs:0.438046875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.435,0) rectangle (axis cs:0.44,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.436953125,0) rectangle (axis cs:0.441953125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.43890625,0) rectangle (axis cs:0.44390625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.440859375,0) rectangle (axis cs:0.445859375,0.0008544921875);
+\draw[draw=none,fill=royalblue] (axis cs:0.4428125,0) rectangle (axis cs:0.4478125,0.00091552734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.444765625,0) rectangle (axis cs:0.449765625,0.00250244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.44671875,0) rectangle (axis cs:0.45171875,0.0306396484375);
+\draw[draw=none,fill=royalblue] (axis cs:0.448671875,0) rectangle (axis cs:0.453671875,0.0130615234375);
+\draw[draw=none,fill=royalblue] (axis cs:0.450625,0) rectangle (axis cs:0.455625,0.00201416015625);
+\draw[draw=none,fill=royalblue] (axis cs:0.452578125,0) rectangle (axis cs:0.457578125,0.000732421875);
+\draw[draw=none,fill=royalblue] (axis cs:0.45453125,0) rectangle (axis cs:0.45953125,0.00067138671875);
+\draw[draw=none,fill=royalblue] (axis cs:0.456484375,0) rectangle (axis cs:0.461484375,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.4584375,0) rectangle (axis cs:0.4634375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.460390625,0) rectangle (axis cs:0.465390625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.46234375,0) rectangle (axis cs:0.46734375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.464296875,0) rectangle (axis cs:0.469296875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.46625,0) rectangle (axis cs:0.47125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.468203125,0) rectangle (axis cs:0.473203125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.47015625,0) rectangle (axis cs:0.47515625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.472109375,0) rectangle (axis cs:0.477109375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.4740625,0) rectangle (axis cs:0.4790625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.476015625,0) rectangle (axis cs:0.481015625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.47796875,0) rectangle (axis cs:0.48296875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.479921875,0) rectangle (axis cs:0.484921875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.481875,0) rectangle (axis cs:0.486875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.483828125,0) rectangle (axis cs:0.488828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.48578125,0) rectangle (axis cs:0.49078125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.487734375,0) rectangle (axis cs:0.492734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.4896875,0) rectangle (axis cs:0.4946875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.491640625,0) rectangle (axis cs:0.496640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.49359375,0) rectangle (axis cs:0.49859375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.495546875,0) rectangle (axis cs:0.500546875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.4975,0) rectangle (axis cs:0.5025,0.04974365234375);
+\draw[draw=none,fill=royalblue] (axis cs:0.499453125,0) rectangle (axis cs:0.504453125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.50140625,0) rectangle (axis cs:0.50640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.503359375,0) rectangle (axis cs:0.508359375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.5053125,0) rectangle (axis cs:0.5103125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.507265625,0) rectangle (axis cs:0.512265625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.50921875,0) rectangle (axis cs:0.51421875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.511171875,0) rectangle (axis cs:0.516171875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.513125,0) rectangle (axis cs:0.518125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.515078125,0) rectangle (axis cs:0.520078125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.51703125,0) rectangle (axis cs:0.52203125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.518984375,0) rectangle (axis cs:0.523984375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.5209375,0) rectangle (axis cs:0.5259375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.522890625,0) rectangle (axis cs:0.527890625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.52484375,0) rectangle (axis cs:0.52984375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.526796875,0) rectangle (axis cs:0.531796875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.52875,0) rectangle (axis cs:0.53375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.530703125,0) rectangle (axis cs:0.535703125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.53265625,0) rectangle (axis cs:0.53765625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.534609375,0) rectangle (axis cs:0.539609375,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.5365625,0) rectangle (axis cs:0.5415625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.538515625,0) rectangle (axis cs:0.543515625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.54046875,0) rectangle (axis cs:0.54546875,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.542421875,0) rectangle (axis cs:0.547421875,0.00091552734375);
+\draw[draw=none,fill=royalblue] (axis cs:0.544375,0) rectangle (axis cs:0.549375,0.00177001953125);
+\draw[draw=none,fill=royalblue] (axis cs:0.546328125,0) rectangle (axis cs:0.551328125,0.01141357421875);
+\draw[draw=none,fill=royalblue] (axis cs:0.54828125,0) rectangle (axis cs:0.55328125,0.030029296875);
+\draw[draw=none,fill=royalblue] (axis cs:0.550234375,0) rectangle (axis cs:0.555234375,0.00238037109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.5521875,0) rectangle (axis cs:0.5571875,0.00054931640625);
+\draw[draw=none,fill=royalblue] (axis cs:0.554140625,0) rectangle (axis cs:0.559140625,0.00048828125);
+\draw[draw=none,fill=royalblue] (axis cs:0.55609375,0) rectangle (axis cs:0.56109375,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.558046875,0) rectangle (axis cs:0.563046875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.56,0) rectangle (axis cs:0.565,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.561953125,0) rectangle (axis cs:0.566953125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.56390625,0) rectangle (axis cs:0.56890625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.565859375,0) rectangle (axis cs:0.570859375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.5678125,0) rectangle (axis cs:0.5728125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.569765625,0) rectangle (axis cs:0.574765625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.57171875,0) rectangle (axis cs:0.57671875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.573671875,0) rectangle (axis cs:0.578671875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.575625,0) rectangle (axis cs:0.580625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.577578125,0) rectangle (axis cs:0.582578125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.57953125,0) rectangle (axis cs:0.58453125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.581484375,0) rectangle (axis cs:0.586484375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.5834375,0) rectangle (axis cs:0.5884375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.585390625,0) rectangle (axis cs:0.590390625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.58734375,0) rectangle (axis cs:0.59234375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.589296875,0) rectangle (axis cs:0.594296875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.59125,0) rectangle (axis cs:0.59625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.593203125,0) rectangle (axis cs:0.598203125,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.59515625,0) rectangle (axis cs:0.60015625,0.001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.597109375,0) rectangle (axis cs:0.602109375,0.04412841796875);
+\draw[draw=none,fill=royalblue] (axis cs:0.5990625,0) rectangle (axis cs:0.6040625,0.00250244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.601015625,0) rectangle (axis cs:0.606015625,0.0006103515625);
+\draw[draw=none,fill=royalblue] (axis cs:0.60296875,0) rectangle (axis cs:0.60796875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.604921875,0) rectangle (axis cs:0.609921875,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.606875,0) rectangle (axis cs:0.611875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.608828125,0) rectangle (axis cs:0.613828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.61078125,0) rectangle (axis cs:0.61578125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.612734375,0) rectangle (axis cs:0.617734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.6146875,0) rectangle (axis cs:0.6196875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.616640625,0) rectangle (axis cs:0.621640625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.61859375,0) rectangle (axis cs:0.62359375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.620546875,0) rectangle (axis cs:0.625546875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.6225,0) rectangle (axis cs:0.6275,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.624453125,0) rectangle (axis cs:0.629453125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.62640625,0) rectangle (axis cs:0.63140625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.628359375,0) rectangle (axis cs:0.633359375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.6303125,0) rectangle (axis cs:0.6353125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.632265625,0) rectangle (axis cs:0.637265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.63421875,0) rectangle (axis cs:0.63921875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.636171875,0) rectangle (axis cs:0.641171875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.638125,0) rectangle (axis cs:0.643125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.640078125,0) rectangle (axis cs:0.645078125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.64203125,0) rectangle (axis cs:0.64703125,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.643984375,0) rectangle (axis cs:0.648984375,0.00048828125);
+\draw[draw=none,fill=royalblue] (axis cs:0.6459375,0) rectangle (axis cs:0.6509375,0.00311279296875);
+\draw[draw=none,fill=royalblue] (axis cs:0.647890625,0) rectangle (axis cs:0.652890625,0.0474853515625);
+\draw[draw=none,fill=royalblue] (axis cs:0.64984375,0) rectangle (axis cs:0.65484375,0.00152587890625);
+\draw[draw=none,fill=royalblue] (axis cs:0.651796875,0) rectangle (axis cs:0.656796875,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.65375,0) rectangle (axis cs:0.65875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.655703125,0) rectangle (axis cs:0.660703125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.65765625,0) rectangle (axis cs:0.66265625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.659609375,0) rectangle (axis cs:0.664609375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.6615625,0) rectangle (axis cs:0.6665625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.663515625,0) rectangle (axis cs:0.668515625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.66546875,0) rectangle (axis cs:0.67046875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.667421875,0) rectangle (axis cs:0.672421875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.669375,0) rectangle (axis cs:0.674375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.671328125,0) rectangle (axis cs:0.676328125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.67328125,0) rectangle (axis cs:0.67828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.675234375,0) rectangle (axis cs:0.680234375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.6771875,0) rectangle (axis cs:0.6821875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.679140625,0) rectangle (axis cs:0.684140625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.68109375,0) rectangle (axis cs:0.68609375,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.683046875,0) rectangle (axis cs:0.688046875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.685,0) rectangle (axis cs:0.69,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.686953125,0) rectangle (axis cs:0.691953125,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.68890625,0) rectangle (axis cs:0.69390625,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.690859375,0) rectangle (axis cs:0.695859375,0.00054931640625);
+\draw[draw=none,fill=royalblue] (axis cs:0.6928125,0) rectangle (axis cs:0.6978125,0.0008544921875);
+\draw[draw=none,fill=royalblue] (axis cs:0.694765625,0) rectangle (axis cs:0.699765625,0.00244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.69671875,0) rectangle (axis cs:0.70171875,0.0318603515625);
+\draw[draw=none,fill=royalblue] (axis cs:0.698671875,0) rectangle (axis cs:0.703671875,0.01153564453125);
+\draw[draw=none,fill=royalblue] (axis cs:0.700625,0) rectangle (axis cs:0.705625,0.00189208984375);
+\draw[draw=none,fill=royalblue] (axis cs:0.702578125,0) rectangle (axis cs:0.707578125,0.00067138671875);
+\draw[draw=none,fill=royalblue] (axis cs:0.70453125,0) rectangle (axis cs:0.70953125,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.706484375,0) rectangle (axis cs:0.711484375,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.7084375,0) rectangle (axis cs:0.7134375,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.710390625,0) rectangle (axis cs:0.715390625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.71234375,0) rectangle (axis cs:0.71734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.714296875,0) rectangle (axis cs:0.719296875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.71625,0) rectangle (axis cs:0.72125,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.718203125,0) rectangle (axis cs:0.723203125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.72015625,0) rectangle (axis cs:0.72515625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.722109375,0) rectangle (axis cs:0.727109375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.7240625,0) rectangle (axis cs:0.7290625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.726015625,0) rectangle (axis cs:0.731015625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.72796875,0) rectangle (axis cs:0.73296875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.729921875,0) rectangle (axis cs:0.734921875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.731875,0) rectangle (axis cs:0.736875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.733828125,0) rectangle (axis cs:0.738828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.73578125,0) rectangle (axis cs:0.74078125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.737734375,0) rectangle (axis cs:0.742734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.7396875,0) rectangle (axis cs:0.7446875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.741640625,0) rectangle (axis cs:0.746640625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.74359375,0) rectangle (axis cs:0.74859375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.745546875,0) rectangle (axis cs:0.750546875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.7475,0) rectangle (axis cs:0.7525,0.04888916015625);
+\draw[draw=none,fill=royalblue] (axis cs:0.749453125,0) rectangle (axis cs:0.754453125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.75140625,0) rectangle (axis cs:0.75640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.753359375,0) rectangle (axis cs:0.758359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.7553125,0) rectangle (axis cs:0.7603125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.757265625,0) rectangle (axis cs:0.762265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.75921875,0) rectangle (axis cs:0.76421875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.761171875,0) rectangle (axis cs:0.766171875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.763125,0) rectangle (axis cs:0.768125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.765078125,0) rectangle (axis cs:0.770078125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.76703125,0) rectangle (axis cs:0.77203125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.768984375,0) rectangle (axis cs:0.773984375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.7709375,0) rectangle (axis cs:0.7759375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.772890625,0) rectangle (axis cs:0.777890625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.77484375,0) rectangle (axis cs:0.77984375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.776796875,0) rectangle (axis cs:0.781796875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.77875,0) rectangle (axis cs:0.78375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.780703125,0) rectangle (axis cs:0.785703125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.78265625,0) rectangle (axis cs:0.78765625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.784609375,0) rectangle (axis cs:0.789609375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.7865625,0) rectangle (axis cs:0.7915625,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.788515625,0) rectangle (axis cs:0.793515625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.79046875,0) rectangle (axis cs:0.79546875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.792421875,0) rectangle (axis cs:0.797421875,0.00067138671875);
+\draw[draw=none,fill=royalblue] (axis cs:0.794375,0) rectangle (axis cs:0.799375,0.0015869140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.796328125,0) rectangle (axis cs:0.801328125,0.0113525390625);
+\draw[draw=none,fill=royalblue] (axis cs:0.79828125,0) rectangle (axis cs:0.80328125,0.0296630859375);
+\draw[draw=none,fill=royalblue] (axis cs:0.800234375,0) rectangle (axis cs:0.805234375,0.00225830078125);
+\draw[draw=none,fill=royalblue] (axis cs:0.8021875,0) rectangle (axis cs:0.8071875,0.0010986328125);
+\draw[draw=none,fill=royalblue] (axis cs:0.804140625,0) rectangle (axis cs:0.809140625,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.80609375,0) rectangle (axis cs:0.81109375,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.808046875,0) rectangle (axis cs:0.813046875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.81,0) rectangle (axis cs:0.815,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.811953125,0) rectangle (axis cs:0.816953125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.81390625,0) rectangle (axis cs:0.81890625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.815859375,0) rectangle (axis cs:0.820859375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.8178125,0) rectangle (axis cs:0.8228125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.819765625,0) rectangle (axis cs:0.824765625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.82171875,0) rectangle (axis cs:0.82671875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.823671875,0) rectangle (axis cs:0.828671875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.825625,0) rectangle (axis cs:0.830625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.827578125,0) rectangle (axis cs:0.832578125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.82953125,0) rectangle (axis cs:0.83453125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.831484375,0) rectangle (axis cs:0.836484375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.8334375,0) rectangle (axis cs:0.8384375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.835390625,0) rectangle (axis cs:0.840390625,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.83734375,0) rectangle (axis cs:0.84234375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.839296875,0) rectangle (axis cs:0.844296875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.84125,0) rectangle (axis cs:0.84625,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.843203125,0) rectangle (axis cs:0.848203125,0.00067138671875);
+\draw[draw=none,fill=royalblue] (axis cs:0.84515625,0) rectangle (axis cs:0.85015625,0.00152587890625);
+\draw[draw=none,fill=royalblue] (axis cs:0.847109375,0) rectangle (axis cs:0.852109375,0.040771484375);
+\draw[draw=none,fill=royalblue] (axis cs:0.8490625,0) rectangle (axis cs:0.8540625,0.0030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.851015625,0) rectangle (axis cs:0.856015625,0.00042724609375);
+\draw[draw=none,fill=royalblue] (axis cs:0.85296875,0) rectangle (axis cs:0.85796875,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.854921875,0) rectangle (axis cs:0.859921875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.856875,0) rectangle (axis cs:0.861875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.858828125,0) rectangle (axis cs:0.863828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.86078125,0) rectangle (axis cs:0.86578125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.862734375,0) rectangle (axis cs:0.867734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.8646875,0) rectangle (axis cs:0.8696875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.866640625,0) rectangle (axis cs:0.871640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.86859375,0) rectangle (axis cs:0.87359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.870546875,0) rectangle (axis cs:0.875546875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.8725,0) rectangle (axis cs:0.8775,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.874453125,0) rectangle (axis cs:0.879453125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.87640625,0) rectangle (axis cs:0.88140625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.878359375,0) rectangle (axis cs:0.883359375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.8803125,0) rectangle (axis cs:0.8853125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.882265625,0) rectangle (axis cs:0.887265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.88421875,0) rectangle (axis cs:0.88921875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.886171875,0) rectangle (axis cs:0.891171875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.888125,0) rectangle (axis cs:0.893125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.890078125,0) rectangle (axis cs:0.895078125,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.89203125,0) rectangle (axis cs:0.89703125,0.000244140625);
+\draw[draw=none,fill=royalblue] (axis cs:0.893984375,0) rectangle (axis cs:0.898984375,0.00048828125);
+\draw[draw=none,fill=royalblue] (axis cs:0.8959375,0) rectangle (axis cs:0.9009375,0.00225830078125);
+\draw[draw=none,fill=royalblue] (axis cs:0.897890625,0) rectangle (axis cs:0.902890625,0.04351806640625);
+\draw[draw=none,fill=royalblue] (axis cs:0.89984375,0) rectangle (axis cs:0.90484375,0.00128173828125);
+\draw[draw=none,fill=royalblue] (axis cs:0.901796875,0) rectangle (axis cs:0.906796875,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.90375,0) rectangle (axis cs:0.90875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.905703125,0) rectangle (axis cs:0.910703125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.90765625,0) rectangle (axis cs:0.91265625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.909609375,0) rectangle (axis cs:0.914609375,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.9115625,0) rectangle (axis cs:0.9165625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.913515625,0) rectangle (axis cs:0.918515625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.91546875,0) rectangle (axis cs:0.92046875,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.917421875,0) rectangle (axis cs:0.922421875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.919375,0) rectangle (axis cs:0.924375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.921328125,0) rectangle (axis cs:0.926328125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.92328125,0) rectangle (axis cs:0.92828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.925234375,0) rectangle (axis cs:0.930234375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.9271875,0) rectangle (axis cs:0.9321875,0.0001220703125);
+\draw[draw=none,fill=royalblue] (axis cs:0.929140625,0) rectangle (axis cs:0.934140625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.93109375,0) rectangle (axis cs:0.93609375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.933046875,0) rectangle (axis cs:0.938046875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.935,0) rectangle (axis cs:0.94,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.936953125,0) rectangle (axis cs:0.941953125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.93890625,0) rectangle (axis cs:0.94390625,0.00030517578125);
+\draw[draw=none,fill=royalblue] (axis cs:0.940859375,0) rectangle (axis cs:0.945859375,0.0003662109375);
+\draw[draw=none,fill=royalblue] (axis cs:0.9428125,0) rectangle (axis cs:0.9478125,0.00048828125);
+\draw[draw=none,fill=royalblue] (axis cs:0.944765625,0) rectangle (axis cs:0.949765625,0.0018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.94671875,0) rectangle (axis cs:0.95171875,0.0289306640625);
+\draw[draw=none,fill=royalblue] (axis cs:0.948671875,0) rectangle (axis cs:0.953671875,0.01324462890625);
+\draw[draw=none,fill=royalblue] (axis cs:0.950625,0) rectangle (axis cs:0.955625,0.001953125);
+\draw[draw=none,fill=royalblue] (axis cs:0.952578125,0) rectangle (axis cs:0.957578125,0.00067138671875);
+\draw[draw=none,fill=royalblue] (axis cs:0.95453125,0) rectangle (axis cs:0.95953125,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.956484375,0) rectangle (axis cs:0.961484375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.9584375,0) rectangle (axis cs:0.9634375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.960390625,0) rectangle (axis cs:0.965390625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.96234375,0) rectangle (axis cs:0.96734375,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.964296875,0) rectangle (axis cs:0.969296875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.96625,0) rectangle (axis cs:0.97125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.968203125,0) rectangle (axis cs:0.973203125,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.97015625,0) rectangle (axis cs:0.97515625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.972109375,0) rectangle (axis cs:0.977109375,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.9740625,0) rectangle (axis cs:0.9790625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.976015625,0) rectangle (axis cs:0.981015625,6.103515625e-05);
+\draw[draw=none,fill=royalblue] (axis cs:0.97796875,0) rectangle (axis cs:0.98296875,0.00018310546875);
+\draw[draw=none,fill=royalblue] (axis cs:0.979921875,0) rectangle (axis cs:0.984921875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.981875,0) rectangle (axis cs:0.986875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.983828125,0) rectangle (axis cs:0.988828125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.98578125,0) rectangle (axis cs:0.99078125,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.987734375,0) rectangle (axis cs:0.992734375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.9896875,0) rectangle (axis cs:0.9946875,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.991640625,0) rectangle (axis cs:0.996640625,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.99359375,0) rectangle (axis cs:0.99859375,0);
+\draw[draw=none,fill=royalblue] (axis cs:0.995546875,0) rectangle (axis cs:1.000546875,0);
+\addplot [line width=0.0004pt, orangered, opacity=1, mark=diamond*, mark size=2.5, mark options={solid}]
+table {%
+1.953125e-07 0.050018308900856
+0.0019533203125 1.83775929870633e-05
+0.0039064453125 1.85784477476201e-05
+0.0058595703125 1.89203873391823e-05
+0.0078126953125 1.94137546881199e-05
+0.0097658203125 2.00743474165203e-05
+0.0117189453125 2.09243387507181e-05
+0.0136720703125 2.19939309113637e-05
+0.0156251953125 2.33237984822956e-05
+0.0175783203125 2.49686707292751e-05
+0.0195314453125 2.70026333665481e-05
+0.0214845703125 2.95271069759451e-05
+0.0234376953125 3.26831187322376e-05
+0.0253908203125 3.66706845559098e-05
+0.0273439453125 4.17803941752787e-05
+0.0292970703125 4.84468052181882e-05
+0.0312501953125 5.73426892131112e-05
+0.0332033203125 6.95541553218983e-05
+0.0351564453125 8.69268871721877e-05
+0.0371095703125 0.000112805087109784
+0.0390626953125 0.000153768832174919
+0.0410158203125 0.000224272068126988
+0.0429689453125 0.000361397982607323
+0.0449220703125 0.00068587135350565
+0.0468751953125 0.00179849121697468
+0.0488283203125 0.0127435227326802
+0.0507814453125 0.0286391221062673
+0.0527345703125 0.00234651417501233
+0.0546876953125 0.000804342898557284
+0.0566408203125 0.00040544617622905
+0.0585939453125 0.000246059394262107
+0.0605470703125 0.000166898071077385
+0.0625001953125 0.000122086032087727
+0.0644533203125 9.44386986763586e-05
+0.0664064453125 7.63509285701996e-05
+0.0683595703125 6.40471147502014e-05
+0.0703126953125 5.54935577639122e-05
+0.0722658203125 4.9532965140385e-05
+0.0742189453125 4.54898901920168e-05
+0.0761720703125 4.29800990694743e-05
+0.0781251953125 4.18191781296219e-05
+0.0800783203125 4.19883690484145e-05
+0.0820314453125 4.36453580948659e-05
+0.0839845703125 4.71899996334071e-05
+0.0859376953125 5.3427977069129e-05
+0.0878908203125 6.39538539876679e-05
+0.0898439453125 8.21101405046633e-05
+0.0917970703125 0.000115726275511941
+0.0937501953125 0.000186674005222926
+0.0957033203125 0.000376663378242822
+0.0976564453125 0.00122948314932825
+0.0996095703125 0.0437774312648112
+0.1015626953125 0.00274601486614498
+0.1035158203125 0.000553765498599112
+0.1054689453125 0.000237044369935462
+0.1074220703125 0.000135111041303768
+0.1093751953125 9.00085108107112e-05
+0.1113283203125 6.62877390565267e-05
+0.1132814453125 5.24221810781203e-05
+0.1152345703125 4.37638707610764e-05
+0.1171876953125 3.81558976547106e-05
+0.1191408203125 3.44979278664965e-05
+0.1210939453125 3.21953725561367e-05
+0.1230470703125 3.09231051764515e-05
+0.1250001953125 3.05175799173986e-05
+0.1269533203125 3.09289885788282e-05
+0.1289064453125 3.22076016942314e-05
+0.1308595703125 3.45175200971057e-05
+0.1328126953125 3.8184647209078e-05
+0.1347658203125 4.38047974162045e-05
+0.1367189453125 5.24804408370335e-05
+0.1386720703125 6.63725967551571e-05
+0.1406251953125 9.01380978068122e-05
+0.1425783203125 0.000135325785717415
+0.1445314453125 0.000237455117995542
+0.1464845703125 0.000554812916526652
+0.1484376953125 0.00275210568086508
+0.1503908203125 0.0437655933140355
+0.1523439453125 0.00123117377419086
+0.1542970703125 0.000377216616749491
+0.1562501953125 0.000186941750004664
+0.1582033203125 0.000115881813233338
+0.1601564453125 8.22103148633492e-05
+0.1621095703125 6.40226148671863e-05
+0.1640626953125 5.34771020085031e-05
+0.1660158203125 4.72259123337426e-05
+0.1679689453125 4.36718202616044e-05
+0.1699220703125 4.20076867391483e-05
+0.1718751953125 4.18327932773651e-05
+0.1738283203125 4.29888967345953e-05
+0.1757814453125 4.54943602238597e-05
+0.1777345703125 4.95332795539524e-05
+0.1796876953125 5.54895892394455e-05
+0.1816408203125 6.40384005006012e-05
+0.1835939453125 7.6336564468139e-05
+0.1855470703125 9.44171194253436e-05
+0.1875001953125 0.000122054573499224
+0.1894533203125 0.000166852067203071
+0.1914064453125 0.000245990183271861
+0.1933595703125 0.000405336355205326
+0.1953126953125 0.000804155611304253
+0.1972658203125 0.00234623212456813
+0.1992189453125 0.0286560720446763
+0.2011720703125 0.0127298437667705
+0.2031251953125 0.00179731654442046
+0.2050783203125 0.000685493738939499
+0.2070314453125 0.000361217576504926
+0.2089845703125 0.00022416788938253
+0.2109376953125 0.000153701655584057
+0.2128908203125 0.000112758550408738
+0.2148439453125 8.68929963159164e-05
+0.2167970703125 6.95285557657037e-05
+0.2187501953125 5.7322812618597e-05
+0.2207033203125 4.8431042158307e-05
+0.2226564453125 4.17676869960996e-05
+0.2246095703125 3.66603111875266e-05
+0.2265626953125 3.26745706802916e-05
+0.2285158203125 2.95200169410568e-05
+0.2304689453125 2.6996730484424e-05
+0.2324220703125 2.49637519081036e-05
+0.2343751953125 2.33197094998482e-05
+0.2363283203125 2.19905536374098e-05
+0.2382814453125 2.09215823344278e-05
+0.2402345703125 2.00721421148461e-05
+0.2421876953125 1.94120475026967e-05
+0.2441408203125 1.89191389283631e-05
+0.2460939453125 1.85776302726682e-05
+0.2480470703125 1.83771887842878e-05
+0.2500001953125 0.0500183089008561
+0.2519533203125 1.83775929870634e-05
+0.2539064453125 1.85784477476204e-05
+0.2558595703125 1.89203873391831e-05
+0.2578126953125 1.94137546881201e-05
+0.2597658203125 2.00743474165211e-05
+0.2617189453125 2.09243387507184e-05
+0.2636720703125 2.19939309113644e-05
+0.2656251953125 2.33237984822959e-05
+0.2675783203125 2.49686707292759e-05
+0.2695314453125 2.70026333665483e-05
+0.2714845703125 2.95271069759459e-05
+0.2734376953125 3.2683118732238e-05
+0.2753908203125 3.66706845559106e-05
+0.2773439453125 4.17803941752797e-05
+0.2792970703125 4.84468052181891e-05
+0.2812501953125 5.73426892131126e-05
+0.2832033203125 6.95541553218995e-05
+0.2851564453125 8.69268871721897e-05
+0.2871095703125 0.000112805087109786
+0.2890626953125 0.000153768832174923
+0.2910158203125 0.000224272068126994
+0.2929689453125 0.000361397982607332
+0.2949220703125 0.00068587135350567
+0.2968751953125 0.00179849121697475
+0.2988283203125 0.012743522732681
+0.3007814453125 0.0286391221062664
+0.3027345703125 0.00234651417501234
+0.3046876953125 0.000804342898557293
+0.3066408203125 0.000405446176229056
+0.3085939453125 0.000246059394262111
+0.3105470703125 0.000166898071077387
+0.3125001953125 0.000122086032087728
+0.3144533203125 9.4438698676359e-05
+0.3164064453125 7.63509285701995e-05
+0.3183595703125 6.40471147502014e-05
+0.3203126953125 5.54935577639116e-05
+0.3222658203125 4.95329651403844e-05
+0.3242189453125 4.54898901920157e-05
+0.3261720703125 4.29800990694731e-05
+0.3281251953125 4.18191781296202e-05
+0.3300783203125 4.19883690484126e-05
+0.3320314453125 4.36453580948638e-05
+0.3339845703125 4.71899996334041e-05
+0.3359376953125 5.34279770691252e-05
+0.3378908203125 6.39538539876628e-05
+0.3398439453125 8.21101405046562e-05
+0.3417970703125 0.000115726275511929
+0.3437501953125 0.000186674005222906
+0.3457033203125 0.000376663378242782
+0.3476564453125 0.00122948314932813
+0.3496095703125 0.0437774312648121
+0.3515626953125 0.00274601486614454
+0.3535158203125 0.000553765498599037
+0.3554689453125 0.000237044369935432
+0.3574220703125 0.000135111041303752
+0.3593751953125 9.0008510810701e-05
+0.3613283203125 6.628773905652e-05
+0.3632814453125 5.24221810781153e-05
+0.3652345703125 4.37638707610723e-05
+0.3671876953125 3.81558976547072e-05
+0.3691408203125 3.44979278664935e-05
+0.3710939453125 3.21953725561337e-05
+0.3730470703125 3.09231051764488e-05
+0.3750001953125 3.0517579917396e-05
+0.3769533203125 3.09289885788256e-05
+0.3789064453125 3.22076016942286e-05
+0.3808595703125 3.45175200971026e-05
+0.3828126953125 3.81846472090743e-05
+0.3847658203125 4.38047974162001e-05
+0.3867189453125 5.24804408370278e-05
+0.3886720703125 6.63725967551497e-05
+0.3906251953125 9.01380978068016e-05
+0.3925783203125 0.000135325785717398
+0.3945314453125 0.000237455117995511
+0.3964845703125 0.000554812916526577
+0.3984376953125 0.00275210568086465
+0.4003908203125 0.0437655933140364
+0.4023439453125 0.00123117377419074
+0.4042970703125 0.000377216616749451
+0.4062501953125 0.000186941750004644
+0.4082033203125 0.000115881813233326
+0.4101564453125 8.22103148633411e-05
+0.4121095703125 6.40226148671804e-05
+0.4140626953125 5.34771020084988e-05
+0.4160158203125 4.72259123337392e-05
+0.4179689453125 4.36718202616018e-05
+0.4199220703125 4.20076867391461e-05
+0.4218751953125 4.18327932773634e-05
+0.4238283203125 4.29888967345938e-05
+0.4257814453125 4.54943602238584e-05
+0.4277345703125 4.95332795539512e-05
+0.4296876953125 5.54895892394444e-05
+0.4316408203125 6.40384005006003e-05
+0.4335939453125 7.63365644681382e-05
+0.4355470703125 9.44171194253428e-05
+0.4375001953125 0.000122054573499223
+0.4394533203125 0.00016685206720307
+0.4414064453125 0.00024599018327186
+0.4433595703125 0.000405336355205326
+0.4453126953125 0.000804155611304253
+0.4472658203125 0.00234623212456813
+0.4492189453125 0.0286560720446763
+0.4511720703125 0.0127298437667705
+0.4531251953125 0.00179731654442046
+0.4550783203125 0.000685493738939498
+0.4570314453125 0.000361217576504926
+0.4589845703125 0.00022416788938253
+0.4609376953125 0.000153701655584056
+0.4628908203125 0.000112758550408738
+0.4648439453125 8.68929963159161e-05
+0.4667970703125 6.95285557657033e-05
+0.4687501953125 5.73228126185967e-05
+0.4707033203125 4.84310421583067e-05
+0.4726564453125 4.17676869960991e-05
+0.4746095703125 3.66603111875263e-05
+0.4765626953125 3.26745706802912e-05
+0.4785158203125 2.95200169410564e-05
+0.4804689453125 2.69967304844237e-05
+0.4824220703125 2.49637519081032e-05
+0.4843751953125 2.33197094998479e-05
+0.4863283203125 2.19905536374094e-05
+0.4882814453125 2.09215823344273e-05
+0.4902345703125 2.00721421148458e-05
+0.4921876953125 1.94120475026963e-05
+0.4941408203125 1.89191389283627e-05
+0.4960939453125 1.85776302726678e-05
+0.4980470703125 1.83771887842873e-05
+0.5000001953125 0.050018308900856
+0.5019533203125 1.83775929870624e-05
+0.5039064453125 1.85784477476195e-05
+0.5058595703125 1.89203873391823e-05
+0.5078126953125 1.94137546881191e-05
+0.5097658203125 2.00743474165199e-05
+0.5117189453125 2.09243387507171e-05
+0.5136720703125 2.19939309113631e-05
+0.5156251953125 2.33237984822943e-05
+0.5175783203125 2.49686707292741e-05
+0.5195314453125 2.70026333665462e-05
+0.5214845703125 2.95271069759435e-05
+0.5234376953125 3.26831187322351e-05
+0.5253908203125 3.66706845559071e-05
+0.5273439453125 4.17803941752757e-05
+0.5292970703125 4.84468052181842e-05
+0.5312501953125 5.73426892131066e-05
+0.5332033203125 6.95541553218917e-05
+0.5351564453125 8.69268871721797e-05
+0.5371095703125 0.000112805087109773
+0.5390626953125 0.000153768832174903
+0.5410158203125 0.000224272068126963
+0.5429689453125 0.00036139798260728
+0.5449220703125 0.000685871353505562
+0.5468751953125 0.00179849121697441
+0.5488283203125 0.0127435227326771
+0.5507814453125 0.0286391221062712
+0.5527345703125 0.00234651417501226
+0.5546876953125 0.000804342898557239
+0.5566408203125 0.000405446176229023
+0.5585939453125 0.00024605939426209
+0.5605470703125 0.000166898071077373
+0.5625001953125 0.000122086032087718
+0.5644533203125 9.44386986763516e-05
+0.5664064453125 7.63509285701941e-05
+0.5683595703125 6.40471147501972e-05
+0.5703126953125 5.54935577639088e-05
+0.5722658203125 4.95329651403824e-05
+0.5742189453125 4.54898901920148e-05
+0.5761720703125 4.29800990694727e-05
+0.5781251953125 4.1819178129621e-05
+0.5800783203125 4.1988369048414e-05
+0.5820314453125 4.36453580948665e-05
+0.5839845703125 4.71899996334082e-05
+0.5859376953125 5.34279770691313e-05
+0.5878908203125 6.39538539876717e-05
+0.5898439453125 8.21101405046695e-05
+0.5917970703125 0.000115726275511951
+0.5937501953125 0.000186674005222944
+0.5957033203125 0.00037666337824286
+0.5976564453125 0.00122948314932837
+0.5996095703125 0.0437774312648104
+0.6015626953125 0.0027460148661454
+0.6035158203125 0.000553765498599185
+0.6054689453125 0.000237044369935491
+0.6074220703125 0.000135111041303782
+0.6093751953125 9.00085108107193e-05
+0.6113283203125 6.62877390565315e-05
+0.6132814453125 5.2422181078123e-05
+0.6152345703125 4.37638707610778e-05
+0.6171876953125 3.81558976547108e-05
+0.6191408203125 3.44979278664958e-05
+0.6210939453125 3.2195372556135e-05
+0.6230470703125 3.09231051764492e-05
+0.6250001953125 3.05175799173956e-05
+0.6269533203125 3.09289885788243e-05
+0.6289064453125 3.22076016942264e-05
+0.6308595703125 3.45175200970993e-05
+0.6328126953125 3.81846472090699e-05
+0.6347658203125 4.38047974161938e-05
+0.6367189453125 5.24804408370192e-05
+0.6386720703125 6.63725967551373e-05
+0.6406251953125 9.01380978067827e-05
+0.6425783203125 0.000135325785717367
+0.6445314453125 0.000237455117995452
+0.6464845703125 0.000554812916526427
+0.6484376953125 0.00275210568086379
+0.6503908203125 0.0437655933140381
+0.6523439453125 0.0012311737741905
+0.6542970703125 0.000377216616749372
+0.6562501953125 0.000186941750004606
+0.6582033203125 0.000115881813233303
+0.6601564453125 8.22103148633262e-05
+0.6621095703125 6.40226148671699e-05
+0.6640626953125 5.34771020084909e-05
+0.6660158203125 4.72259123337332e-05
+0.6679689453125 4.3671820261597e-05
+0.6699220703125 4.20076867391424e-05
+0.6718751953125 4.183279327736e-05
+0.6738283203125 4.29888967345912e-05
+0.6757814453125 4.5494360223856e-05
+0.6777345703125 4.95332795539493e-05
+0.6796876953125 5.54895892394425e-05
+0.6816408203125 6.40384005005988e-05
+0.6835939453125 7.63365644681367e-05
+0.6855470703125 9.44171194253416e-05
+0.6875001953125 0.000122054573499222
+0.6894533203125 0.000166852067203069
+0.6914064453125 0.00024599018327186
+0.6933595703125 0.000405336355205325
+0.6953126953125 0.000804155611304252
+0.6972658203125 0.00234623212456813
+0.6992189453125 0.0286560720446763
+0.7011720703125 0.0127298437667705
+0.7031251953125 0.00179731654442046
+0.7050783203125 0.000685493738939498
+0.7070314453125 0.000361217576504925
+0.7089845703125 0.000224167889382529
+0.7109376953125 0.000153701655584056
+0.7128908203125 0.000112758550408738
+0.7148439453125 8.68929963159156e-05
+0.7167970703125 6.95285557657028e-05
+0.7187501953125 5.73228126185962e-05
+0.7207033203125 4.84310421583063e-05
+0.7226564453125 4.17676869960988e-05
+0.7246095703125 3.66603111875258e-05
+0.7265626953125 3.26745706802909e-05
+0.7285158203125 2.9520016941056e-05
+0.7304689453125 2.69967304844233e-05
+0.7324220703125 2.49637519081027e-05
+0.7343751953125 2.33197094998475e-05
+0.7363283203125 2.1990553637409e-05
+0.7382814453125 2.0921582334427e-05
+0.7402345703125 2.00721421148454e-05
+0.7421876953125 1.94120475026958e-05
+0.7441408203125 1.89191389283622e-05
+0.7460939453125 1.85776302726673e-05
+0.7480470703125 1.83771887842865e-05
+0.7500001953125 0.050018308900856
+0.7519533203125 1.8377592987062e-05
+0.7539064453125 1.85784477476191e-05
+0.7558595703125 1.8920387339182e-05
+0.7578126953125 1.94137546881187e-05
+0.7597658203125 2.00743474165196e-05
+0.7617189453125 2.09243387507168e-05
+0.7636720703125 2.19939309113628e-05
+0.7656251953125 2.3323798482294e-05
+0.7675783203125 2.49686707292738e-05
+0.7695314453125 2.70026333665459e-05
+0.7714845703125 2.95271069759433e-05
+0.7734376953125 3.26831187322348e-05
+0.7753908203125 3.66706845559069e-05
+0.7773439453125 4.17803941752755e-05
+0.7792970703125 4.8446805218184e-05
+0.7812501953125 5.73426892131064e-05
+0.7832033203125 6.95541553218916e-05
+0.7851564453125 8.69268871721795e-05
+0.7871095703125 0.000112805087109773
+0.7890626953125 0.000153768832174903
+0.7910158203125 0.000224272068126963
+0.7929689453125 0.00036139798260728
+0.7949220703125 0.000685871353505561
+0.7968751953125 0.00179849121697441
+0.7988283203125 0.0127435227326771
+0.8007814453125 0.0286391221062712
+0.8027345703125 0.00234651417501226
+0.8046876953125 0.000804342898557239
+0.8066408203125 0.000405446176229023
+0.8085939453125 0.00024605939426209
+0.8105470703125 0.000166898071077373
+0.8125001953125 0.000122086032087718
+0.8144533203125 9.44386986763515e-05
+0.8164064453125 7.6350928570194e-05
+0.8183595703125 6.40471147501971e-05
+0.8203126953125 5.54935577639088e-05
+0.8222658203125 4.95329651403824e-05
+0.8242189453125 4.54898901920146e-05
+0.8261720703125 4.29800990694727e-05
+0.8281251953125 4.18191781296208e-05
+0.8300783203125 4.1988369048414e-05
+0.8320314453125 4.36453580948663e-05
+0.8339845703125 4.71899996334082e-05
+0.8359376953125 5.34279770691312e-05
+0.8378908203125 6.39538539876716e-05
+0.8398439453125 8.21101405046694e-05
+0.8417970703125 0.000115726275511951
+0.8437501953125 0.000186674005222944
+0.8457033203125 0.000376663378242859
+0.8476564453125 0.00122948314932837
+0.8496095703125 0.0437774312648104
+0.8515626953125 0.0027460148661454
+0.8535158203125 0.000553765498599185
+0.8554689453125 0.000237044369935491
+0.8574220703125 0.000135111041303782
+0.8593751953125 9.00085108107192e-05
+0.8613283203125 6.62877390565314e-05
+0.8632814453125 5.24221810781229e-05
+0.8652345703125 4.37638707610778e-05
+0.8671876953125 3.81558976547106e-05
+0.8691408203125 3.44979278664959e-05
+0.8710939453125 3.21953725561349e-05
+0.8730470703125 3.09231051764493e-05
+0.8750001953125 3.05175799173955e-05
+0.8769533203125 3.09289885788243e-05
+0.8789064453125 3.22076016942263e-05
+0.8808595703125 3.45175200970992e-05
+0.8828126953125 3.81846472090698e-05
+0.8847658203125 4.38047974161938e-05
+0.8867189453125 5.24804408370192e-05
+0.8886720703125 6.63725967551371e-05
+0.8906251953125 9.01380978067828e-05
+0.8925783203125 0.000135325785717367
+0.8945314453125 0.000237455117995452
+0.8964845703125 0.000554812916526427
+0.8984376953125 0.00275210568086379
+0.9003908203125 0.0437655933140381
+0.9023439453125 0.0012311737741905
+0.9042970703125 0.000377216616749371
+0.9062501953125 0.000186941750004605
+0.9082033203125 0.000115881813233303
+0.9101564453125 8.2210314863326e-05
+0.9121095703125 6.40226148671699e-05
+0.9140626953125 5.34771020084908e-05
+0.9160158203125 4.72259123337332e-05
+0.9179689453125 4.36718202615968e-05
+0.9199220703125 4.20076867391424e-05
+0.9218751953125 4.18327932773599e-05
+0.9238283203125 4.29888967345912e-05
+0.9257814453125 4.5494360223856e-05
+0.9277345703125 4.95332795539491e-05
+0.9296876953125 5.54895892394426e-05
+0.9316408203125 6.40384005005986e-05
+0.9335939453125 7.63365644681368e-05
+0.9355470703125 9.44171194253414e-05
+0.9375001953125 0.000122054573499222
+0.9394533203125 0.000166852067203069
+0.9414064453125 0.00024599018327186
+0.9433595703125 0.000405336355205325
+0.9453126953125 0.000804155611304252
+0.9472658203125 0.00234623212456813
+0.9492189453125 0.0286560720446762
+0.9511720703125 0.0127298437667705
+0.9531251953125 0.00179731654442046
+0.9550783203125 0.000685493738939498
+0.9570314453125 0.000361217576504925
+0.9589845703125 0.000224167889382529
+0.9609376953125 0.000153701655584056
+0.9628908203125 0.000112758550408738
+0.9648439453125 8.68929963159154e-05
+0.9667970703125 6.95285557657028e-05
+0.9687501953125 5.73228126185964e-05
+0.9707033203125 4.8431042158306e-05
+0.9726564453125 4.17676869960989e-05
+0.9746095703125 3.66603111875255e-05
+0.9765626953125 3.2674570680291e-05
+0.9785158203125 2.95200169410556e-05
+0.9804689453125 2.69967304844234e-05
+0.9824220703125 2.49637519081024e-05
+0.9843751953125 2.33197094998475e-05
+0.9863283203125 2.19905536374086e-05
+0.9882814453125 2.09215823344269e-05
+0.9902345703125 2.00721421148457e-05
+0.9921876953125 1.94120475026953e-05
+0.9941408203125 1.89191389283624e-05
+0.9960939453125 1.85776302726667e-05
+0.9980470703125 1.83771887842865e-05
+};
+\addlegendentry{Analytical result}
 \end{axis}
 
 \end{tikzpicture}

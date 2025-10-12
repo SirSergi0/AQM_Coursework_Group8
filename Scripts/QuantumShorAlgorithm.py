@@ -48,7 +48,18 @@ def to_fraction(x, pos):
 
 def AnalyticalResult(r,q):
     d = [i for i in range(r)]
-    x = np.sort(np.union1d(np.arange(0, q) + 0.01, np.arange(0, ) - 0.01))
+    # x = np.union1d(np.array(np.arange(0,q) + 0.01),
+    #                     np.array([np.arange(0,q) + 0.02,
+    #                      np.arange(0,q) + 0.03,
+    #                      np.arange(0,q) + 0.04,
+    #                      np.arange(0,q) + 0.05,
+    #                      np.arange(0,q) - 0.01,
+    #                      np.arange(0,q) - 0.02,
+    #                      np.arange(0,q) - 0.03,
+    #                      np.arange(0,q) - 0.04,
+    #                      np.arange(0,q) - 0.05]))
+    # x = np.sort(np.union1d(np.arange(0, q) + 0.01, np.arange(0, ) - 0.01))
+    x = np.arange(0, q) + 0.0001
     y = np.zeros(len(x))
 
     for k, i in enumerate(x):
@@ -95,12 +106,14 @@ for i in tqdm(range (4,17), "Shit happens"):
 
 
     # plt.figure(figsize=(10,5))
-    plt.bar(x_UwU, y, width=0.005, align='center', label = 'Numerical result')  # width ~ spacing between your x values
+    # plt.bar(x_UwU, y, width=0.005, align='center', label = 'Numerical result')  # width ~ spacing between your x values
+    plt.bar(x_UwU, y, width=0.005, align='center', color='royalblue', label = 'Numerical result')
     
     WTFErnesto = AnalyticalResult(r_real,2**n_count)
-    plt.plot(WTFErnesto[0], WTFErnesto[1], color='orange', linewidth=1.5, linestyle='dotted', label='Analytical result')
+    # plt.plot(WTFErnesto[0], WTFErnesto[1], color='orange', linewidth=1.5, linestyle='dotted', label='Analytical result')
+    plt.plot(WTFErnesto[0], WTFErnesto[1], linewidth=0.001, color='orangered', marker='d', markersize=5,label='Analytical result',  alpha=1)
 
-    plt.xlabel(r"$\frac{d}{r}$", fontsize=16)
+    plt.xlabel(r"$\frac{\tilde{c}}{q}$", fontsize=16)
     plt.ylabel("Relative frequency")
     plt.legend(loc='upper right')
     
@@ -111,6 +124,7 @@ for i in tqdm(range (4,17), "Shit happens"):
 
     # plot_histogram(countsNumeric,  title = f"N = {N}; n_count = {n_count}")
     plt.savefig(f"../Plots/FractionsPlotBinaryN{N}n_count{n_count}.jpg",dpi=300,bbox_inches='tight')
+    plt.savefig(f"../Plots/FractionsPlotBinaryN{N}n_count{n_count}.pdf",dpi=300,bbox_inches='tight')
     matplot2tikz.save(f"../Plots/FractionsPlotBinaryN{N}n_count{n_count}..tex")
     plt.close()
 
@@ -122,12 +136,12 @@ for i in tqdm(range (4,17), "Shit happens"):
         # Add these values to the rows in our table:
         frac = Fraction(phase).limit_denominator(N)
         # rows.append([f"{output}(bin) = {decimal:>3}(dec)", f"{decimal}/{2**n_count} = {phase:.2f}",f"{frac.numerator}/{frac.denominator}", frac.denominator, np.gcd(x**(frac.denominator//2)-1, N), np.gcd(x**(frac.denominator//2)+1, N)])
-        if (np.gcd(x**(frac.denominator//2)-1, N) not in [1,N]) or (np.gcd(x**(frac.denominator//2)+1, N) not in [1,N]): # Getting rid of trivial divisors,
-            rows.append([f"{output}(bin) = {decimal:>3}(dec)", f"{frac.numerator}/{frac.denominator}", frac.denominator, np.gcd(x**(frac.denominator//2)-1, N), np.gcd(x**(frac.denominator//2)+1, N)])
+        if (np.gcd(x**(frac.denominator//2)-1, N) not in [1,N]) or (np.gcd(x**iterations(frac.denominator//2)+1, N) not in [1,N]): # Getting rid of trivial divisors,
+            rows.append([f"{output}(bin) = {decimal:>3}(dec)", f"{frac.numerator}/{frac.denominator}", frac.denominator, np.gcd(x**(frac.denominator//2)-1, N), np.gcd(x**(frac.denominator//2)+1, N), counts[output]])
             r_guess.append(frac.denominator)
     # Print the rows in a table
     # headers=["Register Output", "Phase", "Fraction", "Guess for r", "guess1","guess2"]
-    headers = ["Register Output", "Fraction", "Guess for r", "guess1","guess2"]
+    headers = ["Register Output", "Fraction", "Guess for r", "guess1","guess2", "iterations"]
     df      = pd.DataFrame(rows, columns=headers)
 
     df.to_csv(f'../Plots/FractionsPlotN{N}n_count{n_count}.csv', index=False)

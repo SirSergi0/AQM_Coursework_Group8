@@ -1,0 +1,30 @@
+\documentclass{standalone}
+% \usepackage{yquant}
+\usepackage{quantikz}
+\usepackage{tikz}
+% \usepackage{subcaption}
+% \usepackage{pgfplots}
+% % \DeclareUnicodeCharacter{2212}{−}
+% \usepgfplotslibrary{groupplots,dateplot}
+% \usetikzlibrary{patterns,shapes.arrows}
+% \pgfplotsset{compat=newest}
+% \usepgfplotslibrary{external}
+% \tikzexternalize
+% \usepackage[export]{adjustbox}
+% \usepackage{circuitikz}
+
+\begin{document}
+\begin{quantikz}[row sep={0.7cm,between origins}, column sep=0.8cm]
+        % First register (t qubits)
+        \lstick{$\ket{0}_0$} & \gate{H} & \ctrl{4} & \qw & \qw & \qw & \qw & \qw & \gate[wires=4]{QFT^\dagger} & \meter{} \\
+        \lstick{$\ket{0}_1$} & \gate{H} & \qw & \ctrl{3} & \qw & \qw & \qw & \qw &  & \meter{} \\
+        \lstick{$\vdots$} & & & &  & & & & \vdots & \vdots \\
+        \lstick{$\ket{0}_{t-1}$} & \gate{H} & \qw & \qw & \qw & \qw & \qw & \ctrl{1} & \qw  & \meter{} \\
+        % Second register (work register)
+        \lstick{$\ket{1}$} & \qw & \gate{U^{2^{t-1}}} & \gate{U^{2^{t-2}}} &  & \qw &  & \gate{U^{2^{0}}} & \qw & \rstick{$\ket{f(a)}$}
+\end{quantikz}
+    % \end{adjustbox}
+    % \caption{Quantum circuit of the Shor's algorithm.}
+    % \label{fig:MainScheme}
+\end{document}
+

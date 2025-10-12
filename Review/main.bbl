@@ -1,0 +1,125 @@
+\begin{thebibliography}{10}
+
+\bibitem{Shor_1994}
+P.~W. Shor.
+\newblock Algorithms for quantum computation: Discrete logarithms and
+  factoring.
+\newblock In {\em Proceedings of the 35th Annual Symposium on Foundations of
+  Computer Science}, pages 124--134, 1994.
+
+\bibitem{Feynman85}
+R.~P. Feynman.
+\newblock Quantum mechanical computers.
+\newblock {\em Optics News}, 11(2):11--20, 1985.
+
+\bibitem{DeutschJozsa1992}
+D.~Deutsch and R.~Jozsa.
+\newblock Rapid solution of problems by quantum computation.
+\newblock {\em Proceedings of the Royal Society of London A},
+  439(1907):553--558, 1992.
+
+\bibitem{BerthiaumeBrassard1992a}
+A.~Berthiaume and G.~Brassard.
+\newblock The quantum challenge to structural complexity theory.
+\newblock In {\em Proceedings of the 7th Annual Structure in Complexity Theory
+  Conference}, pages 132--137, 1992.
+
+\bibitem{BerthiaumeBrassard1992b}
+A.~Berthiaume and G.~Brassard.
+\newblock Oracle quantum computing.
+\newblock In {\em Workshop on Physics and Computation}, pages 195--199, 1992.
+
+\bibitem{BernsteinVazirani97}
+E.~Bernstein and U.~Vazirani.
+\newblock Quantum complexity theory.
+\newblock In {\em Proceedings of the 25th Annual ACM Symposium on Theory of
+  Computing}, pages 11--20, 1993.
+
+\bibitem{Simon94}
+D.~R. Simon.
+\newblock On the power of quantum computation.
+\newblock {\em SIAM Journal on Computing}, 26(5):1474--1483, 1997.
+
+\bibitem{RSA178}
+R.~L. Rivest, A.~Shamir, and L.~Adleman.
+\newblock A method for obtaining digital signatures and public-key
+  cryptosystems.
+\newblock {\em Communications of the ACM}, 21(2):120--126, 1978.
+
+\bibitem{LenstraLenstraManassePollard90}
+A.~K. Lenstra, H.~W. Lenstra, M.~S. Manasse, and J.~M. Pollard.
+\newblock The number field sieve.
+\newblock In {\em Proceedings of the 22nd Annual ACM Symposium on Theory of
+  Computing}, pages 564--572, 1990.
+
+\bibitem{Shallit94}
+J.~Shallit.
+\newblock Origins of the analysis of the euclidean algorithm.
+\newblock {\em Historia Mathematica}, 21(4):401--419, 1994.
+
+\bibitem{bach1996ant}
+E.~Bach and J.~Shallit.
+\newblock {\em Algorithmic Number Theory, Volume 1: Efficient Algorithms}.
+\newblock MIT Press, 1996.
+
+\bibitem{Nielsen_Chuang_2010}
+M.~A. Nielsen and I.~L. Chuang.
+\newblock {\em Quantum Computation and Quantum Information: 10th Anniversary
+  Edition}.
+\newblock Cambridge University Press, Cambridge, 2010.
+
+\bibitem{coppersmith2002approximate}
+D.~Coppersmith.
+\newblock An approximate fourier transform useful in quantum factoring.
+\newblock Technical Report RC 19642, IBM Research Division, Thomas J. Watson
+  Research Center, 1994.
+
+\bibitem{Bernstein98}
+D.~J. Bernstein.
+\newblock Detecting perfect powers in essentially linear time.
+\newblock {\em Mathematics of Computation}, 67(223):1253--1283, 1998.
+
+\bibitem{AgrawalKayalSaxena04}
+M.~Agrawal, N.~Kayal, and N.~Saxena.
+\newblock {PRIMES} is in {P}.
+\newblock {\em Annals of Mathematics (2)}, 160(2):781--793, 2004.
+
+\bibitem{hardy2008introduction}
+G.~H. Hardy, E.~M. Wright, D.~R. Heath-Brown, and J.~Silverman.
+\newblock {\em An Introduction to the Theory of Numbers}.
+\newblock OUP Oxford, 2008.
+
+\bibitem{kitaev_quantum_1995}
+A.~Yu. Kitaev.
+\newblock Quantum measurements and the abelian stabilizer problem.
+\newblock Electronic Colloquium on Computational Complexity (ECCC), 1995.
+\newblock Technical Report TR96.
+
+\bibitem{cleve_quantum_1997}
+R.~Cleve, A.~Ekert, C.~Macchiavello, and M.~Mosca.
+\newblock Quantum algorithms revisited.
+\newblock {\em Proceedings of the Royal Society of London A}, 454:339--354,
+  1998.
+
+\bibitem{qiskit2024}
+A.~Javadi-Abhari, M.~Treinish, K.~Krsulich, C.~J. Wood, J.~Lishman, J.~Gacon,
+  S.~Martiel, P.~D. Nation, L.~S. Bishop, A.~W. Cross, B.~R. Johnson, and J.~M.
+  Gambetta.
+\newblock Quantum computing with {Q}iskit.
+\newblock {\em arXiv preprint arXiv:2405.08810}, 2024.
+
+\bibitem{SirSergi0_AQM_Coursework_Group8}
+{SirSergi0}.
+\newblock Aqm coursework group 8 repository.
+\newblock \url{https://github.com/SirSergi0/AQM_Coursework_Group8}, 2025.
+\newblock Accessed: 2025-10-12.
+
+\bibitem{quantummasterbarcelonacode_factoring}
+{quantummasterbarcelonacode}.
+\newblock Quantum computation — factoring code repository.
+\newblock
+  \url{https://github.com/quantummasterbarcelonacode/QuantumComputation/tree/main/Factoring},
+  2025.
+\newblock Accessed: 2025-10-12.
+
+\end{thebibliography}
