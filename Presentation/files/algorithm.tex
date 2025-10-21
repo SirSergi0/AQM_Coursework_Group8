@@ -1,0 +1,94 @@
+\begin{frame}
+\begin{figure}
+	\centering
+\scalebox{0.70}{
+\begin{tikzpicture}[
+    node distance=0.5cm and 0.5cm,
+    every node/.style={align=center},
+    startstop/.style={rectangle, draw, fill=micolor!75, minimum width=2.6cm, minimum height=1cm},
+    process/.style={rectangle, rounded corners, draw, fill= micolor!50, minimum width=3.6cm, minimum height=1cm},
+    decision/.style={rectangle, rounded corners, draw, fill=micolor!25, aspect=2, minimum width=3.6cm, minimum height=1cm},
+    arrow/.style={-{Latex[length=3mm]}, thick}
+]
+
+% Nodes
+% \node[startstop] (start) {Start};
+\node[startstop] (input) {Given $n$, choose $x$ with $1 < x < n$};
+\node[process, below=of input] (gcd) {Compute $\gcd(x,n)$};
+\node[decision, below=of gcd] (checkgcd) {$\gcd(x,n) \neq 1$?};
+\node[process, below right=of checkgcd, xshift=-1cm] (found) {Set \\ $p_1 = \gcd(x,n)$, \\ $p_2 = n / p_1$};
+\node[startstop, below=of found] (end1) {Factors found};
+\node[process, below left=of checkgcd, xshift=1cm] (order) {Compute order $r$ of $[x]$ in $(\mathbb{Z}/n\mathbb{Z})^*$ };
+\node[decision, below=of order] (checkr) {$r$ even?};
+\node[process, below left=of checkr, xshift=-1cm] (retry) {Choose a new $x$};
+\node[process, below right=of checkr, xshift=1cm] (compute) {Compute $\gcd(x^{r/2} \pm 1, n)$};
+\node[decision, below=of compute] (checkdiv) {Non-trivial divisor found?};
+\node[startstop, below=of checkdiv] (end2) {Factors found};
+
+% Connections
+% \draw[arrow] (start) -- (input);
+\draw[arrow] (input) -- (gcd);
+\draw[arrow] (gcd) -- (checkgcd);
+\draw[arrow] (checkgcd) -- node[right,xshift=0.1cm]{Yes} (found);
+\draw[arrow] (found) -- (end1);
+\draw[arrow] (checkgcd) -- node[left, xshift=-0.5cm]{No} (order);
+\draw[arrow] (order) -- (checkr);
+\draw[arrow] (checkr) -- node[left, xshift = -0.7cm]{No} (retry);
+\draw[arrow] (retry) |- (input);
+\draw[arrow] (checkr) -- node[right, xshift = 0.7cm]{Yes} (compute);
+\draw[arrow] (compute) -- (checkdiv);
+\draw[arrow] (checkdiv) -- node[right]{Yes} (end2);
+\draw[arrow] (checkdiv) -| node[above, xshift = 6.2cm]{No} (retry);
+
+\end{tikzpicture}
+	}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}
+	\centering
+\scalebox{0.70}{
+\begin{tikzpicture}[
+    node distance=0.5cm and 0.5cm,
+    every node/.style={align=center},
+    startstop/.style={rectangle, draw, fill=micolor!75, minimum width=2.6cm, minimum height=1cm},
+    quantum/.style={rectangle, rounded corners, draw, fill=micolor!100, minimum width=2.6cm, minimum height=1cm},
+    process/.style={rectangle, rounded corners, draw, fill= micolor!50, minimum width=3.6cm, minimum height=1cm},
+    decision/.style={rectangle, rounded corners, draw, fill=micolor!25, aspect=2, minimum width=3.6cm, minimum height=1cm},
+    arrow/.style={-{Latex[length=3mm]}, thick}
+]
+
+% Nodes
+% \node[startstop] (start) {Start};
+\node[startstop] (input) {Given $n$, choose $x$ with $1 < x < n$};
+\node[process, below=of input] (gcd) {Compute $\gcd(x,n)$};
+\node[decision, below=of gcd] (checkgcd) {$\gcd(x,n) \neq 1$?};
+\node[process, below right=of checkgcd, xshift=-1cm] (found) {Set \\ $p_1 = \gcd(x,n)$, \\ $p_2 = n / p_1$};
+\node[startstop, below=of found] (end1) {Factors found};
+\node[quantum, below left=of checkgcd, xshift=1cm] (order) {Compute order $r$ of $[x]$ in $(\mathbb{Z}/n\mathbb{Z})^*$ \\ (Quantum step)};
+\node[decision, below=of order] (checkr) {$r$ even?};
+\node[process, below left=of checkr, xshift=-1cm] (retry) {Choose a new $x$};
+\node[process, below right=of checkr, xshift=1cm] (compute) {Compute $\gcd(x^{r/2} \pm 1, n)$};
+\node[decision, below=of compute] (checkdiv) {Non-trivial divisor found?};
+\node[startstop, below=of checkdiv] (end2) {Factors found};
+
+% Connections
+% \draw[arrow] (start) -- (input);
+\draw[arrow] (input) -- (gcd);
+\draw[arrow] (gcd) -- (checkgcd);
+\draw[arrow] (checkgcd) -- node[right,xshift=0.1cm]{Yes} (found);
+\draw[arrow] (found) -- (end1);
+\draw[arrow] (checkgcd) -- node[left, xshift=-0.5cm]{No} (order);
+\draw[arrow] (order) -- (checkr);
+\draw[arrow] (checkr) -- node[left, xshift = -0.7cm]{No} (retry);
+\draw[arrow] (retry) |- (input);
+\draw[arrow] (checkr) -- node[right, xshift = 0.7cm]{Yes} (compute);
+\draw[arrow] (compute) -- (checkdiv);
+\draw[arrow] (checkdiv) -- node[right]{Yes} (end2);
+\draw[arrow] (checkdiv) -| node[above, xshift = 6.2cm]{No} (retry);
+
+\end{tikzpicture}
+	}
+\end{figure}
+\end{frame}

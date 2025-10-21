@@ -1,0 +1,34 @@
+\begin{frame}{Implementation of Shor's algorithm}
+		
+			\begin{itemize}
+				\item State before $QFT^{\dagger}$: $|\phi \rangle
+				= \frac{1}{\sqrt{r2^t}} \sum_{j=0}^{2^t - 1} |j\rangle 
+				\sum_{d=0}^{r-1} e^{i\frac{2\pi j d}{r}} |u_d\rangle
+				= \frac{1}{\sqrt{2^t}} \sum_{j=0}^{2^t - 1} |j\rangle |x^j \bmod n\rangle$, where $|u_d\rangle$ are the eigenvectors of the unitary operator $U \, |y\rangle= |x y \,(\text{mod} \, n) \rangle$.
+				
+				\vspace{6pt}
+				
+				\item Final state: $|\psi \rangle
+				= \frac{1}{\sqrt{r}}  \sum_{d=0}^{r-1} |\tilde{c}/q \rangle |u_d\rangle$, where $q=2^t$ and $\tilde{c}/q$ is an estimation of $d/r$ precise to $t$ bits. We will determine $d/r$ from the estimation $\tilde{c}/q$ using the continued fractions expansion.
+			\end{itemize}
+			\begin{figure}[H]
+				\centering
+\scalebox{0.90}{
+\begin{quantikz}[row sep={0.7cm,between origins}, column sep=0.8cm]
+        % First register (t qubits)
+        \lstick{$\ket{0}_0$} & \gate{H} & \ctrl{4} & \qw & \qw & \qw & \gate[wires=4]{QFT^\dagger} & \meter{} \\
+        \lstick{$\ket{0}_1$} & \gate{H} & \qw & \ctrl{3} & \qw & \qw &  & \meter{} \\
+        \lstick{$\vdots$}\\
+        \lstick{$\ket{0}_{t-1}$} & \gate{H} & \qw  & \qw & \qw & \ctrl{1} & \qw  & \meter{} \\
+        % Second register (work register)
+        \lstick{$\ket{1}$} & \qw & \gate{U^{2^{t-1}}} & \gate{U^{2^{t-2}}} & \dots   & \gate{U^{2^{0}}} & \qw & \rstick{$\ket{x^{j}º\bmod{n}}$}
+\end{quantikz}
+}
+				\caption{Quantum circuit implementing Shor's algorithm.}
+				\label{fig:shor_qc}
+				
+				
+			\end{figure}
+		
+		
+	\end{frame}

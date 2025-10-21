@@ -1,0 +1,22 @@
+
+1. Historical introduction (1min) (David)
+    -Quantum advantage
+    -Predecessors 
+    -Cryptography, RSA
+
+2. Math's background (2min) (David & Sergio)
+    -Reducing factoring to order-finding
+    -Flux diagram / Mathematical algorithm
+
+3. Modern implementation (2 min) (Sergio & Ernesto)
+    - QFT
+    - QPE
+    - WHOLE algorithm diagram
+    - Precision formula
+
+4. Example N=55 (55 = 5 * 11) (2 min) (Ernesto & Amey)
+    - Figure
+    - Table
+    - Source of error: common divisors
+    
+5. Conclusion (1min) (Amey)

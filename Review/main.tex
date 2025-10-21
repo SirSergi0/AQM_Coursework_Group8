@@ -89,9 +89,9 @@ presents numerical simulations using modern quantum computing tools. As a practi
 \section{\label{sec:intro} Introduction}
 
 Quantum computing is an emerging field based on the principles of quantum theory, such as superposition, entanglement and probability-amplitude interference. Under certain conditions, quantum computers can provide exponential complexity separation over some classical computational models \citep{Shor_1994}. 
-This is often referred to as the quantum advantage, a phenomenon in which a quantum computer can solve a task which is either impossible for a classical computer, or it improves the precision of the solution using less resources.
+This is often referred to as the quantum advantage, a phenomenon in which a quantum computer can solve a task which is either impossible for a classical computer, or it improves the precision of the solution using fewer resources.
 % Quantum advantage refers to the ability of quantum devices to outperform classical systems in solving certain problems. 
-Although the term itself has gained popularity only recently, Richard Feynman first suggested in 1986 that exploiting quantum mechanics could enable simulating quantum systems previously thought to be out of reach for binary-bit-based computers \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with some probabilistic guarantee \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not include a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made an influential contribution by identifying an oracle problem solvable in polynomial time on a quantum computer, but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
+Although the term itself has gained popularity only recently, Richard Feynman first suggested in 1986 that exploiting quantum mechanics could enable simulating quantum systems previously thought to be out of reach for bit-based computers \cite{Feynman85}. In the early 1990s, several scientists, including Deutsch, Jozsa, Berthiaume, and Brassard, explicitly addressed this idea, showing that while certain tasks could be solved exactly using quantum mechanics, their classical analogues required randomization and could only be solved with some probabilistic guarantee \cite{DeutschJozsa1992, BerthiaumeBrassard1992a, BerthiaumeBrassard1992b}. However, these works did not include a problem outside the class of those already known to be solvable in polynomial time on a classical computer with the aid of randomization and small error. In 1994, inspired by Bernstein and Vazirani's work \cite{BernsteinVazirani97}, Daniel Simon made an influential contribution by identifying an oracle problem solvable in polynomial time on a quantum computer, but requiring exponential time classically \cite{Simon94}, thereby providing a concrete confirmation of Feynman’s intuition.
 
 
 Given these extraordinary findings, the possibility of using a quantum computer to solve classically hard problems seems compelling, but it is a looming threat to fields like cryptography, where most practical methods often rely on hard-to-solve computational problems. 
@@ -119,7 +119,7 @@ Otherwise, if $\gcd(x, n) = 1$, then the equivalence class $[x]$ belongs to the 
 \end{align*}
 In this case, we look for the \emph{order} of $[x]$, namely the smallest positive integer $r$  such that $x^r \equiv 1 \pmod{n}$.
 
-This order $r$ always exists since $\left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$ is a finite abelian group. The efficient computation of $r$ is precisely the step where the quantum routine of the algorithm becomes essential since it is a computationally hard problem classically, i.e., the bottleneck of the algorithm when $n$ is a large number\cite{bach1996ant}.
+This order $r$ always exists since $\left(\tfrac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$ is a finite abelian group. The efficient computation of $r$ is precisely the step where the quantum routine of the algorithm becomes essential since it is a computationally hard problem classically, i.e., the bottleneck of the algorithm when $n$ is a large number \cite{bach1996ant}.
 
 Once $r$ is obtained, two cases arise. If $r$ is odd, the choice of $x$ is not useful and the procedure is repeated with a new guess $x$. If $r$ is even, then 
 \begin{align*}
@@ -148,11 +148,11 @@ Considering a system with $n$ qubits, $N=2^n$ and $\{\ket{k}\}_{k=0}^{N-1}$ is s
     \end{split}
 \end{equation}
 }
-This expression enables the implementation of the QFT solely through the composition of two types of quantum gates. The first ones are Hadamard's ($H$) and act on a single qubit. They are represented as a matrix by \[H=\frac{1}{\sqrt{2}}\begin{pmatrix}
+This expression enables the implementation of the QFT solely through the composition of two types of quantum gates. The first ones are Hadamard's ($H$) and act on a single qubit. They are represented by the matrix \[H=\frac{1}{\sqrt{2}}\begin{pmatrix}
     1&1\\1&-1
 \end{pmatrix}.\]
-The second ones are controlled phase shifts ($CR_k$) and act in two qubits as \[CR_k=\begin{pmatrix} 1&0&0&0\\0&1&0&0\\ 0&0&1&0 \\ 0&0&0&e^{\frac{2\pi i}{2^k}} \end{pmatrix}.\]
-Then, the quantum circuit that performs the QFT is the one on Fig. \ref{fig:qft}. Notice how such implementation is exactly the same as the one proposed by Shor \cite{Shor_1994}.
+The second ones are controlled phase shifts ($CR_k$) and act on two qubits as \[CR_k=\begin{pmatrix} 1&0&0&0\\0&1&0&0\\ 0&0&1&0 \\ 0&0&0&e^{\frac{2\pi i}{2^k}} \end{pmatrix}.\]
+Then, the quantum circuit implementing the QFT is shown in Fig. \ref{fig:qft}. Notice that this implementation is exactly the same as the one proposed by Shor \cite{Shor_1994}.
 
 \begin{figure*}[ht]
 \centering
@@ -188,9 +188,9 @@ with filled dots indicating their respective control qubits. Notice how by readi
 
 \section{Order finding}\label{sec:Orderfinding}
 
-As discussed above, the quantum computations in Shor's algorithm are mainly focused on finding the order, i.e. the minimum integer $r$ such that $x^r\equiv 1 \pmod n$. Here we present how this computation is implemented in a quantum circuit and discuss the insights and problems of this algorithm.
+As discussed above, the quantum computations in Shor's algorithm are mainly focused on finding the order, i.e. the smallest positive integer $r$ such that $x^r\equiv 1 \pmod n$. Here we present how this computation is implemented in a quantum circuit and discuss the insights and problems of this algorithm.
 
- The first thing to do is find $q=2^t$, a power of 2 for certain $t\in \mathbb{N}$, such that $n^2<q<2n^2$. Notice that we can exclude $n$ from being a prime power, since there are many efficient classical algorithms to factorize $n$ in these cases \cite{Bernstein98,AgrawalKayalSaxena04}.
+ The first thing to do is find $q=2^t$, a power of 2 for some $t\in \mathbb{N}$, such that $n^2<q<2n^2$. Notice that we can exclude the case where $n$ is a prime power, since there are many efficient classical algorithms to factorize $n$ in these cases \cite{Bernstein98,AgrawalKayalSaxena04}.
 Now, starting from the state given by $\ket{0}^{\otimes t}\otimes\ket{0}$,
 we apply a Hadamard gate to each of the first $t$ qubits. This yields
 \[\left(\frac{\ket{0}+\ket{1}}{\sqrt{2}}\right)^{\otimes t}\otimes\ket{0}=\frac{1}{\sqrt{2^t}}\sum_{a=0}^{2^t-1}\ket{a}\otimes\ket{0}=\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{0},\]
@@ -199,15 +199,15 @@ where the tensorial product has expanded into a sum of all possible $2^t$ binary
 Our state is now 
 $\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\ket{a}\ket{x^a(\bmod{n})}$, and we can perform a quantum Fourier transform to the first register $\ket{a}$ yielding 
 $\frac{1}{\sqrt{q}}\sum_{a=0}^{q-1}\sum_{c=0}^{q-1}e^{2\pi ia\frac{c}{q}}\ket{c}\ket{x^a(\bmod{n})}$.
-Now we proceed with a projective measurement into a general state $\ket{\tilde{c}}\ket{x^k(\bmod{n})}$ and compute the corresponding probability. This is
+Now we proceed with a projective measurement onto a general state $\ket{\tilde{c}}\ket{x^k(\bmod{n})}$ and compute the corresponding probability. This is
 \[\mathbb{P}(\tilde{c},x^k(\bmod{n}))=\left|\frac{1}{q}\sum_{\substack{a=0\\x^a\equiv x^k (\bmod{n})}}^{q-1}e^{2\pi i a \frac{\tilde{c}}{q}}\right|^2.\]
 
 
 
-Notice that some terms in the sum might be repeated since we can find $\ket{x^i(\bmod{n})}=\ket{x^j(\bmod{n})}$ for $i\neq j$. This happens when $x^ i\equiv x^j(\bmod{n})$, thus $i=br+j$, where we have supposed $i>j$, $b,r\in \mathbb{Z}$ and $r$ satisfies $x^r\equiv 1(\bmod{n})$ i.e. $r$ is the order of $x$ in $\left(\frac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$. Therefore, $a=br+k$ for some $k\in \mathbb{Z}$ and the probability is reexpressed as
+Notice that some terms in the sum might be repeated since we can find $\ket{x^i(\bmod{n})}=\ket{x^j(\bmod{n})}$ for $i\neq j$. This happens when $x^ i\equiv x^j(\bmod{n})$, thus $i=br+j$, where we have supposed $i>j$, $b,r\in \mathbb{Z}$ and $r$ satisfies $x^r\equiv 1(\bmod{n})$ i.e. $r$ is the order of $x$ in $\left(\frac{\mathbb{Z}}{n\mathbb{Z}}\right)^*$. Therefore, $a=br+k$ for some $k\in \mathbb{Z}$ and the probability is rewritten as
 \[\mathbb{P}(\tilde{c},x^k(\bmod{n}))=\left|\frac{1}{q}\sum_{b=0}^{\lfloor\frac{q-1-k}{r}\rfloor}e^{2\pi i b\frac{r\tilde{c}}{q}}\right|^2,\]
 where we eliminated the global unitary factor $e^{2\pi i \frac{\tilde{c}}{q}k}$.
-By Euclidean division, $r\tilde{c}=dq+\{r\tilde{c}\}_q$, where $d\in \mathbb{Z}$ and $\{r\tilde{c}\}_q$ is the residue taken in the interval $-\frac{q}{2}<\{r\tilde{c}\}_q\le\frac{q}{2}$. Such operation spans a phase that we can omit.
+By Euclidean division, $r\tilde{c}=dq+\{r\tilde{c}\}_q$, where $d\in \mathbb{Z}$ and $\{r\tilde{c}\}_q$ is the residue taken in the interval $-\frac{q}{2}<\{r\tilde{c}\}_q\le\frac{q}{2}$. This operation introduces only a global phase, which we may omit.
 
 With an error of $O(\frac{1}{q})$ and assuming $\frac{-r}{2}\le \{r\tilde{c}\}_q\le \frac{r}{2}$ it can be shown that \[\mathbb{P}(\tilde{c},x^k(\bmod{n}))\approx\frac{\left|\sin\left(\pi \frac{\{r\tilde{c}\}_q}{r}\right) \right|^2}{\pi^2 \left|\{r\tilde{c}\}_q\right|^2}.\]
 
@@ -221,7 +221,7 @@ Once this fraction is obtained, two possibilities arise. If $d$ and $r$ are rela
 As discussed in Section \ref{sec:Orderfinding}, once $r$ is obtained, the quantum routine is finished and a potential divisor can be easily computed classically.
 
 \section{Example. Factoring $\mathbf{N=55}$ \label{sec:Example}}
-Now we will illustrate Shor's algorithm by applying it to factor $N=55$. Shor's original procedure, as presented in Section \ref{sec:Orderfinding}, used a fixed number of qubits $t$ in the first register, and its success relied on being repeated $O(\log \log r)$ times. We will instead implement a more modern formulation of Shor's algorithm, in which the success probability is improved by increasing the number of qubits $t$ rather than by iterations of the algorithm \cite{kitaev_quantum_1995, cleve_quantum_1997}.
+We now illustrate Shor's algorithm by applying it to factor $N=55$. Shor's original procedure, as presented in Section \ref{sec:Orderfinding}, used a fixed number of qubits $t$ in the first register, and its success relied on being repeated $O(\log \log r)$ times. We will instead implement a more modern formulation of Shor's algorithm, in which the success probability is improved by increasing the number of qubits $t$ rather than by iterations of the algorithm \cite{kitaev_quantum_1995, cleve_quantum_1997}.
 
 % Shor's algorithm is an instance of the Quantum Phase Estimation (QPE) algorithm. Therefore, 
 The number of qubits $t$ needed to obtain a certain estimation  $\tilde{c}/q$ accurate to $2L+1$ bits (where $L$ is the number of bits needed to write $n$), with probability at least $(1-\epsilon)/r$ is:
@@ -256,20 +256,20 @@ The relative frequencies of measuring $\tilde{c}/q$ obtained after simulating ou
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.45\textwidth]{FractionsPlotBinaryN55n_count13.jpg}
-    \caption{Comparison of results from running Shor's algorithm on N = 55 for t=13 and $2^{14}$ iteration with the plot for the analytical formula derived in Eq. \eqref{Ernesto's_Art}}
+    \caption{Comparison of results from running Shor's algorithm on N = 55 for t=13 and $2^{14}$ iteration with the plot for the analytical formula derived in Eq. \eqref{Ernesto's_Art}.}
     \label{fig:plot_d_r}
 
 \end{figure}
 
 However, the quantum advantage of Shor's algorithm arises from the fact that it does not require performing enough iterations to clearly distinguish these peaks. Instead, in Table \ref{tab:table} we show how Shor's procedure would continue for some of the most probable measures of $\tilde{c}/q$. From the estimated values $\tilde{c}/q$, we compute $d/r$ via the continued fractions expansion, and the denominator $r$ resulting is in fact the order that Shor's algorithm outputs. 
 
-As mentioned previously, one source of failure in the algorithm is that $d$ and $r$ might share common factors that simplify, delivering a wrong output. This is precisely what happens when the results $r=10,5,4$ are obtained. This  issue can be mitigated by repeating the algorithm $O(\log_2 N)$ times, so that we observe a value $d/r$ such that $d$ and $r$ are coprime with a high probability \cite{Nielsen_Chuang_2010}.
+As mentioned previously, one source of failure in the algorithm is that $d$ and $r$ might share common factors that simplify, delivering a wrong output. This occurs precisely when the results $r=10,5,4$ are obtained. This  issue can be mitigated by repeating the algorithm $O(\log_2 N)$ times, so that we observe a value $d/r$ such that $d$ and $r$ are coprime with a high probability \cite{Nielsen_Chuang_2010}.
 
-Since the correct order $r=20$ is even, we can continue with the classical part of the algorithm. We compute $\gcd(2^{20/2}+1, 55)$, obtaining a non trivial factor $p_1=5$ and thus $p_2=11$. Hence, we successfully factorized $N=55=11 \cdot 5$ using Shor's algorithm.
+Since the correct order $r=20$ is even, we can continue with the classical part of the algorithm. We compute $\gcd(2^{20/2}+1, 55)$, obtaining a non-trivial factor $p_1=5$ and thus $p_2=11$. Hence, we successfully factorized $N=55=11 \cdot 5$ using Shor's algorithm.
 
 \begin{table}[b]
 \centering
-\caption{Simulation results of $\tilde{c}/q$, with their corresponding relative frequency, the resulting $d/r$ from continued fractions expansion and the estimation for $r$.}
+\caption{Simulation results of $\tilde{c}/q$ with their corresponding relative frequency, the resulting $d/r$ from continued fractions expansion and the estimation for $r$.}
 \label{tab:table}
 \begin{tabular}{c c c c}
 \hline
@@ -293,13 +293,13 @@ In summary, we have reviewed Shor’s original paper, which introduced a quantum
 
 The order-finding subroutine can be divided into two essential stages: phase estimation via QFT and the continued fraction algorithm. We have also reproduced Shor's mathematical formulation of the probability of correctly estimating a given phase and verified it numerically.
 
-Finally, we implemented successfully the algorithm to factor the number 55. Our results confirm the expected behavior: the phase estimation produces well-defined peaks corresponding to rational approximations of the true order, and the continued fraction analysis successfully retrieves the correct value. We have identified two types of errors in this context: qubit precision and common divisors. The first type can be modeled analytically and is therefore relatively easy to control as with each added qubit the precision of phase estimation improves. The second type, however, is more challenging. When determining the fraction using the continued fraction algorithm, the resulting numerator and denominator may share common divisors, which can lead to an incorrect estimate of the order. At present, no effective method exists to systematically eliminate this source of error, but can be mitigated by repeating the algorithm $O(\log_2 N)$ times.
+Finally, we successfully implemented the algorithm to factor the number 55. Our results confirm the expected behavior: the phase estimation produces well-defined peaks corresponding to rational approximations of the true order, and the continued fraction analysis successfully retrieves the correct value. We have identified two types of errors in this context: qubit precision and common divisors. The first type can be modeled analytically and is therefore relatively easy to control as with each added qubit the precision of phase estimation improves. The second type, however, is more challenging. When determining the fraction using the continued fraction algorithm, the resulting numerator and denominator may share common divisors, which can lead to an incorrect estimate of the order. At present, no effective method exists to systematically eliminate this source of error, but this can be mitigated by repeating the algorithm $O(\log_2 N)$ times.
 
 In conclusion, our study reaffirms the significance of Shor’s results and demonstrates how quantum computation can outperform classical approaches in addressing problems of deep mathematical and practical importance.
 
 \bibliographystyle{unsrt}
 \vspace{-0.5cm}
-\bibliography{biblio}
+\bibliography{biblioGPT}
 
 \end{document}
 %

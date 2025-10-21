@@ -1,0 +1,76 @@
+\begin{frame}{Implementation of Shor's algorithm}
+
+% % \newcounter{theo}[section]
+% \newenvironment{theo}[1][]{%
+% % \stepcounter{theo}%
+% % \ifstrempty{#1}%
+% % {
+% \mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east),outer sep=0pt]
+% \node[anchor=east,rectangle,fill=blue!20]
+% {\strut Theorem~\thetheo};}}
+% % }%
+
+% {\mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east),outer sep=0pt]
+% \node[anchor=east,rectangle,fill=blue!20]
+% {\strut Estimation Precision};}}%
+% }%
+
+% \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+% linewidth=2pt,topline=true,
+% frametitleaboveskip=\dimexpr−\ht\strutbox\relax,}
+
+% \begin{mdframed}[]\relax%
+% % }\
+% {\end{mdframed}}}
+
+% \begin{theo}
+%     Nice
+% \end{theo}
+
+% \newenvironment{theo}[1][]
+% {
+% \mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east),outer sep=2pt]
+% \node[anchor=east,rectangle,fill=red]
+% {\strut Estimation Precision};}}
+
+% \mdfsetup{innertopmargin=10pt,linecolor=red,%
+% linewidth=2pt,topline=true,
+% frametitleaboveskip=\dimexpr−\ht\strutbox\relax,}
+
+% {
+% \begin{mdframed}
+% % \relax%
+% Nice
+% \end{mdframed}
+% }
+% }
+
+
+% \textbf{Estimation Precision}
+    
+% \[
+% \mathbb{P}(\tilde{c})=\frac{1}{r2^{2t}}\sum_{d=0}^{r-1} \frac{\sin^2\left(\pi \left( \frac{d}{r}2^t -  \tilde{c} \right) \right)}{\sin^2\left(\pi \left( \frac{d}{r} -  \frac{\tilde{c}}{2^t} \right) \right)}
+% \]
+
+
+
+%\begin{theo}[yes]{}
+%\[
+%\mathbb{P}(\tilde{c})=\frac{1}{r2^{2t}}\sum_{d=0}^{r-1} \frac{\sin^2\left(\pi \left( \frac{d}{r}2^t -  \tilde{c} \right) \right)}{\sin^2\left(\pi \left( \frac{d}{r} -  \frac{\tilde{c}}{2^t} \right) \right)}
+%\]
+%!TEX encoding = UTF-8 Unicode\end{theo}
+
+\begin{block}{Probability distribution}
+The probability of measuring $\tilde{c}/q$ is calculated in the Quantum Phase Estimation (QPE) algorithm and it is given by,
+\[
+\mathbb{P}(\tilde{c})=\frac{1}{r2^{2t}}\sum_{d=0}^{r-1} \frac{\sin^2\left(\pi \left( \frac{d}{r}2^t -  \tilde{c} \right) \right)}{\sin^2\left(\pi \left( \frac{d}{r} -  \frac{\tilde{c}}{2^t} \right) \right)}.
+\]
+\end{block}
+
+\end{frame}

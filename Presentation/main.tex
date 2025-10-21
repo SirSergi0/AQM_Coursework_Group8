@@ -1,0 +1,141 @@
+\documentclass[aspectratio=169, xcolor=dvipsnames]{beamer}
+
+%----------------------------------------------
+% TEMA Y COLORES PERSONALIZADOS
+%----------------------------------------------
+\usetheme[progressbar=frametitle]{Madrid}% Tema claro, profesional
+\usepackage{xcolor}
+\definecolor{micolor}{RGB}{184, 45, 42} % rojo oscuro personalizado
+\setbeamercolor{structure}{fg=micolor} % Color principal
+
+% Cambiar colores de los títulos y bloques
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{frametitle}{fg=white}
+\setbeamercolor{section in toc}{fg=black}
+\setbeamercolor{block title}{fg=white,bg=micolor}
+\setbeamercolor{block body}{bg=white, fg=black}
+\setbeamercolor{item}{fg=micolor}
+
+%----------------------------------------------
+% PAQUETES
+%----------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{quantikz}
+\usepackage{svg}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+\setbeamertemplate{caption}[numbered]
+
+\addtobeamertemplate{background}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[opacity=0.09] at (current page.center) {
+      \includegraphics[width=0.4\paperwidth]{Logo_mqst.png}
+    };
+  \end{tikzpicture}
+}{}
+
+\usepackage[
+  backend=biber,
+  style=ieee,     % cita [1], [2], etc.
+  sorting=none,      % orden por aparición
+  doi=false,         % elimina DOI
+  url=false,         % elimina URL
+  isbn=false,        % elimina ISBN
+  eprint=false       % elimina e-prints
+]{biblatex}
+
+\usepackage{amsthm}
+\usepackage[framemethod=TikZ]{mdframed}
+
+\newcounter{theo}[section]\setcounter{theo}{0}
+\renewcommand{\thetheo}{\arabic{section}.\arabic{theo}}
+\newenvironment{theo}[2][]{%
+\refstepcounter{theo}%
+\ifstrempty{#1}%
+{}%
+{\mdfsetup{%
+innertopmargin=2cm,
+singleextra={\node[anchor=west,xshift=5mm,rectangle,fill=micolor,inner sep=0.5mm] at (P-|O) %
+{\hspace*{5pt}\strut 
+\textbf{\textcolor{white}{Estimation Precision}}
+\hspace*{5pt}
+% Theorem~\thetheo:~#1\hspace*{5pt}
+};}}%
+}%
+\mdfsetup{linecolor=micolor,%
+linewidth=2pt,topline=true,%
+innertopmargin=1.5Em,
+}
+\begin{mdframed}[]\relax%
+\label{#2}}{\end{mdframed}}
+
+\addbibresource{biblioGPT.bib}
+
+%----------------------------------------------
+% INFORMACIÓN DE LA PRESENTACIÓN
+%----------------------------------------------
+\title[AQMCoursework]{Shor’s 1994 Quantum Factoring Algorithm: History, Mathematics, and Simulations}
+\author[Shor's Algorithm]{Amey Bhatuse \\
+Sergio Castañeiras Morales \\
+David González Lociga \\
+José Ernesto Ramos Sánchez
+}
+\institute[]{\textbf{Advanced Quantum Mechanics} \\ Master in Quantum Science and Technology Barcelona}
+\date{October 21, 2025}
+
+%----------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------
+\begin{document}
+
+\input{files/title}
+
+
+
+%\input{files/index}
+\input{files/intro}
+\input{files/math}
+
+\input{files/algorithm}
+
+\input{files/CircuitImplementation}
+
+\input{files/shor_implementation}
+
+\input{files/implementation}
+
+\input{files/Example55}
+
+\input{files/demo55}
+
+\input{files/Table}
+
+\input{files/Classical_processing}
+
+\input{files/conclusions}
+%----------------------------------------------
+\section*{Thank you}
+
+% \begin{frame}
+%     \centering
+%     \Huge{\textbf{Thank you for your attention!}}\\
+%     \vspace{1cm}
+% \end{frame}
+
+\input{files/thankyou}
+
+%\begin{frame}[allowframebreaks]{References}
+%  \scriptsize
+%  \printbibliography
+%\end{frame}
+
+\input{files/extraslide}
+\end{document}

@@ -1,0 +1,48 @@
+\begin{frame}
+    \centering
+    \vspace{1cm}
+    {\fontsize{24pt}{24pt}\selectfont \textbf{Backup slides}}
+\end{frame}
+
+\begin{frame}{QFT circuit implementation}
+    \begin{figure}
+\centering
+\scalebox{0.7}{ % full size, no shrinking needed
+\begin{quantikz}[
+  row sep=0.5cm, 
+  column sep=0.4cm, 
+  /tikz/every label/.append style={font=\small},
+  /tikz/every gate/.append style={minimum width=0.5cm, minimum height=0.35cm, inner sep=0pt, font=\normalsize}
+]
+\lstick{$\ket{k_1}$} & \gate{H} & \gate{R_2} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-1}} & \gate{R_n} & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_1\dots k_n}\ket{1}$}\\
+\lstick{$\ket{k_2}$} & \qw & \ctrl{-1} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw & \gate{H} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \gate{R_{n-2}} & \gate{R_{n-1}}& {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \qw  & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_2\dots k_n}\ket{1}$}\\
+\lstick{$\vdots$} \\ 
+\lstick{$\ket{k_{n-1}}$} & \qw & \qw & \qw & \ctrl{-3} & \qw & \qw & \qw & \ctrl{-2} &  \qw & {\hspace{0.1cm}\dots\hspace{0.1cm}}  &\gate{H} &\gate{R_2} & \qw & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_{n-1}k_n}\ket{1}$}\\
+\lstick{$\ket{k_n}$} & \qw & \qw & \qw & \qw & \ctrl{-4} & \qw & \qw & \qw & \ctrl{-3} & {\hspace{0.1cm}\dots\hspace{0.1cm}} & \qw & \ctrl{-1} & \gate{H} & \qw & \rstick{$\ket{0}+e^{2\pi i0.k_n}\ket{1}$}\\
+\end{quantikz}}
+
+% \includegraphics[
+% width=38cm, 
+% height=10cm]{fig_QFT.pdf}
+
+% }
+\caption{Quantum circuit implementing the Quantum Fourier Transform (QFT). 
+The output states are shown unnormalized (the $1/\sqrt{2}$ factors are omitted). 
+Controlled phase shift gates $CR_k$ are represented by phase shift gates $R_k$ acting on the target qubit, 
+with filled dots indicating their respective control qubits. Notice how by reading the output qubits downwards, we obtain the QFT in the reversed order, so a final SWAP gate is required in order to obtain the desired result.}
+\label{fig:qft}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Precision}
+\begin{block}{How does the precision scale with $t$?}
+If we use $t$ qubits in the first register, 
+\begin{equation*}
+t=2L + 1 + \left\lceil \log_2\left(2+\frac{1}{2\epsilon}\right) \right\rceil,
+\end{equation*}
+we will obtain an estimate $\tilde{c}/q$ of the phase $d/r$ accurate to $2L+1$ bits with probability at least $(1-\epsilon)/r$.
+\end{block}
+
+\end{frame}
+

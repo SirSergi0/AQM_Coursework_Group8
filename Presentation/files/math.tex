@@ -1,0 +1,45 @@
+\begin{frame}{Mathematical formulation}
+\centering
+
+\begin{definition}
+    {\footnotesize
+Given $n\in \mathbb{N}$, the multiplicative group of integers modulo $n$ is defined as
+\[
+\left(\mathbb{Z}/n\mathbb{Z}\right)^{*} 
+= \{ [x] \in \mathbb{Z}/n\mathbb{Z} : \gcd(x,n)=1 \}.
+\]
+For example:
+\[
+\left(\mathbb{Z}/12\mathbb{Z}\right)^{*} 
+= \{ [1],[5],[7],[11]\}.
+\]
+}
+\end{definition}
+\centering
+\begin{tikzpicture}[node distance=9cm, auto]
+
+    % Left box
+    \node[draw, rectangle, minimum width=3cm, minimum height=1.5cm, align=center, fill=micolor!50] (left) 
+        {Factorization};
+    
+    % Text below left box
+    \node[align=center, font=\scriptsize, below=0.3cm of left] (lefttext)
+        {Goal: given $n\in\mathbb{N}$ find $p_1,p_2\in \mathbb{N}$\\ such that $n=p_1\cdot p_2.$ };
+
+    % Right box
+    \node[draw, rectangle, minimum width=3cm, minimum height=1.5cm, align=center, right of=left, fill=micolor!50] (right) 
+        {Order-finding\\(Quantum subroutine)};
+    
+    % Text below right box
+    \node[align=center, font=\scriptsize, below=0.3cm of right] (righttext)
+        {Goal: given $n\in \mathbb{N}$ and $[x]\in\left(\mathbb{Z}/n\mathbb{Z}\right)^{*}$,\\ find the smallest $r\in \mathbb{N}$\\ such that $x^r\equiv 1 (\text{mod }n)$. };
+
+    % Thick arrow connecting them with text
+    \draw[->, line width=1pt] 
+        (left) -- node[midway, above, font=\scriptsize, align=center] {Choose $1<x<n$\\ a candidate divisor of $n$\\ such that $\text{gcd}(x,n)=1$.} (right);
+
+\end{tikzpicture}
+
+Once $r$ is obtained, a classical algorithm finds a divisor of $n$!
+
+\end{frame}
